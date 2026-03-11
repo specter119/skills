@@ -1,4 +1,4 @@
-# Wide Research Guidelines
+# Thorough Digest Guidelines
 
 ## Parallelization Table
 

@@ -1,12 +1,12 @@
 {
-  "name": "craft-skills",
-  "version": "1.0.0",
-  "description": "Craft your insights into content - research, report, slide, and more",
+  "name": "skills",
+  "version": "0.1.0",
+  "description": "Marketplace-managed skills for research, writing, presentations, and related content workflows",
   "author": {
     "name": "specter119",
     "url": "https://github.com/specter119"
   },
-  "repository": "https://github.com/specter119/claude-craft-skills",
+  "repository": "https://github.com/specter119/craft-skills",
   "license": "MIT",
-  "keywords": ["research", "report", "slide", "typst", "creative", "genimg", "deep-research", "wide-research"]
+  "keywords": ["research", "report-building", "slide-building", "typst-authoring", "creative", "genimg", "deep-research", "thorough-digest", "onenote-wiki"]
 }

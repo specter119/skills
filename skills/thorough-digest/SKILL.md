@@ -1,14 +1,14 @@
 ---
-name: wide-research
+name: thorough-digest
 description: >
-  Process large volumes of local materials with parallel sub-agents. Features task decomposition,
-  context isolation, parallel execution, and narrative synthesis. Use when processing multiple
-  files, batch analysis, building narratives from existing materials, or when user mentions
-  "wide research", "batch analysis", "批量分析", "整理材料", "构建叙事".
+  Exhaustively reviews local materials with parallel sub-agents — nothing skipped.
+  Inventories, groups, dispatches parallel agents to process every item, then synthesizes findings.
+  Use when asked to "digest materials", "batch analysis", "process these files", "summarize all",
+  "批量分析", "整理这些材料", "构建叙事", "thorough review".
 allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep
 ---
 
-# Wide Research Skill
+# Thorough Digest
 
 Inspired by Manus Wide Research and grapeot's Codex implementation.
 
@@ -65,12 +65,21 @@ Inspired by Manus Wide Research and grapeot's Codex implementation.
 ## Phase 1: Analyze
 
 1. **Inventory**: Enumerate all materials (see `references/templates.md`)
-2. **Classify**: Group by topic/file/section/batch (see `references/guidelines.md` for strategies)
+2. **Classify**: Group by topic/file/section/batch
 3. **Plan**: Decide parallelization strategy
+
+**Grouping strategies**:
+
+| Strategy | When to Use | Example |
+|----------|-------------|---------|
+| By file | Each file is independent | 53 student blog posts |
+| By topic | Files cluster by subject | Research papers by domain |
+| By section | One large file with sections | Long report with chapters |
+| By batch | Arbitrary even distribution | Any large uniform set |
 
 **Output structure**:
 ```plain
-{working_dir}/wide-research/{task-slug}/
+{working_dir}/thorough-digest/{task-slug}/
 ├── _inputs/                    # Symlinks or copies of inputs
 ├── group-a/findings.md
 ├── group-b/findings.md
@@ -109,18 +118,26 @@ See `references/templates.md` for synthesis report template.
 
 ## Parallelization Guidelines
 
-**Rule**: Keep 5-10 items per sub-agent to prevent slacking. See `references/guidelines.md` for detailed table.
+| Total Items | Groups | Items/Group |
+|-------------|--------|-------------|
+| 1-10 | 1-2 | 5-10 |
+| 11-30 | 3-5 | 6-10 |
+| 31-50 | 5-8 | 6-10 |
+| 51-100 | 8-15 | 5-10 |
+| 100+ | 15-20 | 5-10 |
+
+**Rule**: Keep 5-10 items per sub-agent to prevent slacking.
 
 ---
 
 ## Integration with Deep Research
 
 ```plain
-Wide Research → process local materials → identify gaps
+Thorough Digest → process local materials → identify gaps
        ↓
 Deep Research → fill gaps from internet
        ↓
-Wide Research → re-synthesize with new info
+Thorough Digest → re-synthesize with new info
 ```
 
 ---
@@ -130,16 +147,24 @@ Wide Research → re-synthesize with new info
 | File | Purpose | Usage |
 |------|---------|-------|
 | `references/templates.md` | All templates | Read for guidance |
-| `references/guidelines.md` | Tables & best practices | Reference as needed |
-| `scripts/render_docx.py` | Word to images | `uv run scripts/render_docx.py <file.docx>` |
-
-**Word files**: Use `render_docx.py` to convert DOCX → PNG images for reading. Requires LibreOffice and poppler-utils.
 
 ---
 
-## Error Handling & Best Practices
+## Error Handling
 
-See `references/guidelines.md` for detailed tables. Key rules:
-- 5-10 items per sub-agent
-- Explicit file paths, not patterns
-- Verify output count = input count
+| Error | Action |
+|-------|--------|
+| Sub-agent skips items | Re-run with smaller group |
+| File read fails | Note in gaps, continue |
+| Sub-agent timeout | Use partial results |
+| Output format wrong | Re-prompt with explicit format |
+
+---
+
+## Best Practices
+
+1. **Small groups**: 5-10 items per sub-agent
+2. **Explicit lists**: Give exact file paths, not patterns
+3. **Verify counts**: Output item count = input count
+4. **Isolated context**: Sub-agents don't know about other groups
+5. **File-based communication**: Write to files, supervisor reads

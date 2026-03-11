@@ -1,6 +1,6 @@
 # Touying Slides Framework
 
-> Typst slide framework. For narrative and design guidance, refer to `slide` skill.
+> Typst slide framework. For narrative and design guidance, refer to `slide-building` skill.
 
 ## Decision Guide: Touying vs Native Typst
 

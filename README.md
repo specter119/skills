@@ -1,44 +1,32 @@
 # Craft Skills
 
-Craft your insights into content - research, report, slide, and more.
+Craft your insights into content with marketplace-managed research, writing, slides, and Typst authoring skills.
 
 A collection of Agent Skills for Claude Code that help you research, write, and create professional documents.
 
 ## Installation
 
-### Option 1: Install as Plugin (All Skills)
+### Install as Plugin
+
+This installs the `skills` plugin, which bundles all skills in this repository.
 
 ```bash
 # Add marketplace
-/plugin marketplace add specter119/claude-craft-skills
+/plugin marketplace add specter119/craft-skills
 
 # Install plugin
-/plugin install craft-skills@specter119-claude-craft-skills
+/plugin install skills@craft-skills
 ```
 
-### Option 2: Install Individual Skills
+### Local Development
 
-If you only need specific skills, you can install them directly to `~/.claude/skills/`:
-
-```bash
-# Install deep-research only
-curl -fsSL https://github.com/specter119/claude-craft-skills/archive/main.tar.gz | \
-  tar -xz --strip-components=2 -C ~/.claude/skills/ claude-craft-skills-main/skills/deep-research
-
-# Install report only
-curl -fsSL https://github.com/specter119/claude-craft-skills/archive/main.tar.gz | \
-  tar -xz --strip-components=2 -C ~/.claude/skills/ claude-craft-skills-main/skills/report
-
-# Install slide only
-curl -fsSL https://github.com/specter119/claude-craft-skills/archive/main.tar.gz | \
-  tar -xz --strip-components=2 -C ~/.claude/skills/ claude-craft-skills-main/skills/slide
-```
-
-Or clone the entire repo and copy what you need:
+For local iteration, clone the repo and validate the manifests before publishing updates:
 
 ```bash
-git clone https://github.com/specter119/claude-craft-skills.git /tmp/craft-skills
-cp -r /tmp/craft-skills/skills/deep-research ~/.claude/skills/
+git clone https://github.com/specter119/craft-skills.git /tmp/craft-skills
+cd /tmp/craft-skills
+claude plugins validate .
+./scripts/validate-skills.sh
 ```
 
 ## Available Skills
@@ -46,11 +34,12 @@ cp -r /tmp/craft-skills/skills/deep-research ~/.claude/skills/
 | Skill | Description | Trigger Keywords |
 |-------|-------------|------------------|
 | **deep-research** | Deep research with multi-source synthesis | "调研", "研究", "深入了解" |
-| **wide-research** | Broad exploration across multiple topics | "广泛调研", "全面了解" |
-| **report** | Generate professional reports | "报告", "report" |
-| **slide** | Create presentation slides with Typst | "幻灯片", "slide", "演示" |
-| **typst** | Typst technical foundation layer | Used by slide/report |
+| **thorough-digest** | Exhaustive batch processing for local materials | "批量分析", "整理材料", "汇总这些" |
+| **report-building** | Generate and structure professional reports | "报告", "report" |
+| **slide-building** | Create presentation slides with Typst | "幻灯片", "slide", "演示" |
+| **typst-authoring** | Typst authoring foundation layer | Used by slide-building/report-building |
 | **genimg** | Generate images for content | "生成图片", "配图" |
+| **onenote-wiki** | Sync and convert OneNote wiki pages | "拉取 onenote", "同步 wiki" |
 
 ## Usage
 

@@ -200,7 +200,7 @@ site:github.com/[org] [topic]
 
    **分析**: [Why they differ]
    **建议**: [What to trust and why]
-   ```text
+   ```
 
 ---
 

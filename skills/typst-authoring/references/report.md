@@ -1,6 +1,6 @@
 # Report 技术参考
 
-> 本文档提供 Typst 报告生成的技术细节。内容结构请参考 `report` skill。
+> 本文档提供 Typst 报告生成的技术细节。内容结构请参考 `report-building` skill。
 
 ## 快速命令
 
@@ -221,7 +221,7 @@ typst init @preview/basic-report:0.2.0 my-report
 
 ### 流程图
 
-参考 `typst` skill 的流程图生成部分。推荐顺序：diagraph > D2 > oxdraw
+参考 `typst-authoring` skill 的流程图生成部分。推荐顺序：diagraph > D2 > oxdraw
 
 ---
 

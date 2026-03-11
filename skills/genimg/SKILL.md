@@ -1,12 +1,12 @@
 ---
 name: genimg
 description: >
-  This skill should be used when generating AI images using Gemini.
-  Triggers: "生成图片", "画一张", "generate image", "create illustration".
+  Generates AI images using Gemini API.
+  Use when asked to "生成图片", "画一张", "generate image", "create illustration".
   Not for diagrams, charts, or flowcharts.
 ---
 
-# GenImg - AI Image Generation
+# GenImg
 
 Generate images using Gemini.
 
@@ -91,14 +91,14 @@ subject placement. Keep all other elements unchanged.
 Copy `.env.example` to `.env` and add API key:
 
 ```bash
-cp ~/.claude/skills/genimg/.env.example ~/.claude/skills/genimg/.env
+cp .env.example .env
 # Edit .env and add your GEMINI_API_KEY
 ```
 
 ## Usage
 
 ```bash
-SCRIPT=~/.claude/skills/genimg/scripts/generate.py
+SCRIPT=scripts/generate.py
 
 # Basic generation (uv run auto-reads PEP 723 dependency declarations)
 uv run $SCRIPT "a futuristic city" -o city.png
@@ -190,7 +190,7 @@ uv run $SCRIPT "enhance lighting, add more details" \
 
 ## Slide/Presentation Integration
 
-Use `genimg` + `slide` + `typst` together to enhance technical presentations.
+Use `genimg` + `slides` + `typst` together to enhance technical presentations.
 
 ### Recommended Configuration for Presentations
 
@@ -207,7 +207,7 @@ Use `genimg` + `slide` + `typst` together to enhance technical presentations.
 ```bash
 # 1. Navigate to slide project directory
 cd /path/to/slide/project
-SCRIPT=~/.claude/skills/genimg/scripts/generate.py
+SCRIPT=scripts/generate.py
 
 # 2. Generate cover image
 uv run $SCRIPT "AI agents in supply chain network, abstract, professional" \

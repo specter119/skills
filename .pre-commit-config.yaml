@@ -1,45 +1,49 @@
 repos:
-  # Detect secrets and credentials
-  - repo: https://github.com/Yelp/detect-secrets
-    rev: v1.5.0
-    hooks:
-      - id: detect-secrets
-        args: ['--baseline', '.secrets.baseline']
-        exclude: package.lock.json
-
   # Standard pre-commit hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
-      # Prevent committing private keys
       - id: detect-private-key
-      # Prevent committing AWS credentials
       - id: detect-aws-credentials
-        args: ['--allow-missing-credentials']
-      # Check for files that would conflict in case-insensitive filesystems
+        args: ["--allow-missing-credentials"]
       - id: check-case-conflict
-      # Ensure files end with newline
       - id: end-of-file-fixer
-      # Remove trailing whitespace
       - id: trailing-whitespace
-      # Check yaml syntax
       - id: check-yaml
-      # Check json syntax
       - id: check-json
-      # Prevent large files from being committed
       - id: check-added-large-files
-        args: ['--maxkb=500']
+        args: ["--maxkb=500"]
 
   # Markdown linting
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.21.0
     hooks:
       - id: markdownlint-cli2
-        args: ['--fix']
+        args: ["--fix"]
 
-  # Local hooks
+  # Detect secrets and credentials
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ["--baseline", ".secrets.baseline"]
+        exclude: package.lock.json
+
+  # Repository-specific validation
   - repo: local
     hooks:
+      - id: check-skill-consistency
+        name: Check skill and marketplace consistency
+        entry: ./scripts/check-skill-consistency.sh
+        language: script
+        pass_filenames: false
+
+      - id: validate-marketplace
+        name: Validate Claude Code marketplace
+        entry: claude plugins validate .
+        language: system
+        pass_filenames: false
+
       - id: validate-skills
         name: Validate Claude Code Skills
         entry: ./scripts/validate-skills.sh

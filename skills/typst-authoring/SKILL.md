@@ -1,12 +1,15 @@
 ---
-name: typst
-description: "Typst technical foundation layer providing syntax reference, toolchain commands, package management, and diagram solution selection (diagraph/D2/oxdraw). Serves as technical reference for slide and report skills."
+name: typst-authoring
+description: >
+  Provides Typst technical foundation: syntax reference, toolchain commands, package management,
+  and diagram solution selection (diagraph/D2/oxdraw).
+  Use when working with Typst documents, compiling .typ files, or needing Typst syntax help.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
-# Typst Technical Foundation
+# Typst
 
-Technical foundation for Typst document generation. For narrative and design guidance, refer to `slide` or `report` skills.
+Technical foundation for Typst document generation. For narrative and design guidance, refer to `slide-building` or `report-building` skills.
 
 ## Workflow
 

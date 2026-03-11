@@ -1,0 +1,35 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "craft-skills",
+  "description": "Marketplace-managed skills for research, writing, presentations, and related content workflows",
+  "metadata": {
+    "description": "Marketplace-managed skills for research, writing, presentations, and related content workflows",
+    "version": "0.1.0"
+  },
+  "owner": {
+    "name": "specter119",
+    "url": "https://github.com/specter119"
+  },
+  "plugins": [
+    {
+      "name": "skills",
+      "description": "Collection of marketplace-managed skills for research, authoring, and presentation workflows",
+      "version": "0.1.0",
+      "author": {
+        "name": "specter119",
+        "url": "https://github.com/specter119"
+      },
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/deep-research",
+        "./skills/genimg",
+        "./skills/onenote-wiki",
+        "./skills/report-building",
+        "./skills/slide-building",
+        "./skills/thorough-digest",
+        "./skills/typst-authoring"
+      ]
+    }
+  ]
+}
