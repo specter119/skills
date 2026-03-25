@@ -1,5 +1,5 @@
 ---
-name: typst-authoring
+name: Typst Authoring
 description: >
   Provides Typst technical foundation: syntax reference, toolchain commands, package management,
   and diagram solution selection (diagraph/D2/oxdraw).

@@ -1,24 +1,18 @@
 #!/bin/bash
-# Validate skills using skill-creator's quick_validate.py
-# Checks both internal (~/.claude) and external (~/.config/claude) paths
+# Validate skills using the vendored quick validator.
 
 set -e
 
-# Find skill-creator validate script
-VALIDATE_SCRIPT=""
-if [ -f "$HOME/.claude/skills/skill-creator/scripts/quick_validate.py" ]; then
-    VALIDATE_SCRIPT="$HOME/.claude/skills/skill-creator/scripts/quick_validate.py"
-elif [ -f "$HOME/.config/claude/skills/skill-creator/scripts/quick_validate.py" ]; then
-    VALIDATE_SCRIPT="$HOME/.config/claude/skills/skill-creator/scripts/quick_validate.py"
-fi
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+VALIDATE_SCRIPT="$ROOT_DIR/scripts/quick_validate.py"
 
-if [ -z "$VALIDATE_SCRIPT" ]; then
-    echo "skill-creator not found, skipping validation"
-    exit 0
+if [ ! -f "$VALIDATE_SCRIPT" ]; then
+    echo "Missing validator script: $VALIDATE_SCRIPT"
+    exit 1
 fi
 
 # Find skills directory
-SKILLS_DIR="./skills"
+SKILLS_DIR="$ROOT_DIR/skills"
 if [ ! -d "$SKILLS_DIR" ]; then
     echo "No skills/ directory found"
     exit 0
