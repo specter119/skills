@@ -1,5 +1,5 @@
 ---
-name: Thorough Digest
+name: thorough-digest
 description: >
   Exhaustively reviews local materials with parallel sub-agents — nothing skipped.
   Inventories, groups, dispatches parallel agents to process every item, then synthesizes findings.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slide Building"
+  short_description: "Design slide narratives and layouts"
+  default_prompt: "Use $slide-building when creating presentations, pitch decks, or slide narratives."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thorough Digest"
+  short_description: "Exhaustive local material review"
+  default_prompt: "Use $thorough-digest for exhaustive review of local materials with parallel sub-agents."

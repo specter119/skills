@@ -1,5 +1,5 @@
 ---
-name: Deep Research
+name: deep-research
 description: >
   Searches the web to investigate topics in depth. Decomposes questions, dispatches parallel
   sub-agents to search and fetch, archives raw sources, and produces a structured report.

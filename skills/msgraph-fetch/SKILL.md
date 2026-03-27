@@ -1,5 +1,5 @@
 ---
-name: Microsoft Graph Fetch
+name: msgraph-fetch
 description: >
   Unified Microsoft Graph fetch skill for SharePoint, OneDrive, and OneNote.
   Supports SharePoint file fetch, drive folder sync, site discovery, notebook

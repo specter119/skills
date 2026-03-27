@@ -1,5 +1,5 @@
 ---
-name: Marimo EDA Prototype
+name: marimo-eda-prototype
 description: >
   Guides Codex to write marimo notebooks for EDA and prototype-first work with restrained UI,
   cohesive cells, clear variable scoping, and deliberate extraction into modules. Use when

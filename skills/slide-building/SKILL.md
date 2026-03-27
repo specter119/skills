@@ -1,5 +1,5 @@
 ---
-name: Slide Building
+name: slide-building
 description: >
   Designs slide narrative frameworks and visual layouts.
   Use when creating slides, presentations, or pitch decks.

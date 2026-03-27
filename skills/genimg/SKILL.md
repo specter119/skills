@@ -1,5 +1,5 @@
 ---
-name: Genimg
+name: genimg
 description: >
   Generates AI images using Gemini API.
   Use when asked to "生成图片", "画一张", "generate image", "create illustration".

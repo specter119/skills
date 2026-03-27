@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deep Research"
+  short_description: "Web research with parallel sub-agents"
+  default_prompt: "Use $deep-research for in-depth web research, decomposing questions and dispatching parallel sub-agents."

@@ -1,5 +1,5 @@
 ---
-name: Report Building
+name: report-building
 description: >
   Structures and organizes reports, papers, theses, and documentation.
   Use when asked to create report/paper/thesis/文档/报告/论文.

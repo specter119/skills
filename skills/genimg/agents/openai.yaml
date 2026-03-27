@@ -1,0 +1,4 @@
+interface:
+  display_name: "Genimg"
+  short_description: "AI image generation via Gemini"
+  default_prompt: "Use $genimg to generate AI images when asked to create illustrations or artwork."

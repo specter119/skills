@@ -1,0 +1,4 @@
+interface:
+  display_name: "Microsoft Graph Fetch"
+  short_description: "Fetch from SharePoint, OneDrive, OneNote"
+  default_prompt: "Use $msgraph-fetch to fetch files from SharePoint, sync OneDrive folders, or sync OneNote notebooks via Microsoft Graph API."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Marimo EDA Prototype"
+  short_description: "Marimo notebooks for EDA and prototyping"
+  default_prompt: "Use $marimo-eda-prototype when creating exploratory marimo notebooks with restrained UI and cohesive cells."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Typst Authoring"
+  short_description: "Typst syntax and toolchain reference"
+  default_prompt: "Use $typst-authoring for Typst syntax help, compilation commands, and diagram solution selection."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Report Building"
+  short_description: "Structure reports, papers, documentation"
+  default_prompt: "Use $report-building when creating reports, papers, theses, or structured documentation."
