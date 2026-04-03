@@ -1,4 +1,4 @@
 interface:
   display_name: "Thorough Digest"
-  short_description: "Exhaustive local material review"
-  default_prompt: "Use $thorough-digest for exhaustive review of local materials with parallel sub-agents."
+  short_description: "Exhaustively digest local materials in parallel"
+  default_prompt: "Use $thorough-digest to batch process many local files or materials with parallel sub-agents when nothing should be skipped."

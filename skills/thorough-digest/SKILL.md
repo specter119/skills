@@ -1,170 +1,46 @@
 ---
 name: thorough-digest
 description: >
-  Exhaustively reviews local materials with parallel sub-agents — nothing skipped.
-  Inventories, groups, dispatches parallel agents to process every item, then synthesizes findings.
-  Use when asked to "digest materials", "batch analysis", "process these files", "summarize all",
-  "批量分析", "整理这些材料", "构建叙事", "thorough review".
+  Exhaustively review local materials with parallel sub-agents so no item is skipped. Use when a
+  user asks to batch process many local files, digest a folder, or synthesize a narrative from
+  existing materials rather than searching the web.
 allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep
 ---
 
 # Thorough Digest
 
-Inspired by Manus Wide Research and grapeot's Codex implementation.
+负责 **本地材料的全量处理与并行归纳**，不负责外部网络调研。
 
-## Knowledge Activation
+## 适用边界
 
-**Core insight**: LLM context window limitations cause "lazy" behavior on long tasks (skipping items, premature completion). Apply **agentic decomposition patterns**: divide work into isolated sub-tasks with small output scope.
+### 应该路由到这里
 
-**Key principles** (Claude knows the theory):
-- **Context isolation**: Prevent cross-contamination between sub-tasks
-- **Parallel execution**: Fan-out pattern for independent tasks
-- **Narrative synthesis**: Map-reduce pattern for final output
+- 批量处理本地文件、目录、章节或材料集合
+- 逐项提取要点，要求不能漏项
+- 从既有材料中构建统一叙事或综合报告
 
----
+### 不应该路由到这里
 
-## When to Activate
+- 需要去网上补新信息
+- 只处理一两份材料
+- 主要目标是写 slides 或正式报告，而不是先消化材料
 
-- User wants to process multiple local files/documents
-- Batch analysis of similar items (reports, emails, documents)
-- Building narrative from existing materials
-- Tasks that would produce very long output if done sequentially
-- Chinese: "批量分析", "整理材料", "构建叙事", "汇总这些"
+## 执行骨架
 
-## When NOT to Use (Use Deep Research Instead)
+1. 先 inventory 全部输入项，确保范围清楚。
+2. 按 `references/workflow.md` 决定分组方式和并行策略。
+3. 给每个 sub-agent 明确 item list、输出路径和“不许漏项”的约束。
+4. 汇总各组 findings，必要时再串联 `deep-research` 补缺口。
 
-- Need to search the internet for new information
-- Single topic requiring deep investigation
-- No existing local materials to process
+## 参考地图
 
----
+- `references/workflow.md`: 分阶段流程、分组策略、输出结构
+- `references/guidelines.md`: 并行粒度、错误处理、最佳实践
+- `references/templates.md`: inventory / classify / sub-agent / synthesis 模板
+- `evals/trigger-cases.md`: 最小触发样例
+- `reports/optimization-notes.md`: 本轮重构判断
 
-## Workflow Overview
+## 输出契约
 
-```plain
-┌─────────────────────────────────────────────────────────────────┐
-│  Phase 1: ANALYZE                                               │
-│  ├── Inventory: List all materials to process                   │
-│  ├── Classify: Group into independent sub-tasks                 │
-│  └── Plan: Decide parallelization strategy                      │
-├─────────────────────────────────────────────────────────────────┤
-│  Phase 2: PARALLEL PROCESS                                      │
-│  ├── Launch N sub-agents (one per sub-task group)               │
-│  ├── Each sub-agent: read → process → write findings            │
-│  └── Sub-agents write to isolated output files                  │
-├─────────────────────────────────────────────────────────────────┤
-│  Phase 3: SYNTHESIZE                                            │
-│  ├── Collect all sub-agent outputs                              │
-│  ├── Identify gaps → trigger Deep Research if needed            │
-│  └── Generate final narrative/report                            │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Phase 1: Analyze
-
-1. **Inventory**: Enumerate all materials (see `references/templates.md`)
-2. **Classify**: Group by topic/file/section/batch
-3. **Plan**: Decide parallelization strategy
-
-**Grouping strategies**:
-
-| Strategy | When to Use | Example |
-|----------|-------------|---------|
-| By file | Each file is independent | 53 student blog posts |
-| By topic | Files cluster by subject | Research papers by domain |
-| By section | One large file with sections | Long report with chapters |
-| By batch | Arbitrary even distribution | Any large uniform set |
-
-**Output structure**:
-```plain
-{working_dir}/thorough-digest/{task-slug}/
-├── _inputs/                    # Symlinks or copies of inputs
-├── group-a/findings.md
-├── group-b/findings.md
-├── group-c/findings.md
-└── synthesis.md                # Final output
-```
-
----
-
-## Phase 2: Parallel Process
-
-Launch sub-agents with Task tool. Each receives:
-- Explicit item list (file paths, not patterns)
-- Processing instructions
-- Output path
-
-**Critical rules for sub-agents**:
-- Process EVERY item
-- Do NOT skip any items
-- Each item gets its own section
-
-See `references/templates.md` for sub-agent prompt template.
-
----
-
-## Phase 3: Synthesize
-
-1. **Collect**: Read all findings.md files
-2. **Gap check**: Missing items? Incomplete data?
-3. **Deep Research**: Trigger for external info if needed
-4. **Synthesize**: Generate final report
-
-See `references/templates.md` for synthesis report template.
-
----
-
-## Parallelization Guidelines
-
-| Total Items | Groups | Items/Group |
-|-------------|--------|-------------|
-| 1-10 | 1-2 | 5-10 |
-| 11-30 | 3-5 | 6-10 |
-| 31-50 | 5-8 | 6-10 |
-| 51-100 | 8-15 | 5-10 |
-| 100+ | 15-20 | 5-10 |
-
-**Rule**: Keep 5-10 items per sub-agent to prevent slacking.
-
----
-
-## Integration with Deep Research
-
-```plain
-Thorough Digest → process local materials → identify gaps
-       ↓
-Deep Research → fill gaps from internet
-       ↓
-Thorough Digest → re-synthesize with new info
-```
-
----
-
-## Bundled Resources
-
-| File | Purpose | Usage |
-|------|---------|-------|
-| `references/templates.md` | All templates | Read for guidance |
-
----
-
-## Error Handling
-
-| Error | Action |
-|-------|--------|
-| Sub-agent skips items | Re-run with smaller group |
-| File read fails | Note in gaps, continue |
-| Sub-agent timeout | Use partial results |
-| Output format wrong | Re-prompt with explicit format |
-
----
-
-## Best Practices
-
-1. **Small groups**: 5-10 items per sub-agent
-2. **Explicit lists**: Give exact file paths, not patterns
-3. **Verify counts**: Output item count = input count
-4. **Isolated context**: Sub-agents don't know about other groups
-5. **File-based communication**: Write to files, supervisor reads
+- 默认交付 inventory、分组结果、各组 findings 和最终 synthesis
+- 必须能说明总输入数、已处理数和覆盖情况
