@@ -1,4 +1,4 @@
 interface:
   display_name: "Slide Building"
-  short_description: "Design slide narratives and layouts"
-  default_prompt: "Use $slide-building when creating presentations, pitch decks, or slide narratives."
+  short_description: "Plan slide narratives, page flow, and visual direction"
+  default_prompt: "Use $slide-building for presentations, pitch decks, and talk decks when you need audience-aware outlines, page-by-page slide plans, or visual direction. Do not use it for deep research, report writing, or Typst/PPTX implementation."
