@@ -2,17 +2,17 @@
 
 ## Should Trigger
 
-1. 批量分析这个目录里的 40 份 Markdown 文档。
-2. 把这些会议纪要全部整理成一个统一叙事。
-3. 逐个处理这些材料，不要漏任何一个。
+1. Batch analyze 40 Markdown documents in this directory.
+2. Organize all these meeting minutes into a unified narrative.
+3. Process each of these materials one by one without missing any.
 
 ## Should Not Trigger
 
-1. 先去网上调研一下这个主题。
-2. 只总结这一篇文章。
-3. 帮我画一套 slides 大纲。
+1. First research this topic on the internet.
+2. Just summarize this one article.
+3. Help me create a slides outline.
 
 ## Near Neighbors
 
-1. 需要先处理本地材料，再补外部信息。
-   期望：先 `thorough-digest`，必要时串联 `deep-research`
+1. Need to process local materials first, then supplement with external information.
+   Expected: `thorough-digest` first, chain `deep-research` if needed

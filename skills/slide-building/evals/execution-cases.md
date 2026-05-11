@@ -1,16 +1,16 @@
 # Execution Cases
 
-## 场景 1：从材料到 deck 大纲
+## Scenario 1: From Materials to Deck Outline
 
-- 输入：调研笔记或复盘材料
-- 预期：产出清晰主线和 page-by-page 结构
+- Input: research notes or retrospective materials
+- Expected: clear throughline and page-by-page structure
 
-## 场景 2：优化现有 deck 主线
+## Scenario 2: Optimize Existing Deck Throughline
 
-- 输入：已有 slides，但叙事松散
-- 预期：重写主线、section 结构和页面职责，不直接进入排版实现
+- Input: existing slides with loose narrative
+- Expected: rewrite throughline, section structure, and page responsibilities — do not proceed to layout implementation
 
-## 场景 3：定义视觉方向
+## Scenario 3: Define Visual Direction
 
-- 输入：听众、场景、时长、主题
-- 预期：给出页面类型、信息密度和视觉系统建议
+- Input: audience, context, duration, topic
+- Expected: recommendations for page types, information density, and visual system

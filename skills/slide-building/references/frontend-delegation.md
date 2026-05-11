@@ -1,96 +1,96 @@
 # Frontend Agent Delegation for Slides
 
-委托 `@frontend-ui-ux-engineer` 进行 slide 视觉优化时的指导。
+Guidance for delegating slide visual optimization to `@frontend-ui-ux-engineer`.
 
-## 核心问题：认知偏差
+## Core Problem: Cognitive Bias
 
-`frontend-ui-ux-engineer` 的默认心智模型是 **Web UI/Dashboard**：
-- Card 组件 → 信息容器
-- Grid 布局 → 响应式
-- Border + Shadow → 层级区分
+The default mental model of `frontend-ui-ux-engineer` is **Web UI/Dashboard**:
+- Card component → information container
+- Grid layout → responsive
+- Border + Shadow → hierarchy separation
 
-这套逻辑用在 Slide 上会变成"方框堆砌"。**必须在 prompt 中切换思维模式。**
+This logic applied to slides becomes "box stacking". **The mental model must be switched in the prompt.**
 
-## 心智模型对比表
+## Mental Model Comparison
 
 | Web Design (WRONG) | Slide/Print Design (CORRECT) |
 |--------------------|------------------------------|
 | Responsive layouts | Fixed 16:9 canvas |
 | Interactive elements | Static frames |
 | Scroll for more | One screen = one message |
-| Card 作为默认容器 | 用对齐和留白暗示分组 |
-| Dashboard 等分 grid | 视觉节奏变化 |
-| Hover/Click 交互 | 无交互，纯静态 |
-| Viewport 适配 | 投影仪可读性 |
+| Card as default container | Use alignment and whitespace to imply grouping |
+| Dashboard equal-split grid | Visual rhythm variation |
+| Hover/Click interaction | No interaction — pure static |
+| Viewport adaptation | Projector readability |
 
-## Slide 类型与风格
+## Slide Types and Styles
 
-| 类型 | 适用场景 | 风格特征 | 权威参考 |
+| Type | Use Case | Style Characteristics | Authority Reference |
 |------|----------|----------|----------|
-| **演讲型** | TED、Keynote、有演讲者 | 极简，大留白，每页一个点 | Garr Reynolds (*Presentation Zen*) |
-| **商业型** | 咨询报告、管理层汇报 | 信息密集，结构清晰 | McKinsey/BCG style |
-| **技术型** | 技术分享、架构评审 | 混合风格，代码/图表为主 | 工程文化 |
+| **Talk** | TED, Keynote, speaker present | Minimal, large whitespace, one point per slide | Garr Reynolds (*Presentation Zen*) |
+| **Business** | Consulting reports, management briefings | Information-dense, clear structure | McKinsey/BCG style |
+| **Technical** | Tech talks, architecture reviews | Mixed style, code/diagrams dominant | Engineering culture |
 
-**判断方法**：
-- 有演讲者陪同 → 可以极简
-- 需独立阅读 → 信息完整
-- 主要是代码/架构 → 技术型
+**How to determine**:
+- Speaker present → can be minimal
+- Needs standalone reading → information must be complete
+- Primarily code/architecture → technical type
 
-## 禁止 vs 必须
+## Prohibited vs. Required
 
-| 禁止 | 必须 |
+| Prohibited | Required |
 |------|------|
-| Card/Box 作为默认容器 | 用对齐和接近暗示关系 |
-| Dashboard 风格等分 grid | 用字重和大小建立层级 |
-| Skeleton loader / Loading state | 关键数字要大、要突出 |
-| Hover effect / Click 交互 | 代码块用深色背景 |
-| Responsive / Breakpoint 建议 | 考虑投影仪可读性 |
-| 灰框白底的代码块 | 视觉节奏跨页变化 |
+| Card/Box as default container | Use alignment and proximity to imply relationships |
+| Dashboard-style equal-split grid | Use weight and size to establish hierarchy |
+| Skeleton loader / Loading state | Key numbers must be large and prominent |
+| Hover effect / Click interaction | Code blocks use dark background |
+| Responsive / Breakpoint suggestions | Consider projector readability |
+| Gray-bordered white-background code blocks | Visual rhythm varies across slides |
 
-## 设计原则（知识唤醒）
+## Design Principles (Knowledge Activation)
 
-| 原则 | 权威来源 | 应用 |
+| Principle | Authority | Application |
 |------|----------|------|
-| **Data-ink ratio** | Edward Tufte | 删除不传达信息的视觉噪音 |
-| **Gestalt 原则** | 心理学 | 用接近和对齐暗示关系，减少边框依赖 |
-| **Visual rhythm** | Nancy Duarte | 连续页面需要视觉变化 |
+| **Data-ink ratio** | Edward Tufte | Remove visual noise that carries no information |
+| **Gestalt principles** | Psychology | Use proximity and alignment to imply relationships, reduce border dependency |
+| **Visual rhythm** | Nancy Duarte | Consecutive slides need visual variation |
 | **CRAP** | Robin Williams | Contrast, Repetition, Alignment, Proximity |
-| **Squint test** | 通用 | 模糊视线后，最重要的内容是否仍可见？ |
+| **Squint test** | General | After blurring vision, is the most important content still visible? |
 
-## Prompt 模板
+## Prompt Template
 
 ```markdown
 ## Task: Visual Review of Slide Deck (PRESENTATION DESIGN)
 
 **CRITICAL MINDSET:**
-你现在是**演示设计师**，不是 Web UI 工程师。
+You are now a **presentation designer**, not a Web UI engineer.
 
 | Web Design (WRONG) | Slide Design (CORRECT) |
 |--------------------|------------------------|
 | Responsive layouts | Fixed 16:9 canvas |
 | Interactive elements | Static frames |
-| Card 默认容器 | 对齐和留白暗示分组 |
-| Dashboard 等分 grid | 视觉节奏变化 |
+| Card as default container | Alignment and whitespace to imply grouping |
+| Dashboard equal-split grid | Visual rhythm variation |
 | Hover/Loading states | N/A |
 
 **Authority references:** Edward Tufte (data-ink), Nancy Duarte (rhythm), Garr Reynolds (zen), Robin Williams (CRAP)
 
 ---
 
-## Slide 类型: [演讲型 / 商业型 / 技术型]
+## Slide Type: [Talk / Business / Technical]
 
-## 禁止
-- Card/Box 作为默认容器
-- Dashboard 风格等分 grid
-- Skeleton loader / Hover state 等 Web 模式
-- 灰框白底代码块
+## Prohibited
+- Card/Box as default container
+- Dashboard-style equal-split grid
+- Skeleton loader / Hover state and other Web patterns
+- Gray-bordered white-background code blocks
 
-## 必须
-- 用对齐和接近暗示关系
-- 用字重和大小建立层级
-- 关键数字要大、要突出
-- 代码块用深色背景
-- 考虑投影仪可读性（字体 ≥11pt）
+## Required
+- Use alignment and proximity to imply relationships
+- Use weight and size to establish hierarchy
+- Key numbers must be large and prominent
+- Code blocks use dark background
+- Consider projector readability (font >=11pt)
 
 ---
 
@@ -100,35 +100,35 @@
 - Total pages: [N]
 
 ### Evaluation Criteria
-- **Squint test**: 模糊视线，关键信息是否可见？
-- **Balance**: 视觉重心是否均衡？
-- **Hierarchy**: 眼睛是否自然流向最重要元素？
-- **Contrast**: 颜色在投影仪上是否可读？
-- **Rhythm**: 跨页是否有视觉变化？
+- **Squint test**: Blur vision — is key information still visible?
+- **Balance**: Is the visual center of gravity balanced?
+- **Hierarchy**: Does the eye naturally flow to the most important element?
+- **Contrast**: Are colors readable on a projector?
+- **Rhythm**: Is there visual variation across slides?
 
 ### Output Format
 - Overall assessment (2-3 sentences)
 - Page-by-page issues with severity and fix
 - Top 3 priority fixes
 
-**MUST NOT:** 建议 Web 模式（skeleton loader, hover, responsive 等），改动内容/叙事
-**MUST DO:** 专注于投影显示的视觉呈现质量
+**MUST NOT:** Suggest Web patterns (skeleton loader, hover, responsive, etc.) or modify content/narrative
+**MUST DO:** Focus exclusively on visual presentation quality for projection display
 ```
 
-## 验证 Agent 输出
+## Validating Agent Output
 
-收到建议后检查：
+After receiving suggestions, check:
 
-1. **术语验证**：是否出现 Web 术语（skeleton, hover, responsive）？
-2. **建议可行性**：是否适用于静态 PDF？
-3. **评判标准**：是否基于投影显示而非屏幕显示？
+1. **Terminology check**: Did Web terms appear (skeleton, hover, responsive)?
+2. **Feasibility check**: Are suggestions applicable to static PDFs?
+3. **Evaluation criteria**: Are they based on projection display rather than screen display?
 
-**如果验证失败**，重新委托并强调认知偏差扭转。
+**If validation fails**, re-delegate and emphasize the cognitive bias correction.
 
-## 迭代改进记录
+## Iteration Improvement Log
 
-使用后发现的问题，记录于此以持续优化：
+Issues found after use, recorded here for continuous improvement:
 
-- [x] 2026-01: 首次使用时 agent 建议 "skeleton loader"，说明偏差未扭转 → 增加对比表
-- [ ] 待验证：Gestalt 子原则中哪些最有效（proximity vs similarity）
-- [ ] 待验证：McKinsey/BCG 风格术语是否被正确理解
+- [x] 2026-01: On first use the agent suggested "skeleton loader", indicating the bias was not corrected → added comparison table
+- [ ] To validate: which Gestalt sub-principles are most effective (proximity vs. similarity)
+- [ ] To validate: whether McKinsey/BCG style terminology is correctly understood

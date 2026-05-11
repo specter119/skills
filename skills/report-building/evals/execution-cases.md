@@ -1,16 +1,16 @@
 # Execution Cases
 
-## 场景 1：管理层报告
+## Case 1: Management Report
 
-- 输入：零散事实、若干关键指标、目标受众为管理层
-- 预期：快速选定 `SCQA` / `Pyramid`，形成结论先行结构
+- Input: scattered facts, several key metrics, target audience is management
+- Expected: quickly select `SCQA` / `Pyramid`, form a conclusion-first structure
 
-## 场景 2：技术文档
+## Case 2: Technical Documentation
 
-- 输入：系统说明、约束、接口信息
-- 预期：选择倒金字塔或工程型结构，突出事实与可执行性
+- Input: system description, constraints, interface information
+- Expected: select inverted-pyramid or engineering-style structure, highlight facts and actionability
 
-## 场景 3：商业提案
+## Case 3: Business Proposal
 
-- 输入：问题、方案、收益、竞争对比
-- 预期：输出 Problem-Solution-Impact 风格骨架，并明确 CTA
+- Input: problem, solution, benefits, competitive comparison
+- Expected: output a Problem-Solution-Impact style skeleton with a clear CTA

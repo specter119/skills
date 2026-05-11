@@ -9,7 +9,7 @@ description: >
 
 # Microsoft Graph Explore
 
-统一承接 Microsoft Graph 相关取数和搜索能力，覆盖：
+Unified entry point for Microsoft Graph data retrieval and search capabilities, covering:
 
 - **Content search** via Graph Search API (SharePoint, OneDrive)
 - SharePoint file fetch
@@ -18,7 +18,7 @@ description: >
 - OneNote notebook / section discovery
 - OneNote sync to Markdown
 
-当用户需要"搜索 SharePoint 内容"、"搜索内部 wiki"、"拉 SharePoint 文件"、"同步 OneDrive 目录"、"列出 site/notebook/section"、"同步 OneNote wiki"时使用这个 skill。
+Use this skill when users need to "search SharePoint content", "search the internal wiki", "pull a SharePoint file", "sync an OneDrive directory", "list sites / notebooks / sections", or "sync the OneNote wiki".
 
 ## Architecture
 
@@ -33,45 +33,45 @@ scripts/
 
 ### `.env`
 
-将 `.env.example` 复制到你的项目目录或 skill 目录：
+Copy `.env.example` to your project directory or the skill directory:
 
 ```bash
 cp skills/msgraph-explore/.env.example /path/to/project/.env
 ```
 
-需要的环境变量：
+Required environment variables:
 
 | Variable | Description |
 | --- | --- |
 | `MICROSOFT_CLIENT_ID` | Azure AD app registration client ID |
 | `MICROSOFT_AUTHORITY` | `https://login.microsoftonline.com/<tenant-id>` |
-| `MICROSOFT_REFRESH_TOKEN` | 首次可留空，登录后会自动回写 |
+| `MICROSOFT_REFRESH_TOKEN` | Can be left empty on first run; will be written back automatically after login |
 
 ### Permissions
 
-建议同一个 delegated app registration 一次性配置：
+Recommended to configure all at once on a single delegated app registration:
 
 - `Sites.Read.All`
 - `Notes.Read.All`
 - `Files.Read.All`
 
-脚本会按命令申请最小 scope：
+Scripts request the minimum scope per command:
 
-- Search 命令：`Sites.Read.All` + `Files.Read.All`
-- OneNote 命令：`Sites.Read.All` + `Notes.Read.All`
-- Drive 命令：`Sites.Read.All` + `Files.Read.All`
+- Search commands: `Sites.Read.All` + `Files.Read.All`
+- OneNote commands: `Sites.Read.All` + `Notes.Read.All`
+- Drive commands: `Sites.Read.All` + `Files.Read.All`
 
 ## CLI
 
 ### Search Content (NEW)
 
-搜索 SharePoint 和 OneDrive 中的内容：
+Search for content in SharePoint and OneDrive:
 
 ```bash
 uv run skills/msgraph-explore/scripts/msgraph_search.py "Fin skill design"
 ```
 
-可选参数：
+Optional parameters:
 
 ```bash
 uv run skills/msgraph-explore/scripts/msgraph_search.py "Fin skill design" \
@@ -80,21 +80,21 @@ uv run skills/msgraph-explore/scripts/msgraph_search.py "Fin skill design" \
   --max-results 10
 ```
 
-输出 JSON（含完整 resource 对象，便于 chaining）：
+Output JSON (with full resource objects for chaining):
 
 ```bash
 uv run skills/msgraph-explore/scripts/msgraph_search.py "Fin skill design" --json
 ```
 
-参数说明：
+Parameter reference:
 
-- `query`：搜索关键词，支持 KQL 语法
-- `--entity-types`：搜索实体类型（默认 `driveItem,listItem`，可选 `site`）
-- `--site-path`：KQL path scope（如 `"sites/IACB"`）
-- `--max-results`：最大结果数（默认 25）
-- `--json`：输出包含 raw identifiers 的 JSON
+- `query`: search keyword, supports KQL syntax
+- `--entity-types`: entity types to search (default `driveItem,listItem`; `site` also available)
+- `--site-path`: KQL path scope (e.g., `"sites/IACB"`)
+- `--max-results`: maximum number of results (default 25)
+- `--json`: output JSON containing raw identifiers
 
-**注意**：OneNote 页面的搜索覆盖取决于 Graph Search 索引状态，为 best-effort / discovery-only。如需完整 OneNote 内容搜索，建议先 `fetch-onenote` 同步到本地再用 grep。
+**Note**: OneNote page search coverage depends on the Graph Search index state and is best-effort / discovery-only. For full OneNote content search, it is recommended to first run `fetch-onenote` to sync locally, then use grep.
 
 ### Fetch SharePoint File
 
@@ -103,7 +103,7 @@ uv run skills/msgraph-explore/scripts/msgraph_fetch.py fetch-file \
   --url "<sharepoint-url>"
 ```
 
-可选：
+Optional:
 
 ```bash
 uv run skills/msgraph-explore/scripts/msgraph_fetch.py fetch-file \
@@ -111,13 +111,13 @@ uv run skills/msgraph-explore/scripts/msgraph_fetch.py fetch-file \
   --output-dir "./downloads"
 ```
 
-不传 `--output-dir` 时，默认写到：
+When `--output-dir` is not provided, the default write location is:
 
 ```plain
 ~/.cache/msgraph-explore/materialized/files/
 ```
 
-成功时 `stdout` 最后一行只输出最终本地绝对路径。
+On success, the last line of `stdout` outputs only the final local absolute path.
 
 ### Sync Drive Folder
 
@@ -127,9 +127,9 @@ uv run skills/msgraph-explore/scripts/msgraph_fetch.py sync-folder \
   --output-dir "./data/smart-invoice"
 ```
 
-可选定位参数：
+Optional locating parameters:
 
-- 默认 `me/drive`
+- Default: `me/drive`
 - `--site-id`
 - `--site-search`
 - `--force`
@@ -146,7 +146,7 @@ uv run skills/msgraph-explore/scripts/msgraph_fetch.py list-pages \
   --site-id "<site-id>"
 ```
 
-可选：
+Optional:
 
 ```bash
 uv run skills/msgraph-explore/scripts/msgraph_fetch.py list-pages \
@@ -162,7 +162,7 @@ uv run skills/msgraph-explore/scripts/msgraph_fetch.py fetch-onenote-page \
   --page-id "<page-id>"
 ```
 
-命令会输出该页面的 Markdown 内容到 `stdout`。
+The command outputs the page's Markdown content to `stdout`.
 
 ### Fetch OneNote
 
@@ -172,26 +172,26 @@ uv run skills/msgraph-explore/scripts/msgraph_fetch.py fetch-onenote \
   --output-dir "./wiki_cache"
 ```
 
-可选参数：
+Optional parameters:
 
 - `--site-search`
 - `--notebook-id`
 - `--section-id`
 
-语义：
+Semantics:
 
-- 不带额外参数时，抓取整个 site 下的 OneNote 内容
-- 带 `--notebook-id` 时，抓取单个 notebook
-- 带 `--section-id` 时，抓取单个 section
-- 单页抓取不走这个命令，使用上面的 `fetch-onenote-page --page-id`
+- Without extra parameters: fetches all OneNote content under the site
+- With `--notebook-id`: fetches a single notebook
+- With `--section-id`: fetches a single section
+- Single-page fetch does not use this command; use `fetch-onenote-page --page-id` above
 
-说明：
+Notes:
 
-- `fetch-onenote` 是从 Graph 单向抓取到本地 Markdown
+- `fetch-onenote` is a one-way fetch from Graph to local Markdown
 
 ### CLI Entry Point
 
-统一使用 `scripts/msgraph_fetch.py` 作为取数入口：
+Use `scripts/msgraph_fetch.py` as the unified data retrieval entry point:
 
 ```bash
 uv run skills/msgraph-explore/scripts/msgraph_fetch.py fetch-file --url "..."
@@ -199,13 +199,13 @@ uv run skills/msgraph-explore/scripts/msgraph_fetch.py fetch-file --url "..."
 
 ## Cache Layout
 
-统一使用：
+Unified cache location:
 
 ```plain
 ~/.cache/msgraph-explore/
 ```
 
-缓存按资源分层：
+Cache layered by resource type:
 
 ```plain
 sources/
@@ -218,10 +218,10 @@ meta/
   onenote/
 ```
 
-说明：
+Notes:
 
-- `sources` 存远端原始内容
-- `derived/onenote` 存 Markdown 派生结果
-- `meta` 存 eTag、`lastModifiedDateTime`、缓存时间等元数据
+- `sources` stores raw remote content
+- `derived/onenote` stores Markdown derived output
+- `meta` stores eTag, `lastModifiedDateTime`, cache timestamps, and other metadata
 
-OneNote 不只缓存 Markdown，也保留原始 HTML，便于后续重新渲染。
+OneNote caches not only Markdown but also the original HTML, enabling re-rendering later.

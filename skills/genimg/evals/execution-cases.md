@@ -1,16 +1,16 @@
 # Execution Cases
 
-## 场景 1：单图生成
+## Case 1: Single Image Generation
 
-- 输入：简短概念描述
-- 预期：扩展为叙述型 prompt，生成单张可用插图
+- Input: brief concept description
+- Expected: expand into a narrative prompt, generate a single usable illustration
 
-## 场景 2：编辑已有图片
+## Case 2: Editing an Existing Image
 
-- 输入：现有图片 + 局部修改要求
-- 预期：保持主体与构图不变，只修改指定风格或光线
+- Input: existing image + partial modification request
+- Expected: preserve subject and composition, modify only the specified style or lighting
 
-## 场景 3：多候选探索
+## Case 3: Multi-Candidate Exploration
 
-- 输入：开放式视觉方向
-- 预期：走 `variants + grid` 流程，产出多图供比较
+- Input: open-ended visual direction
+- Expected: run the `variants + grid` workflow, produce multiple images for comparison

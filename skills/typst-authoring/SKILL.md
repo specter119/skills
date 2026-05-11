@@ -9,30 +9,30 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 # Typst Authoring
 
-负责 **Typst 的技术实现层**，不负责内容结构和叙事设计。
+Responsible for **Typst's technical implementation layer**; does not handle content structure or narrative design.
 
-## 适用边界
+## Routing Boundaries
 
-### 应该路由到这里
+### Should Route Here
 
-- Typst 语法、编译、调试
-- Touying slides 的技术实现
-- Report 模板、排版、导出
-- 在 Typst 中选择和实现 diagram 方案
+- Typst syntax, compilation, and debugging
+- Technical implementation of Touying slides
+- Report templates, typesetting, and export
+- Selecting and implementing diagram solutions in Typst
 
-### 不应该路由到这里
+### Should Not Route Here
 
-- slide 的叙事主线与视觉方向
-- report 的论证结构与内容框架
-- 插图生成
+- Narrative arc and visual direction of slides
+- Argument structure and content framework of reports
+- Illustration generation
 
-## 执行骨架
+## Execution Skeleton
 
-1. 先按 `references/workflow.md` 走 diagnostics → compile → output check 的循环。
-2. 再按文档类型分流：slides 看 `references/touying.md`，reports 看 `references/report.md`，diagrams 看 `references/diagraph.md`。
-3. 包版本不确定时优先查最新资料，不依赖硬编码旧版本。
+1. Follow `references/workflow.md` through the diagnostics → compile → output check loop.
+2. Then branch by document type: slides → `references/touying.md`, reports → `references/report.md`, diagrams → `references/diagraph.md`.
+3. When package versions are uncertain, consult the latest documentation; do not rely on hard-coded old version numbers.
 
-## 参考地图
+## Reference Map
 
 - `references/workflow.md`
 - `references/touying.md`
@@ -42,11 +42,11 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 - `evals/execution-cases.md`
 - `reports/optimization-notes.md`
 
-## 输出契约
+## Output Contract
 
-- 默认给出可编译的 Typst 实现或明确的修复建议
-- 必要时附上应运行的诊断 / 编译命令
+- Default output: compilable Typst implementation or clear fix recommendations
+- Attach relevant diagnostic/compile commands when necessary
 
-## 协作与移交
+## Collaboration and Handoff
 
-- 若问题其实是叙事、结构、视觉方向，应移交给相应的内容设计类 skill
+- If the issue is actually narrative, structure, or visual direction, hand off to the appropriate content-design skill

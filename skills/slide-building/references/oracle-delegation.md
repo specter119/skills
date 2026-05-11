@@ -1,19 +1,19 @@
 # Oracle Audience Review - Delegation Guide
 
-委托 Oracle 扮演目标听众进行批判性审视。
+Delegate to Oracle to play the role of the target audience for critical review.
 
-## 核心价值
+## Core Value
 
-自己很难完全带入听众视角批判性审视。Oracle 扮演目标听众，提供「局外人」反馈。
+It is difficult to fully adopt the audience's perspective for critical review on your own. Oracle plays the target audience and provides "outsider" feedback.
 
-| 自己审视 | Oracle 审视 |
+| Self-Review | Oracle Review |
 |---------|------------|
-| 已知所有背景，难以「假装不知道」 | 真正从零开始理解 |
-| 倾向于认为自己的逻辑清晰 | 会指出跳跃/假设过多 |
-| 容易忽略「专家盲区」 | 会问「这个术语什么意思」 |
-| 情感上抗拒否定 | 客观批评，不留情面 |
+| Knows all context — hard to "pretend not to know" | Genuinely starts from zero |
+| Tends to assume own logic is clear | Will flag leaps / excessive assumptions |
+| Easy to miss "expert blind spots" | Will ask "what does this term mean" |
+| Emotionally resistant to rejection | Objective criticism, no softening |
 
-**关键心态**：Oracle 的批评 = 真实听众可能的反应。不是「AI 不理解」，而是「如果听众也不理解怎么办」。
+**Key mindset**: Oracle's critique = what a real audience might react. Not "the AI doesn't understand" — but "what if the audience doesn't understand either".
 
 ---
 
@@ -22,65 +22,65 @@
 ```markdown
 ## Task: Audience-Perspective Review
 
-**Role**: 你是这个 slide 的目标听众 [{audience_description}]。
+**Role**: You are the target audience for this slide [{audience_description}].
 
 **Context**:
-- 演讲目标: {goal}
-- 时长: {duration}
-- 听众背景: {audience_background}
+- Talk goal: {goal}
+- Duration: {duration}
+- Audience background: {audience_background}
 
 **Material**:
 {outline_or_content}
 
 **Review Focus**:
-1. **Hook**: 开头是否抓住我的注意力？我为什么要继续听？
-2. **Pain Point**: 这个问题真的是我关心的吗？还是演讲者自己关心的？
-3. **Story Arc**: 叙事主线清晰吗？我能用一句话复述核心信息吗？
-4. **So What**: 每个部分结束后，我知道该想什么/做什么吗？
-5. **Evidence**: 数据/案例有说服力吗？还是「听起来不错但缺乏证据」？
-6. **Takeaway**: 听完后，我能带走什么可行动的东西？
+1. **Hook**: Does the opening grab my attention? Why should I keep listening?
+2. **Pain Point**: Is this problem something I actually care about? Or is it what the speaker cares about?
+3. **Story Arc**: Is the narrative throughline clear? Can I restate the core message in one sentence?
+4. **So What**: After each section ends, do I know what to think or do?
+5. **Evidence**: Are the data/cases persuasive? Or do they sound good but lack substance?
+6. **Takeaway**: After listening, what actionable thing can I take away?
 
 **Output Format**:
-1. **Overall Impression** (1-2 sentences): 作为听众的第一反应
-2. **Strengths**: 什么地方真正吸引我
-3. **Weaknesses**: 哪里让我走神/困惑/不买账
-4. **Specific Suggestions**: 针对具体 page/section 的改进建议
-5. **Missing Angles**: 我作为听众想知道但没讲到的
+1. **Overall Impression** (1-2 sentences): First reaction as an audience member
+2. **Strengths**: What genuinely engaged me
+3. **Weaknesses**: Where I zoned out / got confused / wasn't convinced
+4. **Specific Suggestions**: Improvement suggestions for specific pages/sections
+5. **Missing Angles**: Things I as an audience member wanted to know but weren't covered
 ```
 
 ---
 
-## 使用方法
+## How to Use
 
-1. **准备材料**：
-   - 文本内容：大纲或内容（Markdown、Typst 或其他文本格式）
-   - 或截图：用 `look_at` 工具查看 PDF 截图，提取内容后传给 Oracle
-2. **填充模板**：替换 `{audience_description}`, `{goal}` 等占位符
-3. **委托 Oracle**：`@oracle` + 完整 prompt
-4. **处理反馈**：
-   - 采纳合理建议
-   - 对于不采纳的，记录原因（可能是听众理解有误，或约束条件不同）
-5. **迭代验证**：重大修改后可再次审视
+1. **Prepare materials**:
+   - Text content: outline or content (Markdown, Typst, or other text format)
+   - Or screenshots: use the `look_at` tool to view PDF screenshots, extract content, then pass to Oracle
+2. **Fill the template**: Replace `{audience_description}`, `{goal}`, and other placeholders
+3. **Delegate to Oracle**: `@oracle` + full prompt
+4. **Process feedback**:
+   - Accept reasonable suggestions
+   - For those not adopted, record the reason (may be audience misunderstanding or different constraints)
+5. **Iterative validation**: Review again after major changes
 
 ---
 
-## Review Focus 详解
+## Review Focus Details
 
-| Focus | 检查什么 | 常见问题 |
+| Focus | What to Check | Common Issues |
 |-------|---------|---------|
-| **Hook** | 开头 30 秒能否抓住注意力 | 背景铺垫过长、直接进技术细节 |
-| **Pain Point** | 问题定义是否与听众共鸣 | 讲「我想讲的」而非「他们想听的」 |
-| **Story Arc** | 叙事主线是否清晰连贯 | 功能罗列、各部分无因果关系 |
-| **So What** | 每部分结论是否明确 | 只陈述事实，不引导思考 |
-| **Evidence** | 数据/案例是否有说服力 | 空洞口号、缺乏具体数字 |
-| **Takeaway** | 听众能带走什么 | 「很有意思」但不知道下一步 |
+| **Hook** | Can the opening 30 seconds capture attention | Background preamble too long, jumping straight into technical details |
+| **Pain Point** | Does the problem definition resonate with the audience | Talking about "what I want to say" rather than "what they want to hear" |
+| **Story Arc** | Is the narrative throughline clear and coherent | Feature lists, no causal relationships between parts |
+| **So What** | Is each section's conclusion explicit | Only stating facts, not guiding thinking |
+| **Evidence** | Are data/cases persuasive | Hollow slogans, lacking specific numbers |
+| **Takeaway** | What can the audience take away | "Very interesting" but no idea what to do next |
 
 ---
 
-## 典型应用场景
+## Typical Application Scenarios
 
-| 场景 | Material | 重点关注 |
+| Scenario | Material | Focus |
 |------|----------|---------|
-| 大纲审视（Phase 2.5） | Outline markdown | Hook, Pain Point, Story Arc |
-| 内容审视（Phase 4.5） | 完整 slide 内容或 PDF 截图 | Evidence, So What, Takeaway |
-| 迭代困境 | 当前版本 + 评分停滞说明 | Missing Angles, Specific Suggestions |
+| Outline review (Phase 2.5) | Outline markdown | Hook, Pain Point, Story Arc |
+| Content review (Phase 4.5) | Full slide content or PDF screenshots | Evidence, So What, Takeaway |
+| Iteration stuck | Current version + explanation of stalled score | Missing Angles, Specific Suggestions |

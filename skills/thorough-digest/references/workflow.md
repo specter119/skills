@@ -2,11 +2,11 @@
 
 ## Phase 1: Analyze
 
-1. Inventory: 枚举所有材料
-2. Classify: 按文件 / 主题 / 章节 / batch 分组
-3. Plan: 决定并行度与输出结构
+1. Inventory: enumerate all materials
+2. Classify: group by file / topic / section / batch
+3. Plan: determine parallelization and output structure
 
-输出结构建议：
+Suggested output structure:
 
 ```plain
 {working_dir}/thorough-digest/{task-slug}/
@@ -18,13 +18,13 @@
 
 ## Phase 2: Parallel Process
 
-每个 sub-agent 必须拿到：
+Each sub-agent must receive:
 
-- 明确 item list
-- 处理指令
-- 输出路径
+- An explicit item list
+- Processing instructions
+- An output path
 
-关键约束：
+Key constraints:
 
 - Process EVERY item
 - Do NOT skip any items
@@ -32,16 +32,16 @@
 
 ## Phase 3: Synthesize
 
-1. Collect 全部 findings
-2. 检查是否有漏项或缺口
-3. 需要时触发外部研究类 skill
-4. 输出综合报告
+1. Collect all findings
+2. Check for missing items or gaps
+3. Trigger an external research skill when needed
+4. Output the synthesis report
 
-## 分组策略
+## Grouping Strategy
 
 | Strategy | When to Use |
 | --- | --- |
-| By file | 每个文件相互独立 |
-| By topic | 材料天然按主题聚类 |
-| By section | 单大文件可切章节 |
-| By batch | 大量均质材料均分 |
+| By file | Each file is independent |
+| By topic | Materials cluster naturally by topic |
+| By section | A single large file can be split by section |
+| By batch | Large volumes of uniform materials divided evenly |

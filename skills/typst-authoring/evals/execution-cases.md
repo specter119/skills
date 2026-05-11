@@ -1,16 +1,16 @@
 # Execution Cases
 
-## 场景 1：修 Typst 编译错误
+## Scenario 1: Fixing a Typst Compilation Error
 
-- 输入：一份不能编译的 `.typ` 文件
-- 预期：走 diagnostics → fix → compile 循环，并给出修复建议
+- Input: a `.typ` file that fails to compile
+- Expected: run the diagnostics → fix → compile loop and provide fix recommendations
 
-## 场景 2：实现 Touying slides
+## Scenario 2: Implementing Touying Slides
 
-- 输入：已有演示结构和页面需求
-- 预期：完成 Touying 层的技术实现，而不是改写叙事
+- Input: an existing presentation structure and page requirements
+- Expected: complete the Touying technical implementation without rewriting the narrative
 
-## 场景 3：图形方案选择
+## Scenario 3: Diagram Solution Selection
 
-- 输入：需要在 Typst 中表达的流程图 / 架构图 / sequence
-- 预期：在 `diagraph` / `D2` / `oxdraw` 之间做合理选择
+- Input: a flowchart / architecture diagram / sequence diagram to be rendered in Typst
+- Expected: make a well-reasoned choice among `diagraph` / `D2` / `oxdraw`

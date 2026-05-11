@@ -1,33 +1,33 @@
-# Setup 与 CLI
+# Setup and CLI
 
-## 环境准备
+## Environment Setup
 
 ```bash
 cp skills/msgraph-explore/.env.example /path/to/project/.env
 ```
 
-需要的环境变量：
+Required environment variables:
 
 | Variable | Description |
 | --- | --- |
 | `MICROSOFT_CLIENT_ID` | Azure AD app registration client ID |
 | `MICROSOFT_AUTHORITY` | `https://login.microsoftonline.com/<tenant-id>` |
-| `MICROSOFT_REFRESH_TOKEN` | 首次可为空，登录后可自动回写 |
+| `MICROSOFT_REFRESH_TOKEN` | Can be left empty on first run; will be written back automatically after login |
 
-## 权限
+## Permissions
 
-建议一次性配置：
+Recommended to configure all at once on a single delegated app registration:
 
 - `Sites.Read.All`
 - `Notes.Read.All`
 - `Files.Read.All`
 
-脚本会按命令申请最小 scope：
+Scripts request the minimum scope per command:
 
 - OneNote: `Sites.Read.All` + `Notes.Read.All`
 - Drive: `Sites.Read.All` + `Files.Read.All`
 
-## 常用命令
+## Common Commands
 
 ### Search Content
 
@@ -35,7 +35,7 @@ cp skills/msgraph-explore/.env.example /path/to/project/.env
 uv run skills/msgraph-explore/scripts/msgraph_search.py "Fin skill design"
 ```
 
-可选：
+Optional:
 
 ```bash
 uv run skills/msgraph-explore/scripts/msgraph_search.py "Fin skill design" \
@@ -87,7 +87,7 @@ uv run skills/msgraph-explore/scripts/msgraph_fetch.py fetch-onenote \
   --output-dir "./wiki_cache"
 ```
 
-## 缓存布局
+## Cache Layout
 
 ```plain
 ~/.cache/msgraph-explore/
@@ -101,8 +101,8 @@ meta/
   onenote/
 ```
 
-说明：
+Notes:
 
-- `sources` 存远端原始内容
-- `derived/onenote` 存 Markdown 派生结果
-- `meta` 存 eTag、缓存时间等元数据
+- `sources` stores raw remote content
+- `derived/onenote` stores Markdown derived output
+- `meta` stores eTag, cache timestamps, and other metadata

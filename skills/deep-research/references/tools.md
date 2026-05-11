@@ -34,11 +34,11 @@ For each key finding:
 
 ```plain
 Coverage Level:
-- 90-100%: 完整 - 所有子问题有答案，多个来源验证
-- 70-89%:  良好 - 主要问题有答案，部分待验证
-- 50-69%:  部分 - 核心问题有答案，存在明显缺口
-- 30-49%:  不足 - 仅有基础信息，需要迭代
-- 0-29%:   缺失 - 几乎无有效信息
+- 90-100%: Complete - All sub-questions answered, multiple sources verified
+- 70-89%:  Good - Main questions answered, some pending verification
+- 50-69%:  Partial - Core questions answered, notable gaps exist
+- 30-49%:  Insufficient - Only basic information, needs iteration
+- 0-29%:   Missing - Almost no usable information
 ```
 
 ### Quality Indicators
@@ -54,22 +54,22 @@ Coverage Level:
 ### Overall Research Quality Score
 
 ```markdown
-## 研究质量评估
+## Research Quality Assessment
 
-| 指标 | 得分 | 权重 | 加权分 |
+| Metric | Score | Weight | Weighted Score |
 |------|------|------|--------|
-| 维度覆盖度 | [X]/100 | 30% | |
-| 来源质量 | [X]/100 | 25% | |
-| 信息时效性 | [X]/100 | 20% | |
-| 交叉验证度 | [X]/100 | 15% | |
-| 深度分析 | [X]/100 | 10% | |
-| **总分** | | | **[X]/100** |
+| Dimension Coverage | [X]/100 | 30% | |
+| Source Quality | [X]/100 | 25% | |
+| Information Recency | [X]/100 | 20% | |
+| Cross-Validation | [X]/100 | 15% | |
+| Depth of Analysis | [X]/100 | 10% | |
+| **Total** | | | **[X]/100** |
 
-质量等级:
-- A (85+): 可直接用于决策
-- B (70-84): 可用，建议验证关键点
-- C (55-69): 仅供参考，需补充研究
-- D (<55): 不可靠，需重新研究
+Quality Grade:
+- A (85+): Ready for decision-making
+- B (70-84): Usable, recommend verifying key points
+- C (55-69): Reference only, additional research needed
+- D (<55): Unreliable, research needs to be redone
 ```
 
 ---
@@ -193,13 +193,13 @@ site:github.com/[org] [topic]
 4. **Report both perspectives**
 
    ```markdown
-   ### 存在争议: [Topic]
+   ### Conflict: [Topic]
 
-   **观点 A** ([Source]): [Description]
-   **观点 B** ([Source]): [Description]
+   **View A** ([Source]): [Description]
+   **View B** ([Source]): [Description]
 
-   **分析**: [Why they differ]
-   **建议**: [What to trust and why]
+   **Analysis**: [Why they differ]
+   **Recommendation**: [What to trust and why]
    ```
 
 ---
@@ -221,15 +221,15 @@ site:github.com/[org] [topic]
 
 ```markdown
 ---
-研究主题: [Topic]
-研究类型: Technology / Comparison / Concept / Problem / Trend
-调研日期: [YYYY-MM-DD]
-研究迭代: [N] 轮
-总体完整度: [X]%
-质量等级: A/B/C/D
-主要来源数: [N]
-信息缺口: [N] 个
-置信度: High/Medium/Low
+Research Topic: [Topic]
+Research Type: Technology / Comparison / Concept / Problem / Trend
+Research Date: [YYYY-MM-DD]
+Research Iterations: [N]
+Overall Completeness: [X]%
+Quality Grade: A/B/C/D
+Primary Source Count: [N]
+Information Gaps: [N]
+Confidence: High/Medium/Low
 ---
 ```
 

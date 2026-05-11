@@ -1,139 +1,139 @@
 # Slide Workflow
 
-把 slide 工作拆成“先判断、再定骨架、最后做视觉”。
+Break slide work into "assess first, define skeleton, then handle visuals".
 
-## 1. 输入检查
+## 1. Input Check
 
-开始前确认：
+Confirm before starting:
 
-- 听众：术语深度、背景假设、买点
-- 媒介：投影、线上会议、独立阅读
-- 时长：决定页数与节奏
-- 目标：说服、汇报、教学、复盘
-- 材料：研究笔记、原始证据、截图、案例、数据
+- Audience: terminology depth, assumed background, buy-in points
+- Medium: projection, online meeting, standalone reading
+- Duration: determines page count and pacing
+- Goal: persuade, report, teach, retrospective
+- Materials: research notes, raw evidence, screenshots, case studies, data
 
-如果关键材料不足，先补：
+If key materials are missing, supplement first:
 
-- 新主题调研：研究类 skill
-- 已有材料消化：批量消化类 skill
+- New topic research: use research skill
+- Digest existing materials: use bulk-digest skill
 
-## 2. 大纲设计
+## 2. Outline Design
 
-### 一句话主线
+### One-Sentence Throughline
 
-先写一句话回答：
+Write one sentence answering:
 
-> 这个 deck 想让听众在结束后相信什么、记住什么、去做什么？
+> What should the audience believe, remember, or do after this deck?
 
-如果一句话说不清，后续页面通常也会散。
+If it can't be said in one sentence, the slides will usually fall apart too.
 
-### 大纲验证
+### Outline Validation
 
-检查 4 件事：
+Check 4 things:
 
-- 主线是否能被一句话复述
-- 各部分是否有因果关系，而不是功能罗列
-- 是否围绕听众关心的问题，而不是演讲者想说的话题
-- 每个 part 结束后是否有明确的 `So What`
+- Can the throughline be restated in one sentence
+- Do sections have causal relationships, not just feature lists
+- Is it centered on what the audience cares about, not what the speaker wants to say
+- Does each part end with a clear `So What`
 
-### 何时停下来重写大纲
+### When to Stop and Rewrite the Outline
 
-- 用户说“方向不对”
-- 新信息改变了问题定义
-- 现有研究无法支撑当前叙事
-- 页面越写越多，但重点仍不清晰
+- The user says "the direction is wrong"
+- New information changes the problem definition
+- Existing research cannot support the current narrative
+- Pages keep accumulating but the focus remains unclear
 
-## 3. 页数估算
+## 3. Page Count Estimate
 
-经验法则：
+Rules of thumb:
 
-- 转场页：每个 part 1 页
-- 独立概念：每 2 个概念约 1 页
-- 对比：Before/After 通常 1 页
-- 架构/流程：每个大图 1 页
-- Demo/截图：每个关键截图 1 页
-- Takeaway + Q&A：通常 2 页
+- Transition slide: 1 per part
+- Standalone concept: ~1 slide per 2 concepts
+- Comparison: Before/After typically 1 slide
+- Architecture/Process: 1 slide per major diagram
+- Demo/Screenshot: 1 slide per key screenshot
+- Takeaway + Q&A: typically 2 slides
 
-粗估公式：
+Rough formula:
 
 ```text
-目标页数 ≈ 转场页 + 内容点数 × 0.6
+Target page count ≈ transition slides + content points × 0.6
 ```
 
-适用范围：10-30 分钟演讲。
+Applicable for: 10–30 minute presentations.
 
-## 4. 内容转换
+## 4. Content Conversion
 
-不要把原资料目录直接搬进 slides，要做 4 个动作：
+Do not copy the source material outline directly into slides. Perform 4 actions:
 
-1. 提取关键数字，尽量形成对比
-2. 识别 pain point，而不是只讲“功能”
-3. 选择 1-2 个最强案例，其他只做陪衬
-4. 重组为 Hook → Pain → Solution → Evidence → Takeaway
+1. Extract key numbers, forming comparisons where possible
+2. Identify pain points — don't just list "features"
+3. Select 1–2 strongest cases; others serve as context only
+4. Reorganize as Hook → Pain → Solution → Evidence → Takeaway
 
-## 5. 信息密度
+## 5. Information Density
 
-好的 slide 要有“可行动信息”，而不是“看起来很满”。
+Good slides need "actionable information", not just "looking full".
 
-优先保留：
+Prioritize keeping:
 
-- 具体数字
-- 可验证对比
-- 真实场景
-- 听众下一步动作
+- Specific numbers
+- Verifiable comparisons
+- Real scenarios
+- Audience next steps
 
-优先删减：
+Prioritize removing:
 
-- 模糊形容词
-- 重复背景介绍
-- 不能改变判断的装饰性文字
+- Vague adjectives
+- Repeated background exposition
+- Decorative text that cannot change any judgment
 
-### 数字化技巧
+### Quantification Techniques
 
-| 模糊表述 | 更好的说法 |
+| Vague Phrasing | Better Alternative |
 | --- | --- |
-| 容易重复 | `3× duplicate logic` |
-| 上下文有限 | `~8K tokens / context` |
-| 长期有问题 | `6 months until rewrite` |
-| 选择很多 | `75+ providers` |
+| Easy to duplicate | `3× duplicate logic` |
+| Limited context | `~8K tokens / context` |
+| Problems long-term | `6 months until rewrite` |
+| Many choices | `75+ providers` |
 
-精确数字必须可追溯，估算数字要标记 `~` 或 `approx.`。
+Precise numbers must be traceable; estimated numbers should be marked `~` or `approx.`.
 
-## 6. 占位内容处理
+## 6. Handling Placeholder Content
 
-识别以下信号：
+Identify the following signals:
 
-- `TODO`、`TBD`、`[placeholder]`
-- “稍后补图 / 稍后补数据”
-- 只给链接，没有结论
-- 有标题但没有证据
+- `TODO`, `TBD`, `[placeholder]`
+- "Add image later / Add data later"
+- Links provided but no conclusion drawn
+- Title exists but no evidence
 
-处理原则：
+Handling principles:
 
-- 不自动删除
-- 明确标注页面和缺口
-- 问用户是现在补齐，还是保留到后续迭代
+- Do not auto-delete
+- Explicitly flag the slide and the gap
+- Ask the user whether to fill now or defer to a later iteration
 
-## 7. 经验分享类 deck
+## 7. Experience-Sharing Decks
 
-经验分享不是概念搬运，必须回答：
+Experience sharing is not concept transfer — it must answer:
 
-1. 我遇到了什么问题
-2. 我怎么解决
-3. 效果如何
-4. 听众可以如何复用
+1. What problem did I encounter
+2. How did I solve it
+3. What were the results
+4. How can the audience reuse this
 
-如果某页只能回答“这个工具有这个功能”，通常不够强。
+If a slide can only answer "this tool has this feature", it usually isn't strong enough.
 
-## 8. 方案对比
+## 8. Solution Comparison
 
-方案类内容很容易过时，必须：
+Comparison content goes stale easily. You must:
 
-- 搜索核实关键事实和版本状态
-- 客观陈述侧重点，而不是主观贬低替代方案
-- 标注时间点，避免把过时信息写进 slide
+- Search to verify key facts and version status
+- Objectively state trade-offs — do not subjectively disparage alternatives
+- Note the date to avoid embedding stale information in slides
 
-表达建议：
+Phrasing guidance:
 
-- 不要说 `X is better`
-- 改说 `X optimizes for A, while Y optimizes for B`
+- Don't say `X is better`
+- Instead say `X optimizes for A, while Y optimizes for B`

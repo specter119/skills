@@ -2,20 +2,20 @@
 
 ## Should Trigger
 
-1. 帮我写一份项目复盘报告，给管理层看。
-2. 把这些研究材料组织成一篇技术白皮书。
-3. 写一份商业提案，输出 Markdown。
+1. Write a project retrospective report for management.
+2. Organize these research materials into a technical white paper.
+3. Write a business proposal, output in Markdown.
 
 ## Should Not Trigger
 
-1. 帮我做 10 页分享 slides。
-2. 修一下 Typst 报告模板的编译错误。
-3. 总结这条消息，发给同事。
+1. Make a 10-page slide deck for a tech talk.
+2. Fix the compilation error in a Typst report template.
+3. Summarize this message to send to a colleague.
 
 ## Near Neighbors
 
-1. 我还没有资料，先帮我调研这个主题。
-   期望：先 research，再 report-building
+1. I don't have any material yet — help me research this topic first.
+   Expected: research first, then report-building
 
-2. 我已经有报告结构，只差 Typst 实现。
-   期望：优先 typst-authoring
+2. I already have the report structure, just need the Typst implementation.
+   Expected: prioritize typst-authoring

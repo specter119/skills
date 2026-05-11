@@ -1,9 +1,9 @@
 # Optimization Notes
 
-日期：2026-04-03
+Date: 2026-04-03
 
-## 本轮动作
+## Actions This Round
 
-1. 将 `SKILL.md` 从大段执行细节收缩为边界与执行骨架
-2. 新增 `references/execution.md` 承接目录逻辑、错误处理和 supervisor heuristics
-3. 增加最小 trigger eval
+1. Condensed `SKILL.md` from verbose execution details into routing boundaries and an execution skeleton
+2. Added `references/execution.md` to carry directory logic, error handling, and supervisor heuristics
+3. Added minimal trigger eval

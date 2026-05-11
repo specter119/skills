@@ -1,12 +1,12 @@
 # Optimization Notes
 
-日期：2026-04-03
+Date: 2026-04-03
 
-## 本轮判断
+## Current Assessment
 
-该 skill 边界已经较清楚，暂不做结构性重写。
+The skill boundaries are already fairly clear. No structural rewrite needed at this time.
 
-## 本轮动作
+## Actions This Round
 
-1. 补最小 trigger cases
-2. 记录当前状态，作为后续是否需要 execution eval 的基线
+1. Add minimal trigger cases
+2. Record the current state as a baseline for deciding whether execution evals are needed later

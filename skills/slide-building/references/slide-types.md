@@ -1,97 +1,97 @@
 # Slide Types
 
-参考 `pptx-generator` 的“每页必须先分类”思路，但这里面向的是 **叙事与版式规划**，不是具体 PPTX API。
+Based on the `pptx-generator` principle of "classify every slide first", but oriented toward **narrative and layout planning** — not a specific PPTX API.
 
-## 使用原则
+## Usage Principles
 
-- 每页先判定页面类型，再决定布局
-- 连续 3 页不要使用同一种视觉骨架
-- 一页只服务一个主要 takeaway
+- Determine page type first, then decide on layout
+- Do not use the same visual skeleton for 3 consecutive slides
+- Each slide serves only one primary takeaway
 
 ## 1. Cover
 
-- 用途：定调、建立期待、抛出主题
-- 必备元素：主标题、副标题、讲者/时间/组织信息
-- 常见布局：
-  - 左文右图
-  - 中央标题 + 背景视觉
-- 失败信号：
-  - 标题和副标题尺寸差不多
-  - 封面信息太多，像目录页
+- Purpose: set the tone, establish expectations, introduce the topic
+- Required elements: main title, subtitle, speaker/date/organization info
+- Common layouts:
+  - Text left, image right
+  - Center title + background visual
+- Failure signals:
+  - Title and subtitle are nearly the same size
+  - Cover has too much information — looks like a table of contents
 
 ## 2. Agenda / Overview
 
-- 用途：告诉听众这场分享怎么走
-- 必备元素：3-5 个 section，必要时附一句目标
-- 常见布局：
-  - 编号纵列
-  - 双列 agenda
-- 失败信号：
-  - 目录像报告目录一样过细
-  - section 过多，听众 3 秒扫不完
+- Purpose: tell the audience how the talk will proceed
+- Required elements: 3–5 sections, optionally one goal sentence
+- Common layouts:
+  - Numbered vertical list
+  - Two-column agenda
+- Failure signals:
+  - Outline is too granular, like a report table of contents
+  - Too many sections — audience can't scan in 3 seconds
 
 ## 3. Section Divider
 
-- 用途：在 part 之间切换节奏
-- 必备元素：章节编号、章节标题、可选一句过渡
-- 常见布局：
-  - 居中大标题
-  - 左对齐 + 强调色块
-- 失败信号：
-  - 看起来像普通内容页
-  - 视觉重量不足，翻页时没有“切段”感
+- Purpose: shift pace between parts
+- Required elements: section number, section title, optional one-line transition
+- Common layouts:
+  - Centered large title
+  - Left-aligned + accent color block
+- Failure signals:
+  - Looks like a regular content slide
+  - Insufficient visual weight — no "scene cut" feel when advancing
 
 ## 4. Evidence Slide
 
-- 用途：用数字、案例、截图、引用支撑结论
-- 必备元素：结论句 + 证据
-- 常见布局：
-  - 大数字 + 小标签
-  - 截图 / 图表 + 注释
-  - 引用块 + 解释
-- 失败信号：
-  - 有结论没证据
-  - 有素材但不知道听众该看什么
+- Purpose: support conclusions with numbers, cases, screenshots, quotes
+- Required elements: conclusion sentence + evidence
+- Common layouts:
+  - Large number + small label
+  - Screenshot / chart + annotation
+  - Quote block + explanation
+- Failure signals:
+  - Conclusion without evidence
+  - Material exists but it's unclear what the audience should focus on
 
 ## 5. Comparison Slide
 
-- 用途：讲 before/after、方案 A/B、取舍与决策
-- 必备元素：比较维度、结论、适用条件
-- 常见布局：
-  - 左右对比
-  - pros/cons 双栏
-  - 决策矩阵
-- 失败信号：
-  - 只有“更好/更差”没有判断标准
-  - 整页都在描述细节，没有最终结论
+- Purpose: before/after, option A/B, trade-offs and decisions
+- Required elements: comparison dimensions, conclusion, applicable conditions
+- Common layouts:
+  - Left/right comparison
+  - pros/cons dual columns
+  - Decision matrix
+- Failure signals:
+  - Only "better/worse" with no evaluation criteria
+  - Entire slide describing details with no final conclusion
 
 ## 6. Process / Architecture Slide
 
-- 用途：讲流程、阶段、系统关系、迁移路径
-- 必备元素：顺序或结构关系
-- 常见布局：
-  - 水平时间线
-  - 垂直流程
+- Purpose: explain processes, phases, system relationships, migration paths
+- Required elements: sequential or structural relationships
+- Common layouts:
+  - Horizontal timeline
+  - Vertical flow
   - hub-and-spoke
-- 失败信号：
-  - 箭头很多，但没有主路径
-  - 所有框一样重，眼睛不知道先看哪
+- Failure signals:
+  - Many arrows but no primary path
+  - All boxes are equally weighted — eyes don't know where to look first
 
 ## 7. Summary / CTA
 
-- 用途：收束观点，让听众带着结论离开
-- 必备元素：3-5 条 takeaway，或下一步行动
-- 常见布局：
-  - Key takeaways 列表
-  - Summary + next steps 双栏
+- Purpose: wrap up ideas, let the audience leave with a conclusion
+- Required elements: 3–5 takeaways or next steps
+- Common layouts:
+  - Key takeaways list
+  - Summary + next steps dual columns
   - Thank you + contact
-- 失败信号：
-  - 只是重复前文标题
-  - 没有回答“然后呢”
+- Failure signals:
+  - Merely repeats previous slide headings
+  - Does not answer "so what now"
 
-## 视觉节奏建议
+## Visual Rhythm Recommendations
 
-连续页面建议交替使用：
+Consecutive slides should alternate between:
 
 - `text + visual`
 - `metric / quote / timeline`
@@ -100,18 +100,18 @@
 - `dense evidence`
 - `lightweight divider`
 
-具体组件见 `components.md`。
+See `components.md` for specific components.
 
-## 选择页型的快速问题
+## Quick Questions for Choosing Slide Type
 
-给每页先问一句：
+Ask one question for each slide first:
 
-- 这页是在定调？
-- 是在导航？
-- 是在转场？
-- 是在证明？
-- 是在比较？
-- 是在解释过程？
-- 是在收束行动？
+- Is this slide setting the tone?
+- Is it navigating?
+- Is it transitioning?
+- Is it proving?
+- Is it comparing?
+- Is it explaining a process?
+- Is it wrapping up into action?
 
-如果都不是，说明这页目标还没定义清楚。
+If none of the above, the slide's purpose is not yet defined.

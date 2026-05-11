@@ -1,13 +1,13 @@
 # Optimization Notes
 
-日期：2026-04-03
+Date: 2026-04-03
 
-## 本轮判断
+## Current Assessment
 
-原入口更像 CLI 手册，适合迁移到 `references/`，主入口只保留任务路由和执行骨架。
+The original entry point was more like a CLI manual; it is better suited to `references/`. The main entry point should only retain task routing and the execution skeleton.
 
-## 本轮动作
+## Actions This Round
 
-1. 将 `SKILL.md` 改为任务导向入口
-2. 把环境、权限、命令示例、缓存布局迁入 `references/setup-and-cli.md`
-3. 增加最小 trigger cases
+1. Refactor `SKILL.md` into a task-oriented entry point
+2. Migrate environment setup, permissions, command examples, and cache layout to `references/setup-and-cli.md`
+3. Add minimal trigger cases

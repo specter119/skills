@@ -2,37 +2,37 @@
 name: report-building
 description: >
   Structures and organizes reports, papers, theses, and documentation.
-  Use when asked to create report/paper/thesis/文档/报告/论文.
+  Use when asked to create report/paper/thesis/documentation.
   Supports Markdown and Typst output.
 allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch
 ---
 
-# 报告构建
+# Report Building
 
-负责 **长文结构化写作**，不负责演示结构设计或纯 Typst 实现。
+Handles **long-form structured writing**; does not handle presentation structure design or pure Typst implementation.
 
-## 适用边界
+## Routing Boundaries
 
-### 应该路由到这里
+### Route Here
 
-- 报告、论文、技术文档、商业提案、案例研究等长文写作
-- 需要先定逻辑框架，再展开论证
+- Long-form writing: reports, papers, technical documentation, business proposals, case studies
+- Tasks that require establishing a logical framework first, then developing the argument
 
-### 不应该路由到这里
+### Do Not Route Here
 
-- 短消息、摘要级文案
-- 幻灯片或演示结构设计
-- 纯 Typst 实现问题
+- Short messages or summary-level copy
+- Slide or presentation structure design
+- Pure Typst implementation issues
 
-## 执行骨架
+## Execution Skeleton
 
-1. 明确写作目标、受众和用途，并从 `references/framework-selection.md` 选取匹配框架。
-2. 依据 `references/workflow.md` 设计大纲，标出核心论点、关键证据和行动项。
-3. 按节撰写内容，持续用 MECE、So What、数据支撑等原则自检。
-4. 需要时委托 `@oracle` 扮演读者审视大纲和初稿。
-5. 正式排版或导出再移交给 Typst 实现层 skill。
+1. Clarify the writing goal, audience, and purpose; select a matching framework from `references/framework-selection.md`.
+2. Design the outline per `references/workflow.md`; mark core arguments, key evidence, and action items.
+3. Write content section by section, continuously self-checking with MECE, So What, and data-backed principles.
+4. When needed, delegate to `@oracle` to review the outline and draft from a reader's perspective.
+5. Hand off to the Typst implementation skill for formal typesetting or export.
 
-## 参考地图
+## Reference Map
 
 - `references/framework-selection.md`
 - `references/workflow.md`
@@ -41,12 +41,12 @@ allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch
 - `evals/execution-cases.md`
 - `reports/optimization-notes.md`
 
-## 输出契约
+## Output Contract
 
-- 默认产出清晰的报告骨架、论证链和适配目标介质的正文
-- 若进入排版阶段，可继续移交实现层 skill
+- Default output is a clear report skeleton, argument chain, and body text suited to the target medium
+- If entering the typesetting phase, hand off to the implementation skill
 
-## 协作与移交
+## Collaboration and Handoff
 
-- 需要事实或数据时先调用研究类 skill
-- 同时打造演示内容时，可再移交给演示结构设计类 skill
+- When facts or data are needed, call a research skill first
+- When also building presentation content, hand off to a presentation structure design skill

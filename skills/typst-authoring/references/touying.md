@@ -178,21 +178,21 @@ typst watch slides.typ slides.pdf
 | `dewdrop` | Elegant, subtle | Executive presentations |
 
 ```typst
-// Simple - 简洁现代
+// Simple - minimal and modern
 #let s = themes.simple.register()
 
-// University - 学术风格
+// University - academic style
 #let s = themes.university.register(
   institution: "University Name",
 )
 
-// Metropolis - 类 Beamer Metropolis
+// Metropolis - Beamer Metropolis-like
 #let s = themes.metropolis.register()
 
-// Aqua - 清新配色
+// Aqua - fresh color palette
 #let s = themes.aqua.register()
 
-// Dewdrop - 优雅风格
+// Dewdrop - elegant style
 #let s = themes.dewdrop.register()
 ```
 
@@ -228,13 +228,13 @@ See `references/diagraph.md` for detailed best practices.
 ## Compilation
 
 ```bash
-# PDF（默认）
+# PDF (default)
 typst compile slides.typ slides.pdf
 
-# PNG 预览
+# PNG preview
 typst compile --format png slides.typ slide-{0p}.png
 
-# 高质量 PDF
+# High-quality PDF
 typst compile --pdf-standard a-2b slides.typ slides.pdf
 ```
 

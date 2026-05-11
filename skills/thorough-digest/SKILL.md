@@ -9,44 +9,44 @@ allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep
 
 # Thorough Digest
 
-负责 **本地材料的全量处理与并行归纳**，不负责外部网络调研。
+Responsible for **exhaustive processing and parallel synthesis of local materials**; does not handle external web research.
 
-## 适用边界
+## Routing Boundaries
 
-### 应该路由到这里
+### Should Route Here
 
-- 批量处理本地文件、目录、章节或材料集合
-- 逐项提取要点，要求不能漏项
-- 从既有材料中构建统一叙事或综合报告
+- Batch processing of local files, directories, sections, or material collections
+- Item-by-item extraction of key points with no items allowed to be skipped
+- Building a unified narrative or comprehensive report from existing materials
 
-### 不应该路由到这里
+### Should Not Route Here
 
-- 需要去网上补新信息
-- 只处理一两份材料
-- 主要目标是写 slides 或正式报告，而不是先消化材料
+- Requires fetching new information from the web
+- Only processing one or two documents
+- The primary goal is writing slides or a formal report rather than first digesting materials
 
-## 执行骨架
+## Execution Skeleton
 
-1. 先 inventory 全部输入项，确保范围清楚。
-2. 按 `references/workflow.md` 决定分组方式和并行策略。
-3. 给每个 sub-agent 明确 item list、输出路径和“不许漏项”的约束。
-4. 汇总各组 findings，必要时再串联外部研究类 skill 补缺口。
+1. First inventory all input items to ensure the scope is clear.
+2. Follow `references/workflow.md` to determine grouping and parallelization strategy.
+3. Give each sub-agent an explicit item list, output path, and the constraint that no items may be skipped.
+4. Aggregate findings from each group; if needed, chain an external research skill to fill gaps.
 
-## 参考地图
+## Reference Map
 
-- `references/workflow.md`: 分阶段流程、分组策略、输出结构
-- `references/guidelines.md`: 并行粒度、错误处理、最佳实践
-- `references/templates.md`: inventory / classify / sub-agent / synthesis 模板
-- `evals/trigger-cases.md`: 最小触发样例
-- `evals/execution-cases.md`: 关键执行场景
-- `reports/optimization-notes.md`: 本轮重构判断
+- `references/workflow.md`: phased workflow, grouping strategy, output structure
+- `references/guidelines.md`: parallelization granularity, error handling, best practices
+- `references/templates.md`: inventory / classify / sub-agent / synthesis templates
+- `evals/trigger-cases.md`: minimal trigger examples
+- `evals/execution-cases.md`: key execution scenarios
+- `reports/optimization-notes.md`: current refactor rationale
 
-## 输出契约
+## Output Contract
 
-- 默认交付 inventory、分组结果、各组 findings 和最终 synthesis
-- 必须能说明总输入数、已处理数和覆盖情况
+- Default deliverables: inventory, grouping results, per-group findings, and final synthesis
+- Must be able to report total input count, processed count, and coverage status
 
-## 协作与移交
+## Collaboration and Handoff
 
-- 若综合阶段发现关键事实缺口，再移交给外部研究类 skill
-- 若材料已消化完、下一步要写正式产物，再移交给写作或演示结构类 skill
+- If the synthesis phase reveals critical fact gaps, hand off to an external research skill
+- If materials are fully digested and the next step is writing a formal deliverable, hand off to a writing or presentation-structure skill

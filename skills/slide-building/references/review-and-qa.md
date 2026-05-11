@@ -1,25 +1,25 @@
 # Review And QA
 
-slide 的质量必须看渲染结果，不能只看源码。
+Slide quality must be evaluated from rendered output — not from source code alone.
 
-## 0. P0 交付门限
+## 0. P0 Delivery Threshold
 
-在做任何主观评估之前，先过这组可判定的检查。任何一项不通过都应修正后再继续：
+Before any subjective assessment, run this set of deterministic checks. Any failure must be fixed before proceeding:
 
-- [ ] **无捏造指标**：所有数字要么有来源，要么标注 `~` / `[待补数据]`。"10× faster"、"99.9% uptime" 等无来源数字必须删除或标注。
-- [ ] **无填充文字**：不含 lorem ipsum、"Feature One"、"seamless innovation"、"streamline your workflow" 等空洞文案。
-- [ ] **无表情符号图标**：`✨ 🚀 🎯 ⚡ 🔥 💡` 不得出现在标题或列表项中。
-- [ ] **对比度达标**：正文 ≥ 4.5:1，大字 ≥ 3:1（参考 `design-system.md` §2）。
-- [ ] **页数一致**：实际页数 = 预期页数，无意外溢出。
-- [ ] **每页有 takeaway**：每个内容页都能回答"听众看完这页应该记住什么"。
+- [ ] **No fabricated metrics**: All numbers must have a source or be marked `~` / `[data needed]`. Numbers without sources like "10× faster" or "99.9% uptime" must be removed or flagged.
+- [ ] **No filler text**: Does not contain lorem ipsum, "Feature One", "seamless innovation", "streamline your workflow", or similar hollow copy.
+- [ ] **No emoji icons**: `✨ 🚀 🎯 ⚡ 🔥 💡` must not appear in headings or list items.
+- [ ] **Contrast passes**: Body text ≥ 4.5:1, large text ≥ 3:1 (see `design-system.md` §2).
+- [ ] **Page count matches**: Actual page count equals expected page count, no unexpected overflow.
+- [ ] **Every slide has a takeaway**: Each content slide can answer "what should the audience remember after this slide".
 
-通过 P0 后再进入下面的结构检查和主观评审。
+After passing P0, proceed to the structural check and subjective review below.
 
-## 1. 先做结构检查
+## 1. Structural Check First
 
-Typst / Touying 文字溢出常常不会报错，但会静默多出一页。
+Typst / Touying text overflow often doesn't raise an error — it silently adds an extra page.
 
-建议先检查：
+Check first:
 
 ```bash
 grep -c "^==+ " slide.typ
@@ -27,69 +27,69 @@ pdfinfo slide.pdf | grep Pages
 pdftotext slide.pdf - | head -200
 ```
 
-如果预期页数和实际页数不一致，先修结构问题，再谈美学。
+If expected and actual page counts differ, fix structural issues before addressing aesthetics.
 
-## 2. 再做渲染审阅
+## 2. Render Review Second
 
 ```bash
 pdftoppm -png -r 150 slide.pdf /tmp/review/page
 ```
 
-逐页检查：
+Check page by page:
 
-- 视觉重心是否稳定
-- 留白是否有意义
-- 连续翻 5 页是否有节奏变化
-- 投影时是否一眼知道最重要的信息
+- Is the visual center of gravity stable
+- Is the whitespace intentional
+- Do 5 consecutive slides have rhythm variation
+- Is the most important information immediately clear when projected
 
-## 3. 四个核心测试
+## 3. Four Core Tests
 
 ### Squint Test
 
-眯眼后还能先看到最重要的信息吗？
+Can you still see the most important information first when squinting?
 
 ### Whitespace Test
 
-留白是为了强调，还是只是内容太空？
+Is whitespace there for emphasis, or is the slide just sparse?
 
 ### Rhythm Test
 
-连续页面是否有结构变化，还是每页都像复制粘贴？
+Do consecutive slides have structural variation, or does every slide look like copy-paste?
 
 ### So What Test
 
-读完这页，听众是否知道该怎么理解或采取什么行动？
+After reading this slide, does the audience know how to interpret it or what action to take?
 
-## 4. 评分框架
+## 4. Scoring Framework
 
-每项 1-10 分：
+Each dimension scored 1–10:
 
-| 维度 | 问题 |
+| Dimension | Question |
 | --- | --- |
-| Narrative Structure | 主线是否清晰，part 之间是否有因果关系 |
-| Information Density | 是否有数字、对比、场景，而不是泛泛描述 |
-| Visual Rhythm | 连续页面是否有变化 |
-| So What | 每页是否有明确 takeaway |
-| Domain-Specific Value | 是否真正服务于该主题的判断或决策 |
+| Narrative Structure | Is the throughline clear? Do parts have causal relationships? |
+| Information Density | Are there numbers, comparisons, and scenarios — not just vague descriptions? |
+| Visual Rhythm | Do consecutive slides have variation? |
+| So What | Does each slide have a clear takeaway? |
+| Domain-Specific Value | Does the content genuinely serve the topic's judgment or decision-making? |
 
-建议目标：
+Suggested targets:
 
-- 每轮至少提升 3 分
-- 总分达到 42/50 后再视作可交付版本
+- Improve by at least 3 points per round
+- Treat as deliverable only after reaching 42/50
 
-## 5. 经验分享类的特别检查
+## 5. Special Checks for Experience-Sharing Decks
 
-必须回答：
+Must answer:
 
-1. 遇到了什么问题
-2. 怎么解决
-3. 效果如何
-4. 听众如何复用
+1. What problem was encountered
+2. How it was solved
+3. What the results were
+4. How the audience can reuse it
 
-如果整套 deck 只有“功能介绍”，那通常更像文档，不像分享。
+If the entire deck is only "feature introduction", it usually reads more like documentation than a talk.
 
-## 6. 何时请外部评审
+## 6. When to Request External Review
 
-- 大纲冻结前，请 `@oracle` 审主线和痛点
-- 内容初稿后，请 `@oracle` 审证据和说服力
-- 视觉评分停滞时，请 `@frontend-ui-ux-engineer` 审投影效果
+- Before the outline is finalized, ask `@oracle` to review the throughline and pain points
+- After the content first draft, ask `@oracle` to review evidence and persuasiveness
+- When visual score plateaus, ask `@frontend-ui-ux-engineer` to review projection quality

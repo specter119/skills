@@ -1,13 +1,13 @@
 # Optimization Notes
 
-日期：2026-04-03
+Date: 2026-04-03
 
-## 本轮判断
+## Assessment
 
-`report-building` 与 `slide-building`、`typst-authoring` 邻接度高，因此入口需要更强调边界和输出契约。
+`report-building` has high adjacency to `slide-building` and `typst-authoring`, so the entry point needs to more strongly emphasize boundaries and the output contract.
 
-## 本轮动作
+## Actions Taken
 
-1. 将入口压缩为边界、执行骨架、质量门
-2. 把框架选择和 workflow 拆到 `references/`
-3. 增加 trigger / execution 两类 eval 基线
+1. Trimmed the entry point to boundaries, execution skeleton, and quality gates
+2. Split framework selection and workflow into `references/`
+3. Added trigger and execution eval baselines

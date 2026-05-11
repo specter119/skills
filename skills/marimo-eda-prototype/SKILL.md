@@ -9,40 +9,40 @@ allowed-tools: Read, Write, Edit, Bash
 
 # Marimo EDA Prototype
 
-负责 **prototype-first 的 marimo notebook**，不负责把 notebook 做成重交互产品。
+Responsible for **prototype-first marimo notebooks**, not for turning notebooks into heavily interactive products.
 
-## 适用边界
+## Routing Boundaries
 
-### 应该路由到这里
+### Should Route Here
 
-- 创建或修改 marimo notebook 做 EDA / 原型分析
-- 优化 notebook 的 cell cohesion、交互密度和 module 边界
-- 判断某段 notebook 逻辑是否应该抽到 helper / module
+- Create or modify marimo notebooks for EDA / prototype analysis
+- Optimize notebook cell cohesion, interaction density, and module boundaries
+- Determine whether a piece of notebook logic should be extracted to a helper / module
 
-### 不应该路由到这里
+### Should Not Route Here
 
-- 完整前端应用或长期 UI 产品
-- 一般 Python 脚本开发
-- 纯 API 查询而不涉及 notebook 结构判断
+- Full frontend applications or long-term UI products
+- General Python script development
+- Pure API queries without notebook structure decisions
 
-## 执行骨架
+## Execution Skeleton
 
-1. 先确认 notebook 的主任务仍是分析，而不是 UI 编排。
-2. 按 `references/workflow.md` 先写静态分析版本，再决定是否加入少量交互。
-3. 用 `references/boundary.md` 和 `references/design-patterns.md` 判断 cell cohesion、graph hygiene 和 extraction signal。
-4. 需要技术检查时优先跑 `uvx marimo check`，`scripts/marimo_lint.py` 只做弱信号辅助。
+1. First confirm the notebook's primary task is still analysis, not UI orchestration.
+2. Follow `references/workflow.md`: write the static analysis version first, then decide whether to add minimal interaction.
+3. Use `references/boundary.md` and `references/design-patterns.md` to assess cell cohesion, graph hygiene, and extraction signals.
+4. For technical checks, prefer running `uvx marimo check`; `scripts/marimo_lint.py` serves only as a weak-signal supplement.
 
-## 参考地图
+## Reference Map
 
-- `references/boundary.md`: 边界、护栏、决策表、示例
-- `references/workflow.md`: 默认工作流、guardrails、完成前自检
-- `references/design-patterns.md`: 高价值 pattern 与反模式
-- `references/eval-fixtures.md`: 样本与评估材料
-- `evals/trigger-cases.md`: 最小触发样例
-- `evals/execution-cases.md`: 关键执行场景
-- `reports/optimization-notes.md`: 本轮重构判断
+- `references/boundary.md`: boundaries, guardrails, decision table, examples
+- `references/workflow.md`: default workflow, guardrails, pre-completion checklist
+- `references/design-patterns.md`: high-value patterns and anti-patterns
+- `references/eval-fixtures.md`: sample notebooks and evaluation materials
+- `evals/trigger-cases.md`: minimal trigger examples
+- `evals/execution-cases.md`: key execution scenarios
+- `reports/optimization-notes.md`: current round refactoring decisions
 
-## 输出契约
+## Output Contract
 
-- 默认产出分析优先、交互克制、结构清楚的 marimo notebook
-- 若发现 notebook 正在演化成 app，应明确提出抽 module 或转产品代码的建议
+- Default output is an analysis-first, interaction-restrained, clearly structured marimo notebook
+- If the notebook is evolving into an app, explicitly recommend extracting modules or transitioning to product code

@@ -13,7 +13,7 @@
 - Batch analysis of similar items (reports, emails, documents, or structured records).
 - Building a narrative or executive summary from existing materials.
 - Tasks that would produce very long output if executed sequentially.
-- Common phrases: "批量分析", "整理材料", "构建叙事", "汇总这些".
+- Common phrases: "batch analysis", "organize materials", "build narrative", "summarize these".
 
 ## When to Pass to Another Skill
 - The request requires new internet research or crawling.

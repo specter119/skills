@@ -1,16 +1,16 @@
 # Execution Cases
 
-## 场景 1：技术对比调研
+## Case 1: Technology Comparison Research
 
-- 输入：两个或多个技术方案，需要来源归档和结构化结论
-- 预期：拆分比较维度、归档来源、输出带结论的 `report.md`
+- Input: Two or more technology solutions requiring source archiving and structured conclusions
+- Expected: Decompose comparison dimensions, archive sources, output `report.md` with conclusions
 
-## 场景 2：趋势研究
+## Case 2: Trend Research
 
-- 输入：带时间范围的主题，例如“最近半年”
-- 预期：按时间线或主题拆分子问题，标记信息缺口和时间点
+- Input: A topic with a time scope, e.g., "the past six months"
+- Expected: Break down sub-questions by timeline or theme, mark information gaps and time points
 
-## 场景 3：为后续产物准备研究底稿
+## Case 3: Preparing a Research Draft for Downstream Artifacts
 
-- 输入：将用于报告或演示的主题
-- 预期：研究目录可被后续写作或演示 skill 直接消费
+- Input: A topic intended for a report or presentation
+- Expected: Research directory ready to be directly consumed by a subsequent writing or presentation skill

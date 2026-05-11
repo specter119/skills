@@ -2,70 +2,70 @@
 
 ## Example 1: Technology Research with Parallel Tasks
 
-**Query**: "调研 Claude Code Skills 系统"
+**Query**: "Research the Claude Code Skills system"
 
 ### Phase 0: Decomposition
 
 ```plain
-Claude Code Skills 深度调研 (Technology Template)
-├── D1. 是什么: Skill 定义, 与 MCP/Tool 的区别, 架构设计
-├── D2. 为什么: 解决什么问题, 设计理念, vs 传统工具
-├── D3. 怎么用: 创建 skill, SKILL.md 结构, 调试技巧
-├── D4. 生态系统: 官方 skills, 社区资源, 插件市场
-├── D5. 最佳实践: 设计原则, 常见模式, 反模式
-├── D6. 高级特性: Task 集成, allowed-tools, model override
-└── D7. 限制与未来: 当前限制, roadmap, 社区反馈
+Claude Code Skills Deep Research (Technology Template)
+├── D1. What: Skill definition, difference from MCP/Tool, architecture design
+├── D2. Why: What problem it solves, design philosophy, vs traditional tools
+├── D3. How: Creating a skill, SKILL.md structure, debugging tips
+├── D4. Ecosystem: Official skills, community resources, plugin marketplace
+├── D5. Best Practices: Design principles, common patterns, anti-patterns
+├── D6. Advanced Features: Task integration, allowed-tools, model override
+└── D7. Limitations & Future: Current limitations, roadmap, community feedback
 ```
 
 ### Phase 1: Parallel Tasks
 
 ```plain
-启动 3 个并行 Task:
+Launch 3 parallel Tasks:
 
-**Task 1: 核心概念 (D1-D2)**
-- 搜索: "Claude Code Skills official documentation"
-- 搜索: "Claude Skills vs MCP vs Tools difference"
-- 抓取: docs.anthropic.com/skills
-- 输出: scratch/research-d1-d2.md
+**Task 1: Core Concepts (D1-D2)**
+- Search: "Claude Code Skills official documentation"
+- Search: "Claude Skills vs MCP vs Tools difference"
+- Fetch: docs.anthropic.com/skills
+- Output: scratch/research-d1-d2.md
 
-**Task 2: 使用方法 (D3-D4)**
-- 搜索: "Claude Code Skills tutorial 2025"
-- 搜索: "Claude Skills ecosystem community"
+**Task 2: Usage (D3-D4)**
+- Search: "Claude Code Skills tutorial 2025"
+- Search: "Claude Skills ecosystem community"
 - Context7: get-library-docs for claude-code
-- 输出: scratch/research-d3-d4.md
+- Output: scratch/research-d3-d4.md
 
-**Task 3: 高级实践 (D5-D7)**
-- 搜索: "Claude Skills best practices"
-- 搜索: "Claude Skills limitations roadmap"
-- 抓取: github.com/anthropics/skills
-- 输出: scratch/research-d5-d7.md
+**Task 3: Advanced Practices (D5-D7)**
+- Search: "Claude Skills best practices"
+- Search: "Claude Skills limitations roadmap"
+- Fetch: github.com/anthropics/skills
+- Output: scratch/research-d5-d7.md
 ```
 
 ### Phase 2: Synthesis
 
 ```markdown
-## 完整度评估
+## Completeness Assessment
 
-| 维度 | 覆盖度 | 可信度 | 缺口 |
+| Dimension | Coverage | Credibility | Gaps |
 |------|--------|--------|------|
-| D1 | 90% | High | 无 |
-| D2 | 85% | High | 无 |
-| D3 | 80% | High | 代码示例需补充 |
-| D4 | 70% | Medium | 社区资源不完整 |
-| D5 | 75% | Medium | 反模式案例少 |
-| D6 | 65% | Medium | model override 文档少 |
-| D7 | 50% | Low | roadmap 信息有限 |
+| D1 | 90% | High | None |
+| D2 | 85% | High | None |
+| D3 | 80% | High | Code examples need supplement |
+| D4 | 70% | Medium | Community resources incomplete |
+| D5 | 75% | Medium | Few anti-pattern examples |
+| D6 | 65% | Medium | Limited model override docs |
+| D7 | 50% | Low | Limited roadmap information |
 
-总体: 74% → 需要迭代 D6, D7
+Overall: 74% → Need to iterate D6, D7
 ```
 
 ### Phase 3: Iteration
 
 ```plain
-补充 Task: D6-D7 深入研究
-- 搜索: "Claude Skills advanced features model"
-- 搜索: "Claude Code roadmap 2025"
-- 抓取: anthropic.com/engineering 相关文章
+Supplemental Task: D6-D7 deep research
+- Search: "Claude Skills advanced features model"
+- Search: "Claude Code roadmap 2025"
+- Fetch: anthropic.com/engineering related articles
 ```
 
 **Expected Output**: Comprehensive 15-page report with architecture diagrams, code examples, and actionable recommendations.
@@ -74,114 +74,114 @@ Claude Code Skills 深度调研 (Technology Template)
 
 ## Example 2: Comparison Research
 
-**Query**: "Tokio vs async-std vs smol 对比分析"
+**Query**: "Tokio vs async-std vs smol comparative analysis"
 
 ### Decomposition (Comparison Template)
 
 ```plain
-Rust 异步运行时对比分析
-├── D1. 定位差异: 各自设计目标和理念
-├── D2. 架构对比: 核心实现差异 (executor, reactor)
-├── D3. 性能对比: 基准测试, 内存占用, 延迟
-├── D4. 开发体验: API 设计, 文档, 错误处理
-├── D5. 生态对比: 库支持, 社区规模
-├── D6. 适用场景: 各自最佳用例
-└── D7. 迁移考虑: 互操作性, 迁移成本
+Rust Async Runtime Comparative Analysis
+├── D1. Positioning Differences: Design goals and philosophy of each
+├── D2. Architecture Comparison: Core implementation differences (executor, reactor)
+├── D3. Performance Comparison: Benchmarks, memory usage, latency
+├── D4. Developer Experience: API design, documentation, error handling
+├── D5. Ecosystem Comparison: Library support, community size
+├── D6. Use Cases: Best use cases for each
+└── D7. Migration Considerations: Interoperability, migration cost
 ```
 
 ### Parallel Tasks
 
 ```plain
-Task 1: 基础对比 (D1-D2)
-- 搜索: "Tokio vs async-std design philosophy"
+Task 1: Foundation Comparison (D1-D2)
+- Search: "Tokio vs async-std design philosophy"
 - Context7: Tokio docs, async-std docs
 
-Task 2: 性能与体验 (D3-D4)
-- 搜索: "Rust async runtime benchmark 2025"
-- 搜索: "async-std vs tokio developer experience"
+Task 2: Performance and Experience (D3-D4)
+- Search: "Rust async runtime benchmark 2025"
+- Search: "async-std vs tokio developer experience"
 
-Task 3: 生态与场景 (D5-D7)
-- 搜索: "Tokio ecosystem libraries"
-- 搜索: "when to use smol vs tokio"
+Task 3: Ecosystem and Use Cases (D5-D7)
+- Search: "Tokio ecosystem libraries"
+- Search: "when to use smol vs tokio"
 ```
 
 ### Expected Output
 
 ```markdown
-## 对比矩阵
+## Comparison Matrix
 
-| 特性 | Tokio | async-std | smol | 结论 |
+| Feature | Tokio | async-std | smol | Conclusion |
 |------|-------|-----------|------|------|
-| 设计理念 | 性能优先 | 兼容 std | 极简 | 按需选择 |
-| 性能 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Tokio 略优 |
-| 学习曲线 | 中等 | 低 | 低 | async-std 最友好 |
-| 生态系统 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | Tokio 最丰富 |
-| 适合场景 | 高性能服务 | 简单应用 | 嵌入式/小型 | - |
+| Design Philosophy | Performance-first | std-compatible | Minimal | Choose as needed |
+| Performance | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Tokio slightly ahead |
+| Learning Curve | Medium | Low | Low | async-std most beginner-friendly |
+| Ecosystem | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | Tokio most extensive |
+| Best Fit | High-performance services | Simple apps | Embedded/small | - |
 ```
 
 ---
 
 ## Example 3: Problem-Solving Research
 
-**Query**: "如何解决 Rust async 生态碎片化问题"
+**Query**: "How to solve the Rust async ecosystem fragmentation problem"
 
 ### Decomposition (Problem Template)
 
 ```plain
-Rust 异步生态碎片化问题解决方案
-├── D1. 问题定义: 什么是碎片化, 症状表现
-├── D2. 根因分析: 为什么会碎片化
-├── D3. 方案枚举: 有哪些解决方案
-├── D4. 方案对比: 各方案优劣
-├── D5. 推荐方案: 最佳实践
-├── D6. 实施步骤: 如何落地
-└── D7. 风险预案: 可能问题
+Rust Async Ecosystem Fragmentation Solution Research
+├── D1. Problem Definition: What is fragmentation, symptoms
+├── D2. Root Cause Analysis: Why fragmentation occurs
+├── D3. Solution Enumeration: Available solutions
+├── D4. Solution Comparison: Pros and cons of each
+├── D5. Recommended Solution: Best practices
+├── D6. Implementation Steps: How to execute
+└── D7. Risk Contingency: Possible issues
 ```
 
 ### Key Findings
 
 ```markdown
-## 方案对比
+## Solution Comparison
 
-| 方案 | 复杂度 | 风险 | 成本 | 推荐度 |
+| Solution | Complexity | Risk | Cost | Recommendation |
 |------|--------|------|------|--------|
-| 统一使用 Tokio | Low | Low | Low | ⭐⭐⭐⭐⭐ |
-| 使用 async-compat | Medium | Low | Low | ⭐⭐⭐⭐ |
-| 自建抽象层 | High | High | High | ⭐⭐ |
-| 等待标准化 | N/A | N/A | Time | ⭐⭐⭐ |
+| Standardize on Tokio | Low | Low | Low | ⭐⭐⭐⭐⭐ |
+| Use async-compat | Medium | Low | Low | ⭐⭐⭐⭐ |
+| Build custom abstraction layer | High | High | High | ⭐⭐ |
+| Wait for standardization | N/A | N/A | Time | ⭐⭐⭐ |
 ```
 
 ---
 
 ## Example 4: Trend Research
 
-**Query**: "AI Agent 框架 2025 现状与趋势"
+**Query**: "AI Agent frameworks 2025 current state and trends"
 
 ### Decomposition (Trend Template)
 
 ```plain
-AI Agent 框架现状与趋势
-├── D1. 当前状态: 成熟度, 采用率
-├── D2. 关键玩家: LangChain, AutoGPT, CrewAI, Claude Code
-├── D3. 最新进展: 近期发布, 重大更新
-├── D4. 发展方向: 多 Agent, 工具使用, 记忆系统
-├── D5. 竞争格局: 开源 vs 闭源
-├── D6. 采用建议: 是否值得入场
-└── D7. 风险因素: 技术/生态/商业风险
+AI Agent Framework Current State and Trends
+├── D1. Current State: Maturity, adoption rate
+├── D2. Key Players: LangChain, AutoGPT, CrewAI, Claude Code
+├── D3. Latest Developments: Recent releases, major updates
+├── D4. Development Direction: Multi-agent, tool use, memory systems
+├── D5. Competitive Landscape: Open source vs closed source
+├── D6. Adoption Recommendations: Is it worth entering now
+└── D7. Risk Factors: Technical/ecosystem/business risks
 ```
 
 ### Parallel Tasks with Different Focus
 
 ```plain
-Task 1: 市场概览 (D1-D2)
+Task 1: Market Overview (D1-D2)
 - Exa Search: "AI agent frameworks comparison 2025"
-- 抓取: state of AI agents report
+- Fetch: state of AI agents report
 
-Task 2: 技术动态 (D3-D4)
+Task 2: Technical Developments (D3-D4)
 - WebSearch: "LangChain updates 2025"
 - WebSearch: "AI agent memory systems research"
 
-Task 3: 评估建议 (D5-D7)
+Task 3: Evaluation and Recommendations (D5-D7)
 - WebSearch: "AI agent framework production experience"
 - WebSearch: "AI agent framework risks"
 ```
@@ -242,28 +242,28 @@ Task 3: 评估建议 (D5-D7)
 
 ## Tool Selection Guide
 
-| 场景 | 推荐工具 | 原因 |
+| Scenario | Recommended Tool | Reason |
 |------|----------|------|
-| 广泛发现 | WebSearch, Exa Search | 覆盖面广 |
-| 官方文档 | Context7, WebFetch | 精确内容 |
-| 代码示例 | Exa Code Context | 代码专用 |
-| 最新动态 | Exa Search (livecrawl) | 实时抓取 |
-| 深度内容 | WebFetch, Exa Crawl | 完整页面 |
-| 并行加速 | Task Agents | 节省时间 |
+| Broad discovery | WebSearch, Exa Search | Wide coverage |
+| Official docs | Context7, WebFetch | Precise content |
+| Code examples | Exa Code Context | Code-specific |
+| Latest updates | Exa Search (livecrawl) | Real-time crawling |
+| Deep content | WebFetch, Exa Crawl | Full page retrieval |
+| Parallel speed-up | Task Agents | Save time |
 
 ---
 
 ## Quality Assurance Checklist
 
-每次研究完成前检查:
+Check before completing each research:
 
-- [ ] 所有维度覆盖度 > 50%
-- [ ] 关键发现有 2+ 来源验证
-- [ ] 信息时效性满足要求
-- [ ] 冲突信息已标注
-- [ ] 信息缺口已记录
-- [ ] 报告结构完整
-- [ ] 建议具体可执行
+- [ ] All dimension coverage > 50%
+- [ ] Key findings verified with 2+ sources
+- [ ] Information recency meets requirements
+- [ ] Conflicting information flagged
+- [ ] Information gaps documented
+- [ ] Report structure complete
+- [ ] Recommendations are specific and actionable
 
 ---
 
@@ -272,7 +272,7 @@ Task 3: 评估建议 (D5-D7)
 Shows the complete user-facing interaction flow.
 
 ```plain
-User: "调研 A2A 协议的商业落地案例"
+User: "Research commercial deployment cases of the A2A protocol"
 Current working directory: /path/to/project
 
 → Phase 1: Scope
@@ -286,16 +286,16 @@ Current working directory: /path/to/project
   ...
 
   [Inform user and proceed - NO confirmation needed]
-  "开始研究 A2A 商业案例
+  "Starting research on A2A commercial cases
 
-   输出目录: ./research/a2a-commercial-cases/
+   Output directory: ./research/a2a-commercial-cases/
 
-   研究方向:
-   1. SaaS 产品互联案例
-   2. 跨组织协作案例
-   3. 平台编排案例
+   Research directions:
+   1. SaaS product integration cases
+   2. Cross-organization collaboration cases
+   3. Platform orchestration cases
 
-   预计 5-8 分钟，开始..."
+   Estimated 5-8 minutes, starting now..."
 
 → Phase 2: Research (autonomous)
 
@@ -311,12 +311,12 @@ Current working directory: /path/to/project
 
 → Done
 
-  "研究完成
+  "Research complete
 
-   报告: ./research/a2a-commercial-cases/report.md
-   来源: 12 个文档存档在 _sources/
+   Report: ./research/a2a-commercial-cases/report.md
+   Sources: 12 documents archived in _sources/
 
-   主要发现:
+   Key findings:
    1. [Key finding 1]
    2. [Key finding 2]
    3. [Key finding 3]"
@@ -325,12 +325,12 @@ Current working directory: /path/to/project
 **Example with user-specified directory:**
 
 ```plain
-User: "调研 A2A，存到 docs 目录"
+User: "Research A2A, store it in the docs directory"
 
 → Double confirm:
-  "确认将研究结果存到 ./docs/research/a2a-xxx/ ？"
+  "Confirm storing research results in ./docs/research/a2a-xxx/ ?"
 
-User: "好"
+User: "Yes"
 
 → Proceed as above...
 ```

@@ -1,16 +1,16 @@
 # Execution Cases
 
-## 场景 1：从零创建探索 notebook
+## Scenario 1: Create an Exploration Notebook from Scratch
 
-- 输入：数据集、分析目标、少量约束
-- 预期：先静态分析，再决定是否加入轻量 UI
+- Input: dataset, analysis goal, minimal constraints
+- Expected: static analysis first, then decide whether to add lightweight UI
 
-## 场景 2：清理已失控的 notebook
+## Scenario 2: Clean Up an Out-of-Control Notebook
 
-- 输入：已有 marimo notebook，UI 散乱、cell 依赖复杂
-- 预期：收拢 cell cohesion，减少暴露名字，提出 module 提炼建议
+- Input: existing marimo notebook with scattered UI and complex cell dependencies
+- Expected: consolidate cell cohesion, reduce exposed names, propose module extraction recommendations
 
-## 场景 3：判断是否该抽模块
+## Scenario 3: Decide Whether to Extract a Module
 
-- 输入：某段重复 UI / chart / helper 逻辑
-- 预期：明确给出“保留在 notebook”还是“抽到 module”的判断
+- Input: a repeated piece of UI / chart / helper logic
+- Expected: give a clear verdict of "keep in the notebook" or "extract to a module"

@@ -1,50 +1,50 @@
 # Marimo EDA Prototype Boundaries & Execution Notes
 
-## 目标与输出
-- 目标 job：快速写出以 EDA / prototype-first 为核心的 marimo notebook，分析和验证先行，UI 只在探索效率明显提升时才加入。
-- 核心输出：一份分析主线清晰、交互受控、模块提炼明确的 notebook；必要时附带 helper module 或简短 summary cell。
-- 不是这个 skill 的工作：全面讲授 marimo API、批量扫描 GitHub fixture，也不是把 `scripts/marimo_lint.py` 当作必需 gate。
+## Goals and Outputs
+- Target job: rapidly write marimo notebooks centered on EDA / prototype-first work; analysis and validation come first, UI is added only when it clearly improves exploration efficiency.
+- Core output: a notebook with a clear analysis thread, controlled interaction, and explicit module extraction; accompanied by a helper module or brief summary cell when needed.
+- Out of scope for this skill: comprehensive marimo API instruction, bulk GitHub fixture scanning, and treating `scripts/marimo_lint.py` as a required gate.
 
-## 关键能力偏好
-1. 先用静态分析验证问题 / 输出形式，确认主线。
-2. 只有在交互能显著加快探索时才引入 UI，并保持 UI cell 简洁。
-3. 不把 notebook 当作面向用户的复杂 UI 容器；只让它串联数据、状态和展示。
-4. 一旦某段逻辑或控件组合重复、协调状态复杂或复用明确，就及时抽到 module（如 `utils.py`、`charts.py`、`widgets.py`）。
+## Key Capability Preferences
+1. Use static analysis first to validate the problem / output form and confirm the main thread.
+2. Introduce UI only when interaction will significantly accelerate exploration, and keep UI cells lean.
+3. Do not treat the notebook as a complex UI container for end users; keep it to wiring data, state, and display.
+4. As soon as a piece of logic or widget combination repeats, state coordination becomes complex, or reuse is clear, extract it to a module promptly (e.g., `utils.py`, `charts.py`, `widgets.py`).
 
-## 硬性护栏
+## Hard Guardrails
 
-### 1. 不让 notebook 变成杂乱的 UI 开发
-- 忌：连续多个 cell 都在定义 UI、分析逻辑被拆散、控件只是为了“看起来交互”。
-- 信号：多 cell 早期就沉在状态 wiring、单 cell 里大量 UI 定义与逻辑混合。此时说明需要提炼到模块。
+### 1. Do Not Let the Notebook Become Cluttered UI Development
+- Avoid: multiple consecutive cells all defining UI, analysis logic scattered across cells, widgets added just to "look interactive".
+- Signal: cells sinking into state wiring early on, heavy mixing of UI definitions and logic within a single cell. This indicates it is time to extract to a module.
 
-### 2. UI 要靠近它控制的分析
-- 把 control、计算、结果尽量放在一个 cell 或相邻 cell，避免读者不知道一个控件到底影响哪些后续 cell。
-- 避免 UI 先出现在前面、而使用它的逻辑散落多处。
+### 2. Keep UI Close to the Analysis It Controls
+- Place controls, derived results, and outputs in the same cell or adjacent cells; avoid leaving readers uncertain about which downstream cells a widget affects.
+- Avoid defining UI early in the notebook while the logic that consumes it is scattered far below.
 
-### 3. 只导出真正需要跨 cell 复用的名字
-- 只有稳定 helper、必要的数据或主要结果才保留在依赖图；中间值 / temp 用 `_` 前缀，避免污染图。
+### 3. Only Export Names That Genuinely Need Cross-Cell Reuse
+- Only stable helpers, necessary data, or primary results belong in the dependency graph; use the `_` prefix for intermediate / temp values to avoid polluting the graph.
 
-### 4. 发现复用信号就抽模块
-- 交互 / 逻辑在多个 notebook 中复用、状态协调越来越复杂、维护成本提高，就该将相应 UI / chart / helper 提至 module。
+### 4. Extract to a Module When a Reuse Signal Appears
+- When interaction / logic is reused across multiple notebooks, state coordination grows increasingly complex, or maintenance cost rises, move the relevant UI / chart / helper to a module.
 
-## 知识激活模型
-- Prototype vs product：这是一次性探索还是已经进入长期维护？
-- Notebook vs module：当前逻辑是本次分析的临时内容还是值得沉淀？
-- Reactive graph hygiene：哪些名字得进入依赖图，哪些只能留 cell 内？
-- Cell cohesion：读者能否局部理解一个探索动作？
-- Delayed extraction：在模式成型之前保持轻量，成型后再抽象。
+## Knowledge Activation Model
+- Prototype vs product: is this a one-off exploration or has it entered long-term maintenance?
+- Notebook vs module: is the current logic a temporary artifact of this analysis or something worth solidifying?
+- Reactive graph hygiene: which names must enter the dependency graph, and which should remain cell-local?
+- Cell cohesion: can a reader understand one exploration action in isolation?
+- Delayed extraction: stay lightweight until a pattern solidifies, then abstract.
 
-## 决策参照表
-| 情景 | 首选动作 | 避免 |
+## Decision Reference Table
+| Situation | Preferred Action | Avoid |
 | --- | --- | --- |
-| 一次性分析、固定参数 | 用 plain variables + 直接 computation | 先加 slider / dropdown |
-| 快速试多个参数 | 加少量 UI，靠近分析 cell | 拆成多个独立 UI cells |
-| 过滤 / 绘图逻辑开始重复 | 提炼 helper function | 继续复制相似 cells |
-| 交互块已经像组件 | 抽到 module | 继续让 notebook 充当 UI 容器 |
-| 中间值只服务当前 cell | `_tmp`, `_filtered`, `_chart` | 暴露成全局名字 |
+| One-off analysis, fixed parameters | Plain variables + direct computation | Adding sliders / dropdowns first |
+| Quickly trying multiple parameters | Add minimal UI, close to the analysis cell | Splitting into multiple independent UI cells |
+| Filter / plot logic starts repeating | Extract a helper function | Continuing to copy similar cells |
+| Interaction block already looks like a component | Extract to a module | Continuing to use the notebook as a UI container |
+| Intermediate value serves only the current cell | `_tmp`, `_filtered`, `_chart` | Exposing as a global name |
 
-## 好 / 差示例
-### 好：UI 紧贴探索
+## Good / Bad Examples
+### Good: UI Tightly Coupled to Exploration
 ```python
 threshold = mo.ui.slider(0, 100, value=50, label="Threshold")
 _filtered = df[df["score"] >= threshold.value]
@@ -55,7 +55,7 @@ mo.vstack([
 ])
 ```
 
-### 差：UI 状态散落
+### Bad: UI State Scattered
 ```python
 # Cell 1
 threshold = mo.ui.slider(0, 100, value=50)
@@ -68,7 +68,7 @@ _filtered = df[df["score"] >= threshold.value]
 chart = draw_chart(_filtered)
 ```
 
-### 好：稳定模式抽 helper
+### Good: Extract Helper for Stable Pattern
 ```python
 # charts.py
 def build_sales_chart(df: pd.DataFrame, metric: str) -> alt.Chart:
@@ -80,7 +80,7 @@ chart = build_sales_chart(df, metric.value)
 mo.vstack([metric, chart])
 ```
 
-### 差：伪组件继续长在 notebook
+### Bad: Pseudo-Component Keeps Growing in the Notebook
 ```python
 metric = mo.ui.dropdown(["revenue", "margin"], value="revenue")
 theme = mo.ui.dropdown(["light", "dark"], value="light")
@@ -91,28 +91,28 @@ _final = _toggle_labels(_styled, show_labels.value)
 _final
 ```
 
-## 写作节奏
-1. Imports / 简单配置
-2. 数据加载
-3. 清洗 / 转换
+## Writing Rhythm
+1. Imports / simple configuration
+2. Data loading
+3. Cleaning / transformation
 4. EDA cells
-5. 可选的 prototype interactions（UI 需有分析理由）
+5. Optional prototype interactions (UI must have an analytic rationale)
 6. Summary / next-step outputs
 
-不是固定模板，重点是保持分析主线清晰、交互只为探索服务。
+This is not a rigid template; the key is keeping the analysis thread clear and ensuring interaction serves exploration only.
 
-## 最终自检清单
-- 这份 notebook 的主任务还是分析？
-- UI 是否确实提高了探索效率？
-- 一个探索动作的相关代码是否集中？
-- 是否只暴露了值得跨 cell 复用的名字？
-- 有没有段逻辑更适合 module？
-- UI 可删一半是否更清楚？
+## Final Self-Check Checklist
+- Is the notebook's primary task still analysis?
+- Does the UI genuinely improve exploration efficiency?
+- Is the code for a single exploration action sufficiently concentrated?
+- Are only names worth cross-cell reuse exposed?
+- Is there any logic that would be better off in a module?
+- Would removing half the UI make things clearer?
 
-## 可选检查器
+## Optional Checkers
 - `uvx marimo check notebook.py`
 - `python scripts/marimo_lint.py notebook.py --json`
 
-`scripts/marimo_lint.py` 仅作为启发式提示，用来捕捉“值得再看一眼”的潜在问题，不当最终质量裁判。
+`scripts/marimo_lint.py` serves only as a heuristic hint to catch issues "worth a second look" — it is not the final quality arbiter.
 
-设计模式和 GitHub 样本参见 `references/design-patterns.md`。
+For design patterns and GitHub samples, see `references/design-patterns.md`.

@@ -7,13 +7,13 @@
 - Structure: determine the output path and subdirectories before the autonomous research begins. Write a confirmation line such as:
 
 ```
-开始研究 {topic}
-输出目录: {output path}
-研究方向:
+Starting research on {topic}
+Output directory: {output path}
+Research directions:
 1. [subtopic-1]
 2. [subtopic-2]
 ...
-预计 [N] 分钟，开始...
+Estimated [N] minutes, starting now...
 ```
 
 ### Directory logic

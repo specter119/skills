@@ -1,72 +1,72 @@
 # Optimization Notes
 
-日期：2026-04-03
+Date: 2026-04-03
 
-## 本轮判断
+## Assessment
 
-`slide-building` 原始入口文件信息量很大，但存在 3 个主要问题：
+The original `slide-building` entry file contains a lot of information, but has 3 main issues:
 
-1. 路由描述过泛，容易与 `report-building`、`typst-authoring`、`deep-research` 混淆
-2. `SKILL.md` 过长，把路由、流程、知识库、代码样例混在一起
-3. 缺少最小 eval，后续很难稳定迭代
+1. Routing description too broad — easy to confuse with `report-building`, `typst-authoring`, `deep-research`
+2. `SKILL.md` too long — routing, workflow, knowledge base, and code examples are all mixed together
+3. Minimal evals missing — makes stable iteration difficult
 
-## 本轮优化动作
+## Optimization Actions
 
-1. 将入口改成“边界 + 执行骨架 + 输出契约 + 参考地图”
-2. 把长文内容迁移到独立 `references/`
-3. 新增 `evals/trigger-cases.md` 作为无 ground truth 场景下的最小基线
-4. 对齐 `agents/openai.yaml` 的显示说明
+1. Restructured the entry to "boundaries + execution skeleton + output contract + reference map"
+2. Migrated long-form content to standalone `references/`
+3. Added `evals/trigger-cases.md` as a minimal baseline for scenarios without ground truth
+4. Aligned display descriptions in `agents/openai.yaml`
 
-## 参考来源
+## References
 
-外部参考主要借鉴了 MiniMax `pptx-generator` 的三类做法：
+External references primarily drew from three practices in MiniMax `pptx-generator`:
 
-1. 明确的 skill 边界与 quick reference
-2. 把细节拆到 `references/` 而不是堆在入口
-3. 先定义 slide/page type，再决定页面实现
+1. Explicit skill boundaries and quick reference
+2. Breaking details into `references/` rather than piling them at the entry
+3. Defining slide/page type first, then deciding on page implementation
 
-## 尚未解决的问题
+## Unresolved Issues
 
-1. 还没有真实用户 prompt 回放，无法验证路由精度
-2. 视觉参考仍偏“原则型”，后续可补更多真实案例
-3. 还没有 execution eval，暂时只做 trigger 级别防回退
+1. No real user prompt replay yet — routing accuracy cannot be verified
+2. Visual references remain principle-oriented — real cases can be added later
+3. No execution eval yet — currently only trigger-level regression prevention
 
-## 下一轮可选方向
+## Next Round Options
 
-1. 补真实 prompt 集，做一次 trigger 回放
-2. 为不同 deck 类型补更多页面模式样例
-3. 增加一个“implementation handoff 模板”，方便直接交给 `typst-authoring`
+1. Add a real prompt set and run a trigger replay
+2. Add more page pattern examples for different deck types
+3. Add an "implementation handoff template" for direct handoff to `typst-authoring`
 
 ---
 
-日期：2026-05-11
+Date: 2026-05-11
 
-## 本轮判断
+## Assessment
 
-`design-system.md` 和 `review-and-qa.md` 的设计工艺指导偏基础，缺乏排印层级、色彩纪律和反 AI 默认值方面的结构化规则。
+The design craft guidance in `design-system.md` and `review-and-qa.md` was too basic, lacking structured rules for typography hierarchy, color discipline, and anti-AI defaults.
 
-## 本轮优化动作
+## Optimization Actions
 
-1. **`references/design-system.md`**：
-   - 将"字体层级"升级为"排印层级"，增加层级行为（入口点、节奏、信息流）、五向量模型、三级工作模型和排印反模式
-   - 将"语义色板"升级为"色彩纪律"，增加四层色板结构、强调色纪律（≤2 处/屏）、对比度门限、深色主题规则、反 AI 默认色
-   - 增加"反 AI 默认值"章节（P0/P1/P2 分级）
-   - 增加视觉节奏规则
-   - 扩展常见失误列表
+1. **`references/design-system.md`**:
+   - Upgraded "font hierarchy" to "typography hierarchy", added hierarchy behavior (entry point, rhythm, information flow), five-vector model, three-level working model, and typography anti-patterns
+   - Upgraded "semantic palette" to "color discipline", added four-tier palette structure, accent color discipline (≤2 per screen), contrast thresholds, dark theme rules, anti-AI default colors
+   - Added "Anti-AI Defaults" section (P0/P1/P2 tiers)
+   - Added visual rhythm rules
+   - Extended common mistakes list
 
-2. **`references/review-and-qa.md`**：增加 P0 交付门限（6 项可判定检查），在主观评审之前运行
+2. **`references/review-and-qa.md`**: Added P0 delivery threshold (6 deterministic checks) to run before subjective review
 
-## 参考来源
+## References
 
-借鉴 nexu-io/open-design 的设计工艺规范，主要参考：
-- `craft/typography-hierarchy.md`：排印层级行为与反模式
-- `craft/color.md`：色板结构与强调色纪律
-- `craft/anti-ai-slop.md`：P0/P1/P2 分级的反 AI 默认值规则
+Drew from the nexu-io/open-design design craft specification, primarily referencing:
+- `craft/typography-hierarchy.md`: typography hierarchy behavior and anti-patterns
+- `craft/color.md`: palette structure and accent color discipline
+- `craft/anti-ai-slop.md`: P0/P1/P2 tiered anti-AI defaults rules
 
-所有内容均为原则适配，未直接搬用 CSS/HTML 细节。
+All content was adapted to principles — no CSS/HTML implementation details were carried over directly.
 
-## 尚未解决的问题
+## Unresolved Issues
 
-1. P0 门限尚无自动化检查机制
-2. 排印层级规则缺乏 Typst 代码示例
-3. 反 AI 默认值规则的判定在部分边界情况下仍需人工判断
+1. P0 thresholds have no automated checking mechanism yet
+2. Typography hierarchy rules lack Typst code examples
+3. Anti-AI defaults rule judgments still require manual assessment in some edge cases

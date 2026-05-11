@@ -1,46 +1,46 @@
 # Marimo Notebook Eval Fixtures
 
-这份清单把当前用于回归评估的 GitHub marimo notebook 固定下来。
+This list locks down the GitHub marimo notebooks currently used for regression evaluation.
 
-目的不是追求“全部 0 提示”，而是让每次修改 `marimo_lint.py` 后，都能用同一批样本判断：
+The goal is not to achieve "zero hints across the board", but to ensure that every time `marimo_lint.py` is modified, the same set of samples can be used to judge:
 
-- 噪音有没有上升
-- 某条规则有没有明显变钝
-- `EDA / prototype-first` 的护栏是不是还在
+- Whether noise has increased
+- Whether any rule has clearly dulled
+- Whether the `EDA / prototype-first` guardrails are still in place
 
 ## How To Use
 
-执行方式：
+Run:
 
 ```bash
 python research/marimo-github-eval/collect_lint_results.py research/marimo-github-eval/_sources --json
 ```
 
-单文件定位某个 notebook 时，仍可直接运行：
+To target a single notebook file, you can still run directly:
 
 ```bash
 python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 ```
 
-`collect_lint_results.py` 是 research helper，不是 skill 正式接口。
+`collect_lint_results.py` is a research helper, not the skill's official interface.
 
-评估时看三件事：
+When evaluating, look at three things:
 
-1. 总提示数是否偏离样本角色
-2. 关键规则是否命中正确类型的 notebook
-3. 误报探针的提示是否在收敛
+1. Whether the total hint count deviates from the sample's expected role
+2. Whether key rules fire on the correct type of notebook
+3. Whether false-positive probe hints are converging
 
 ## Fixture Classes
 
 ### 1. Low-Noise Positives
 
-这些样本代表“写得比较克制的 notebook”。
+These samples represent "notebooks written with reasonable restraint".
 
-期望：
+Expected:
 
-- 总提示应偏低
-- 如果命中，也应是少量、可解释的提示
-- 不应被 `oversized-cell` 大量淹没
+- Total hints should be low
+- If hints fire, they should be few in number and explainable
+- Should not be overwhelmed by large numbers of `oversized-cell` hits
 
 #### `explore_high_dimensional_data.py`
 
@@ -48,8 +48,8 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Source: `marimo-team/examples`
 - GitHub: `https://github.com/marimo-team/examples/blob/main/explore_high_dimensional_data/explore_high_dimensional_data.py`
 - Watch:
-  - `ui-scatter` 可偶发命中
-  - 不应出现大量 `oversized-cell`
+  - `ui-scatter` may fire occasionally
+  - Should not produce large numbers of `oversized-cell` hits
 
 #### `nlp_span_comparison.py`
 
@@ -57,8 +57,8 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Source: `marimo-team/examples`
 - GitHub: `https://github.com/marimo-team/examples/blob/main/nlp_span_comparison/nlp_span_comparison.py`
 - Watch:
-  - `ui-scatter` 可合理命中
-  - `oversized-cell` 若出现，应保持低频
+  - `ui-scatter` may fire reasonably
+  - `oversized-cell`, if it appears, should remain infrequent
 
 #### `interactive-matrices.py`
 
@@ -66,8 +66,8 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Source: `marimo-team/spotlights`
 - GitHub: `https://github.com/marimo-team/spotlights/blob/main/011-Vincent/interactive-matrices.py`
 - Watch:
-  - `ui-scatter` 是主要观察点
-  - 不应出现高频 `export-surface` 或 `oversized-cell`
+  - `ui-scatter` is the main observation point
+  - Should not produce frequent `export-surface` or `oversized-cell` hits
 
 #### `comparing-regularizers-in-regression.py`
 
@@ -75,18 +75,18 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Source: `marimo-team/spotlights`
 - GitHub: `https://github.com/marimo-team/spotlights/blob/main/005-cvxpy-nasa/comparing-regularizers-in-regression.py`
 - Watch:
-  - 主要看 `repeated-pattern`
-  - 若大量命中 `oversized-cell`，通常表示规则过敏
+  - Primarily watch `repeated-pattern`
+  - If `oversized-cell` fires heavily, the rule is likely over-sensitive
 
 ### 2. Stress Tests
 
-这些样本体量较大，或包含大量重复展示/讲解结构。
+These samples are large in volume, or contain many repeated display / explanation structures.
 
-期望：
+Expected:
 
-- 可以命中多个规则
-- 重点看提示是否“有价值”，不是单纯数量
-- 规则不应把所有长 notebook 都无差别打爆
+- Multiple rules may fire
+- Focus on whether hints are "valuable", not just the count
+- Rules should not indiscriminately fire on all long notebooks
 
 #### `goodreads-eda.py`
 
@@ -96,7 +96,7 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Watch:
   - `repeated-pattern`
   - `export-surface`
-  - 少量 `oversized-cell`
+  - A small number of `oversized-cell`
 
 #### `stem-probes.py`
 
@@ -106,7 +106,7 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Watch:
   - `export-surface`
   - `oversized-cell`
-  - 是否出现过量教学误报
+  - Whether excessive teaching false positives appear
 
 #### `xdsl.py`
 
@@ -116,7 +116,7 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Watch:
   - `export-surface`
   - `oversized-cell`
-  - 这是科学/教学型噪音探针之一
+  - This is one of the scientific / teaching noise probes
 
 #### `geometric-mtf.py`
 
@@ -129,12 +129,12 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 
 ### 3. Tutorial Sensitivity Probes
 
-这些样本不是坏 notebook，但很容易被 `oversized-cell` 误报。
+These samples are not bad notebooks, but are easily false-positived by `oversized-cell`.
 
-期望：
+Expected:
 
-- 可以有少量提示
-- 如果 `oversized-cell` 明显失控，说明规则又过敏了
+- A small number of hints is acceptable
+- If `oversized-cell` is clearly out of control, the rule has become over-sensitive again
 
 #### `polars_intro.py`
 
@@ -142,7 +142,7 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Source: `marimo-team/spotlights`
 - GitHub: `https://github.com/marimo-team/spotlights/blob/main/014-ryan-parker/polars_intro.py`
 - Watch:
-  - `oversized-cell` 是否失控
+  - Whether `oversized-cell` is out of control
 
 #### `akatsuki-tutorial.py`
 
@@ -152,16 +152,16 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Watch:
   - `repeated-pattern`
   - `oversized-cell`
-  - 不应被当成明显 app-like notebook
+  - Should not be treated as an obviously app-like notebook
 
 ### 4. Module-Boundary Probes
 
-这些样本适合观察“什么时候 notebook 正在越界到 module / component”。
+These samples are suitable for observing "when is a notebook crossing into module / component territory".
 
-期望：
+Expected:
 
-- 至少命中一个结构信号
-- `ui-scatter` / `export-surface` / `oversized-cell` 的组合要有解释力
+- At least one structural signal fires
+- The combination of `ui-scatter` / `export-surface` / `oversized-cell` should be explainable
 
 #### `bennet-meyers-notebook.py`
 
@@ -184,12 +184,12 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 
 ### 5. App-Like Negatives
 
-这些样本更像 workflow builder、rich prototype、或 notebook-local app。
+These samples look more like workflow builders, rich prototypes, or notebook-local apps.
 
-期望：
+Expected:
 
-- 应该稳定命中明显结构提示
-- 如果这些样本几乎不报，说明规则可能过钝
+- Should consistently fire obvious structural hints
+- If these samples produce almost no hints, the rules may be too dull
 
 #### `laurium-prompt_engineering.py`
 
@@ -211,7 +211,7 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 
 ### 6. Coverage Gaps
 
-这些样本用于提醒我们“当前规则没覆盖到什么”。
+These samples remind us "what the current rules do not cover".
 
 #### `lmsys.py`
 
@@ -219,29 +219,29 @@ python skills/marimo-eda-prototype/scripts/marimo_lint.py <file> --json
 - Source: `marimo-team/spotlights`
 - GitHub: `https://github.com/marimo-team/spotlights/blob/main/006-vrtnis/lmsys.py`
 - Watch:
-  - 当前通常只命中少量 `export-surface`
-  - 如果未来增加 narrative / visual exploration 规则，它应重新进入重点观察
+  - Currently usually fires only a small number of `export-surface` hits
+  - If narrative / visual exploration rules are added in the future, it should re-enter the key watch list
 
 ## Regression Expectations
 
-每次调规则后，至少做下面检查：
+After each rule change, perform at least the following checks:
 
 1. `Low-Noise Positives`
-   - 不应出现明显提示膨胀
+   - Should not show obvious hint inflation
 
 2. `Tutorial Sensitivity Probes`
-   - `oversized-cell` 应趋于收敛，而不是增长
+   - `oversized-cell` should trend toward convergence, not growth
 
 3. `App-Like Negatives`
-   - 仍应稳定命中
+   - Should still fire consistently
 
 4. `Module-Boundary Probes`
-   - 不能失去结构解释力
+   - Must not lose structural explanatory power
 
 ## Current Priorities
 
-当前最重要的回归目标：
+The most important regression targets right now:
 
-1. 压低 `oversized-cell` 对 tutorial / explanatory notebook 的误报
-2. 保持对 app-like notebook 的命中能力
-3. 避免解析阶段的 warning 污染 CLI 输出
+1. Reduce `oversized-cell` false positives on tutorial / explanatory notebooks
+2. Maintain the ability to fire on app-like notebooks
+3. Avoid parse-stage warnings polluting CLI output

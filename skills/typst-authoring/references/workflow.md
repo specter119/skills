@@ -1,6 +1,6 @@
 # Workflow
 
-## 核心循环
+## Core Loop
 
 ```plain
 1. Write or inspect Typst code
@@ -10,7 +10,7 @@
 5. Verify page count and rendered output
 ```
 
-## 常用命令
+## Common Commands
 
 ```bash
 typst compile input.typ output.pdf
@@ -19,22 +19,22 @@ typst init @preview/package-name name
 typst compile --format png input.typ output-{0p}.png
 ```
 
-## 输出检查
+## Output Verification
 
-- `pdfinfo`：检查页数
-- `pdftoppm`：导出截图做视觉检查
+- `pdfinfo`: check page count
+- `pdftoppm`: export screenshots for visual inspection
 
-## 版本管理
+## Version Management
 
-Typst package 需要固定版本。
+Typst packages require pinned versions.
 
-建议：
+Recommendations:
 
-- 优先查最新文档或 Universe 信息
-- 不确定时不要直接沿用旧版本号
+- Consult the latest documentation or Universe information first
+- Do not carry over old version numbers when uncertain
 
-## 图形方案选择
+## Diagram Solution Selection
 
-- 简单 flowchart：优先 `diagraph`
-- nested containers：考虑 `D2`
-- sequence / gantt / pie：考虑 `oxdraw`
+- Simple flowchart: prefer `diagraph`
+- Nested containers: consider `D2`
+- Sequence / Gantt / pie: consider `oxdraw`

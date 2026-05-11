@@ -1,37 +1,37 @@
 # Optimization Notes
 
-日期：2026-04-03
+Date: 2026-04-03
 
-## 本轮判断
+## Assessment This Round
 
-该 skill 入口已经足够轻，主要缺的是最小路由基线。
+The skill entry point is already lean enough; what is mainly missing is a minimal routing baseline.
 
-## 本轮动作
+## Actions This Round
 
-1. 新增 trigger cases
-2. 记录当前状态，后续再决定是否补 execution eval
+1. Add trigger cases
+2. Record current state; decide later whether to add execution evals
 
 ---
 
-日期：2026-05-11
+Date: 2026-05-11
 
-## 本轮判断
+## Assessment This Round
 
-`references/report.md` 纯技术导向，缺乏实现层视觉护栏。当上游 skill 未指定具体视觉方向时，agent 容易自行发明不一致的品牌风格。
+`references/report.md` is purely technical in orientation and lacks implementation-layer visual guardrails. When an upstream skill does not specify a visual direction, agents tend to invent inconsistent brand styles on their own.
 
-## 本轮优化动作
+## Optimization Actions This Round
 
-1. **`references/report.md`**：增加"实现层视觉护栏"章节
-   - 排印层级保持：heading 与 body 字号比 ≥1.4×、间距梯度、全大写字距
-   - 强调色纪律：accent 使用有限、语义色仅用于状态
-   - 间距作为层级：章节间 > 节间 > 段间、标题"属于"后文
-   - 不做的事：不发明品牌风格、不做叙事决策
+1. **`references/report.md`**: Add the "Implementation-Layer Visual Guardrails" section
+   - Typography hierarchy: heading-to-body font size ratio ≥1.4×, spacing gradient, all-caps letter-spacing
+   - Accent color discipline: limited accent usage, semantic colors only for status
+   - Spacing as hierarchy: chapter > section > paragraph, heading "belongs to" following content
+   - What not to do: do not invent brand styles, do not make narrative decisions
 
-## 参考来源
+## Reference Sources
 
-借鉴 nexu-io/open-design 的设计工艺规范，将 `craft/typography-hierarchy.md` 和 `craft/color.md` 的原则适配为 Typst 实现层护栏。
+Adapted from the design craft guidelines in nexu-io/open-design, translating the principles from `craft/typography-hierarchy.md` and `craft/color.md` into Typst implementation-layer guardrails.
 
-## 尚未解决的问题
+## Open Issues
 
-1. 护栏规则尚无编译期或 lint 自动检查
-2. 与 `report-building` skill 的 handoff 协议未形式化
+1. Guardrail rules have no compile-time or lint-based automated checks yet
+2. The handoff protocol with the `report-building` skill has not been formalized

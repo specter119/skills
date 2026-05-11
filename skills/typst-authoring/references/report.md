@@ -1,23 +1,23 @@
-# Report 技术参考
+# Report Technical Reference
 
-> 本文档提供 Typst 报告生成的技术细节。内容结构请参考长文结构设计类 skill。
+> This document covers the technical details of Typst report generation. For content structure, refer to the long-form document structure design skill.
 
-## 快速命令
+## Quick Commands
 
 ```bash
-# 编译
+# Compile
 typst compile report.typ report.pdf
 
-# 监视模式
+# Watch mode
 typst watch report.typ report.pdf
 
-# 从模板初始化
+# Initialize from template
 typst init @preview/basic-report:0.2.0 my-report
 ```
 
 ---
 
-## 基础报告模板
+## Basic Report Template
 
 ```typst
 #set document(title: "Report Title", author: "Author")
@@ -27,24 +27,24 @@ typst init @preview/basic-report:0.2.0 my-report
 #set heading(numbering: "1.1")
 
 = Executive Summary
-// 核心结论
+// Core conclusions
 
 = Background
-// 背景描述
+// Background
 
 = Analysis
-// 详细分析
+// Detailed analysis
 
 = Recommendations
-// 行动建议
+// Action recommendations
 
 = Appendix
-// 支持数据
+// Supporting data
 ```
 
 ---
 
-## 学术论文模板 (IMRaD)
+## Academic Paper Template (IMRaD)
 
 ```typst
 #set document(title: "Research Paper", author: "Authors")
@@ -67,27 +67,27 @@ typst init @preview/basic-report:0.2.0 my-report
 *Keywords:* keyword1, keyword2, keyword3
 
 = Introduction
-// 研究背景、问题、假设
+// Research background, problem, hypothesis
 
 = Methods
-// 研究设计、数据收集、分析方法
+// Research design, data collection, analysis methods
 
 = Results
-// 数据呈现、统计结果
+// Data presentation, statistical results
 
 = Discussion
-// 解释发现、与现有研究对比、局限性
+// Interpret findings, compare with existing research, limitations
 
 = Conclusion
-// 核心贡献、未来方向
+// Core contributions, future directions
 
 = References
-// 参考文献
+// References
 ```
 
 ---
 
-## 工厂函数模板
+## Factory Function Template
 
 ```typst
 #let project(
@@ -171,7 +171,7 @@ typst init @preview/basic-report:0.2.0 my-report
   body
 }
 
-// 使用
+// Usage
 #show: project.with(
   title: "Report Title",
   subtitle: "A Comprehensive Analysis",
@@ -183,12 +183,12 @@ typst init @preview/basic-report:0.2.0 my-report
 
 ---
 
-## 图表集成
+## Chart and Figure Integration
 
-### 表格
+### Tables
 
 ```typst
-// 简单表格
+// Simple table
 #table(
   columns: 3,
   table.header([*Metric*], [*Before*], [*After*]),
@@ -196,7 +196,7 @@ typst init @preview/basic-report:0.2.0 my-report
   [Latency], [100ms], [45ms],
 )
 
-// Markdown 风格 (LLM 友好)
+// Markdown style (LLM-friendly)
 #import "@preview/tablem:0.3.0": tablem
 #tablem[
   | *Item* | *Value* |
@@ -205,7 +205,7 @@ typst init @preview/basic-report:0.2.0 my-report
 ]
 ```
 
-### 代码高亮
+### Code Highlighting
 
 ```typst
 #import "@preview/zebraw:0.6.1": *
@@ -219,57 +219,57 @@ typst init @preview/basic-report:0.2.0 my-report
 )
 ```
 
-### 流程图
+### Flowcharts
 
-参考本 skill 的流程图生成部分。推荐顺序：diagraph > D2 > oxdraw
+Refer to the diagram generation section of this skill. Recommended order: diagraph > D2 > oxdraw
 
 ---
 
-## 常见模板包
+## Common Template Packages
 
-| 包名 | 用途 |
+| Package | Purpose |
 |------|------|
-| basic-report | 通用报告 |
-| academic-alt | 学术作业 |
-| thesist | 硕士论文 |
-| modern-technique-report | 技术报告 |
+| basic-report | General-purpose report |
+| academic-alt | Academic assignments |
+| thesist | Master's thesis |
+| modern-technique-report | Technical report |
 
 ---
 
-## 编译验证
+## Compilation Verification
 
 ```bash
-# 语法检查
+# Syntax check
 typst query --check report.typ
 
-# 编译
+# Compile
 typst compile report.typ report.pdf
 
-# 预览
+# Preview
 typst compile --format png report.typ preview.png
 ```
 
-## 实现层视觉护栏
+## Implementation-Layer Visual Guardrails
 
-以下规则属于实现层——当上游 skill 已给出设计方向时，按方向实现；当视觉选择未指定时，遵循这些默认护栏而非自行发明品牌风格。
+These rules belong to the implementation layer — when an upstream skill has already provided design direction, implement accordingly; when visual choices are unspecified, follow these default guardrails rather than inventing brand styles.
 
-### 排印层级保持
+### Typography Hierarchy
 
-- 标题（`heading level 1`）与正文之间至少保持 1.4× 的字号比。如果上游未指定具体尺寸，16pt heading + 11pt body 是安全默认。
-- 各级 heading 的 `v()` 间距不应全部相同——至少有一级的间距是其他的 1.5× 以上，以传递层级信息。
-- 如果 heading 使用全大写（`.text(..)[#upper[...]]`），添加 `0.06em` 字距。
+- The font size ratio between headings (`heading level 1`) and body text must be at least 1.4×. If upstream does not specify sizes, 16pt heading + 11pt body is a safe default.
+- The `v()` spacing for different heading levels should not all be identical — at least one level must have spacing ≥1.5× that of another, to convey hierarchy.
+- If a heading uses all-caps (`.text(..)[#upper[...]]`), add `0.06em` letter-spacing.
 
-### 强调色纪律
+### Accent Color Discipline
 
-- 报告全文中 accent 颜色的使用点应有限——表格表头高亮、图表关键系列、关键结论标记。不要让 accent 出现在每一页。
-- 语义色（success / warn / error）仅用于传达状态语义，不用于装饰。
+- Accent color usage throughout the report should be limited — table header highlights, key chart series, and critical conclusion markers. Do not let accent appear on every page.
+- Semantic colors (success / warn / error) are used only to convey status semantics, not for decoration.
 
-### 间距作为层级
+### Spacing as Hierarchy
 
-- `v()` 间距是层级信号：章节间 > 节间 > 段间。三者应有明显梯度，不能全部相同。
-- 标题与其后内容之间的间距应小于标题与前文之间的间距——让标题"属于"后面的内容。
+- `v()` spacing is a hierarchy signal: between chapters > between sections > between paragraphs. The three must have a clear gradient and must not all be equal.
+- The spacing between a heading and the content that follows it should be smaller than the spacing between the heading and the preceding content — making the heading "belong to" the content below.
 
-### 不做的事
+### What Not to Do
 
-- 不发明品牌风格——如果上游未提供色板/字体选择，使用 Typst 默认或 §基础报告模板 中的保守值。
-- 不做排版层面的叙事决策——如果发现内容结构有问题（论点不清、缺乏证据），应移交给 `report-building` skill 而非在实现层修改。
+- Do not invent brand styles — if upstream does not provide a color palette/font choices, use Typst defaults or the conservative values in the §Basic Report Template.
+- Do not make narrative decisions at the typesetting level — if the content structure has problems (unclear arguments, lack of evidence), hand off to the `report-building` skill rather than fixing at the implementation layer.

@@ -1,36 +1,36 @@
 # Workflow
 
-## 1. 明确写作约束
+## 1. Clarify Writing Constraints
 
-- 目标：说服、汇报、归档、教学、提案
-- 读者：管理层、同行、客户、评审、团队成员
-- 输出介质：Markdown / Typst
-- 证据：数据、引用、案例、附录
+- Goal: persuade, report, archive, teach, or propose
+- Audience: management, peers, clients, reviewers, team members
+- Output medium: Markdown / Typst
+- Evidence: data, citations, case studies, appendices
 
-## 2. 先定结构
+## 2. Define Structure First
 
-先用一句话回答：
+Start by answering in one sentence:
 
-> 读者读完后应该相信什么、记住什么、采取什么行动？
+> What should the reader believe, remember, and do after reading?
 
-然后再拆成章节。
+Then break it into sections.
 
-## 3. 大纲检查
+## 3. Outline Check
 
-- 是否结论先行
-- 是否有清晰逻辑链
-- 是否每节都有 `So What`
-- 是否缺少关键证据
+- Does it lead with the conclusion?
+- Is there a clear logic chain?
+- Does every section have a `So What`?
+- Is any critical evidence missing?
 
-## 4. 写作与审阅
+## 4. Writing and Review
 
-- 先写主结论和章节摘要，再补细节
-- 初稿完成后按需委托 Oracle 做读者视角审阅
-- Typst 只负责实现，不负责改写结构
+- Write the main conclusions and section summaries first, then fill in the details
+- After the first draft, delegate to Oracle for a reader-perspective review as needed
+- Typst handles implementation only — it does not rewrite structure
 
-## 5. 输出选择
+## 5. Output Choice
 
-| 场景 | 建议 |
+| Scenario | Recommendation |
 | --- | --- |
-| 快速协作、内部文档 | Markdown |
-| 正式报告、论文、PDF | Typst |
+| Quick collaboration, internal documentation | Markdown |
+| Formal report, paper, PDF | Typst |

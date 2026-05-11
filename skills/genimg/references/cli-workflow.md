@@ -1,19 +1,19 @@
-# CLI 与工作流
+# CLI and Workflow
 
-## 初始化
+## Initialization
 
 ```bash
 cp .env.example .env
 # edit .env and add GEMINI_API_KEY
 ```
 
-主脚本：
+Main script:
 
 ```bash
 SCRIPT=scripts/generate.py
 ```
 
-## 常用命令
+## Common Commands
 
 ```bash
 uv run $SCRIPT "a futuristic city" -o city.png
@@ -24,7 +24,7 @@ uv run $SCRIPT "abstract tech concept" --variants 4 --grid comparison.png
 uv run $SCRIPT --list-styles
 ```
 
-## 参数摘要
+## Parameter Summary
 
 ```plain
 -o, --output
@@ -41,19 +41,19 @@ uv run $SCRIPT --list-styles
 --json
 ```
 
-## 模型选择
+## Model Selection
 
-| 模型 | 适合场景 |
+| Model | Best For |
 | --- | --- |
-| `gemini-2.5-flash-image` | 快速探索、批量 variants |
-| `gemini-3-pro-image-preview` | 精修、编辑、对文字更敏感的场景 |
+| `gemini-2.5-flash-image` | Fast exploration, batch variants |
+| `gemini-3-pro-image-preview` | Refinement, editing, text-sensitive scenarios |
 
-经验法则：
+Rule of thumb:
 
-- 先用 Flash 找方向
-- 再用 Pro 精修最终稿
+- Use Flash first to find direction
+- Use Pro to refine the final version
 
-## Variants 工作流
+## Variants Workflow
 
 ```bash
 uv run $SCRIPT "futuristic city" --variants 4 --grid grid.png -s tech
@@ -63,16 +63,16 @@ uv run $SCRIPT "enhance lighting, add more details" \
   -m gemini-3-pro-image-preview
 ```
 
-## 与 Slides 集成
+## Slides Integration
 
-| 用途 | 风格 | 比例 |
+| Use Case | Style | Ratio |
 | --- | --- | --- |
 | Cover | `tech` / `corporate` | `16:9` |
 | Section divider | `minimalist` | `16:9` |
 | Concept | `isometric` / `illustration` | `4:3` |
 | Icon | `icon` / `flat` | `1:1` |
 
-建议：
+Tips:
 
-- 默认排除文字：`-n "text, words, letters, labels"`
-- 版式上的标题、标签、注释交给 Typst / Figma
+- Exclude text by default: `-n "text, words, letters, labels"`
+- Leave layout titles, labels, and annotations to Typst / Figma

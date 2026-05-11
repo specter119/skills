@@ -1,16 +1,16 @@
 # Execution Cases
 
-## 场景 1：按文件批量处理
+## Scenario 1: Batch Processing by File
 
-- 输入：一个目录下的多份文档
-- 预期：完整 inventory、分组处理、逐项 findings、最终 synthesis
+- Input: multiple documents in a directory
+- Expected: complete inventory, grouped processing, per-item findings, and final synthesis
 
-## 场景 2：按章节拆大文件
+## Scenario 2: Splitting a Large File by Section
 
-- 输入：一份很长的单文件材料
-- 预期：按 section 分组处理，并保证覆盖完整
+- Input: a single long-form document
+- Expected: processed in section groups with full coverage guaranteed
 
-## 场景 3：消化后补外部缺口
+## Scenario 3: Filling External Gaps After Digesting
 
-- 输入：本地材料中存在信息缺口
-- 预期：先完成本地 digest，再明确指出需外部研究的空缺
+- Input: local materials with information gaps
+- Expected: complete the local digest first, then explicitly identify gaps requiring external research
