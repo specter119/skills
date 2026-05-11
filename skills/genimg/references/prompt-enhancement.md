@@ -38,3 +38,28 @@ Adjust the lighting to warmer tones. Add golden hour warmth with soft orange hig
 ## 执行建议
 - 先用 Flash 模型快速探索，再用 Pro 模型精修。
 - 需要对比时用 `--variants` + `--grid` 自动生成多图格。详细 CLI 操作参见 `references/cli-workflow.md`。
+
+## 视觉反默认值
+
+AI 图像模型有自己的"默认审美"。以下模式不是禁止使用，而是不应无意识地默认产出：
+
+### 避免默认产出
+
+- **蓝紫科技渐变背景**——模型偏爱 indigo→cyan、purple→blue 的"信任感"渐变。如果用户没有要求渐变，默认用纯色或自然光照。
+- **悬浮抽象几何体**——发光的立方体、球体、六边形网格没有语义内容。如果概念图需要形状，让形状承载含义。
+- **假 UI / 假仪表盘**——模型生成的界面元素通常文字不可读且布局不合理。需要 UI 截图时用真实截图或代码生成。
+- **过度发光和光晕**——lens flare、neon glow、光线粒子。适量用于科幻风格，但不应成为每张图的默认效果。
+
+### 参考负向提示
+
+当检测到上述默认倾向时，可追加负向提示：
+
+```plain
+-n "generic gradient background, floating abstract shapes, fake UI elements, lens flare, glowing particles"
+```
+
+注意：如果用户明确要求某种风格（如"科幻风格的发光节点"），则尊重用户意图，不添加该类型的负向提示。
+
+### 判断标准
+
+问自己：去掉这个视觉元素后，图片的核心信息是否改变？如果不变，这个元素大概率是模型的默认填充而非设计选择。
