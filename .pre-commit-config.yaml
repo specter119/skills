@@ -29,6 +29,17 @@ repos:
         args: ["--baseline", ".secrets.baseline"]
         exclude: package.lock.json
 
+  # Skill quality checks
+  - repo: local
+    hooks:
+      - id: waza-check
+        name: Skill readiness check (waza)
+        entry: waza check
+        language: system
+        pass_filenames: false
+        always_run: true
+        verbose: true
+
   # Repository-specific validation
   - repo: local
     hooks:
