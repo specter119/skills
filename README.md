@@ -62,6 +62,7 @@ uv run scripts/build_history_eval_report.py --global-history
 | **genimg** | Generate images for content | "生成图片", "配图" |
 | **marimo-eda-prototype** | Write EDA-first marimo notebooks with restrained UI and clear extraction boundaries | "marimo", "EDA notebook", "prototype-first" |
 | **msgraph-explore** | Search, fetch, and sync Microsoft Graph content for SharePoint, OneDrive, and OneNote | "搜索 SharePoint", "拉 SharePoint 文件", "同步 OneDrive", "拉取 onenote" |
+| **skill-craft** | Create, refactor, evaluate, and package agent skills from workflows or notes | "创建 skill", "改进 skill", "打包 skill", "add evals" |
 | **jj** | jj (Jujutsu) version control for agent workflows, with jj-pre-push hook integration | "jj", "jujutsu", "版本控制" |
 
 ## Usage
@@ -81,7 +82,9 @@ Claude will automatically activate the `deep-research` skill.
 
 ## Acknowledgments
 
-The **jj** skill is based on [onevcat-jj](https://github.com/nicepkg/skills) by onevcat, with modifications to use `jj push` (jj-pre-push alias) instead of `jj git push` for pre-push hook integration.
+The **jj** skill is based on [onevcat-jj](https://github.com/nicepkg/skills/tree/main/skills/onevcat-jj) by onevcat, with modifications to use `jj push` (jj-pre-push alias) instead of `jj git push` for pre-push hook integration.
+
+The **skill-craft** skill is based on [yao-meta-skill](https://github.com/nicepkg/skills/tree/main/skills/yao-meta-skill) by Yao Team, adapted for waza spec compliance and CLI integration. Skill structure influenced by [microsoft/waza](https://github.com/microsoft/waza/tree/main/skills) example skills.
 
 ## License
 
