@@ -1,6 +1,6 @@
 # Research Formats
 
-Format specifications for research artifacts. For full report templates, see `assets/`.
+Format specifications for research artifacts. For full report templates, see [report-en](report-en.md) and [report-zh](report-zh.md).
 
 ---
 

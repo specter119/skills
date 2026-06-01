@@ -10,15 +10,13 @@ description: >
 
 Handles **illustrative image generation and editing**; does not handle precise structural diagrams, charts, or code-generated visuals.
 
-## Routing Boundaries
-
-### Route Here
+## USE FOR
 
 - Generate cover illustrations, concept images, scene images, and decorative icons
 - Edit existing images at the style, lighting, or detail level
 - Generate multiple candidate images in batch and select a direction
 
-### Do Not Route Here
+## DO NOT USE FOR
 
 - Flowcharts, architecture diagrams, charts, or visuals with strict text requirements
 - Images requiring precise, controllable node relationships
@@ -27,14 +25,14 @@ Handles **illustrative image generation and editing**; does not handle precise s
 ## Execution Skeleton
 
 1. First determine whether the image is best solved with a generative model; if code-based drawing is more appropriate, switch tools instead of forcing generation.
-2. Expand the user's short prompt into a 50–150 word narrative prompt following the rules in `references/prompt-enhancement.md`.
+2. Expand the user's short prompt into a 50–150 word narrative prompt following the rules in [prompt-enhancement](references/prompt-enhancement.md).
 3. Decide whether to generate once, edit an existing image, or first run the `variants + grid` exploration workflow.
-4. Execute via `scripts/generate.py`; see `references/cli-workflow.md` for model and parameter selection.
+4. Execute via `scripts/generate.py`; see [cli-workflow](references/cli-workflow.md) for model and parameter selection.
 
-## Reference Map
+## References
 
-- `references/prompt-enhancement.md`: prompt expansion rules, examples, and edit mode
-- `references/cli-workflow.md`: CLI usage, model selection, variants/grid workflow
+- [prompt-enhancement](references/prompt-enhancement.md): prompt expansion rules, examples, and edit mode
+- [cli-workflow](references/cli-workflow.md): CLI usage, model selection, variants/grid workflow
 - `evals/trigger-cases.md`: minimal trigger cases
 - `evals/execution-cases.md`: key execution scenarios
 - `reports/optimization-notes.md`: current refactor rationale and remaining gaps
@@ -45,6 +43,6 @@ Handles **illustrative image generation and editing**; does not handle precise s
 - Unless the user explicitly requests text in the image, exclude `text/labels` by default
 - If the image will be used in a layout later, provide recommended aspect ratio, style, and file naming
 
-## Collaboration and Handoff
+## Collaboration
 
 - If the image is destined for a presentation or document, hand off to a layout or structure-design skill for final placement

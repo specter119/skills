@@ -2,7 +2,8 @@
 name: report-building
 description: >
   Structures and organizes reports, papers, theses, and documentation.
-  Use when asked to create report/paper/thesis/documentation.
+  USE FOR: create report/paper/thesis/documentation, establish logical framework then develop argument.
+  DO NOT USE FOR: short messages or summaries, slide/presentation design, pure Typst implementation issues.
   Supports Markdown and Typst output.
 allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch
 ---
@@ -11,14 +12,12 @@ allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch
 
 Handles **long-form structured writing**; does not handle presentation structure design or pure Typst implementation.
 
-## Routing Boundaries
-
-### Route Here
+## USE FOR
 
 - Long-form writing: reports, papers, technical documentation, business proposals, case studies
 - Tasks that require establishing a logical framework first, then developing the argument
 
-### Do Not Route Here
+## DO NOT USE FOR
 
 - Short messages or summary-level copy
 - Slide or presentation structure design
@@ -26,20 +25,20 @@ Handles **long-form structured writing**; does not handle presentation structure
 
 ## Execution Skeleton
 
-1. Clarify the writing goal, audience, and purpose; select a matching framework from `references/framework-selection.md`.
-2. Design the outline per `references/workflow.md`; mark core arguments, key evidence, and action items.
+1. Clarify the writing goal, audience, and purpose; select a matching framework from [framework-selection](references/framework-selection.md).
+2. Design the outline per [workflow](references/workflow.md); mark core arguments, key evidence, and action items.
 3. Write content section by section, continuously self-checking with MECE, So What, and data-backed principles.
-4. When needed, delegate to `@oracle` to review the outline and draft from a reader's perspective.
+4. When needed, delegate via [oracle-delegation](references/oracle-delegation.md) to review the outline and draft from a reader's perspective.
 5. Hand off to the Typst implementation skill for formal typesetting or export.
 
 ## Reference Map
 
-- `references/framework-selection.md`
-- `references/workflow.md`
-- `references/oracle-delegation.md`
-- `evals/trigger-cases.md`
-- `evals/execution-cases.md`
-- `reports/optimization-notes.md`
+- [framework-selection](references/framework-selection.md)
+- [workflow](references/workflow.md)
+- [oracle-delegation](references/oracle-delegation.md)
+- [trigger-cases](evals/trigger-cases.md)
+- [execution-cases](evals/execution-cases.md)
+- [optimization-notes](reports/optimization-notes.md)
 
 ## Output Contract
 

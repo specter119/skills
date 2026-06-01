@@ -2,8 +2,9 @@
 name: typst-authoring
 description: >
   Provide Typst technical guidance for writing, compiling, and debugging Typst documents,
-  including package selection and diagram solution choice. Use when the task is Typst syntax,
-  toolchain usage, Touying/report implementation, or diagram rendering inside Typst.
+  including package selection and diagram solution choice. USE FOR: Typst syntax, compilation,
+  debugging, Touying slide implementation, report typesetting, diagram rendering in Typst.
+  DO NOT USE FOR: slide narrative/visual design, report content structure, illustration generation.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
@@ -11,16 +12,14 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 Responsible for **Typst's technical implementation layer**; does not handle content structure or narrative design.
 
-## Routing Boundaries
-
-### Should Route Here
+## USE FOR
 
 - Typst syntax, compilation, and debugging
 - Technical implementation of Touying slides
 - Report templates, typesetting, and export
 - Selecting and implementing diagram solutions in Typst
 
-### Should Not Route Here
+## DO NOT USE FOR
 
 - Narrative arc and visual direction of slides
 - Argument structure and content framework of reports
@@ -28,19 +27,19 @@ Responsible for **Typst's technical implementation layer**; does not handle cont
 
 ## Execution Skeleton
 
-1. Follow `references/workflow.md` through the diagnostics → compile → output check loop.
-2. Then branch by document type: slides → `references/touying.md`, reports → `references/report.md`, diagrams → `references/diagraph.md`.
+1. Follow [workflow](references/workflow.md) through the diagnostics → compile → output check loop.
+2. Then branch by document type: slides → [touying](references/touying.md), reports → [report](references/report.md), diagrams → [diagraph](references/diagraph.md).
 3. When package versions are uncertain, consult the latest documentation; do not rely on hard-coded old version numbers.
 
 ## Reference Map
 
-- `references/workflow.md`
-- `references/touying.md`
-- `references/report.md`
-- `references/diagraph.md`
-- `evals/trigger-cases.md`
-- `evals/execution-cases.md`
-- `reports/optimization-notes.md`
+- [workflow](references/workflow.md)
+- [touying](references/touying.md)
+- [report](references/report.md)
+- [diagraph](references/diagraph.md)
+- [trigger-cases](evals/trigger-cases.md)
+- [execution-cases](evals/execution-cases.md)
+- [optimization-notes](reports/optimization-notes.md)
 
 ## Output Contract
 

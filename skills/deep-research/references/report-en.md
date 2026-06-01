@@ -210,19 +210,19 @@ Confidence: High/Medium/Low
 
 ### High Confidence Sources (Authoritative)
 
-- [Source Name](URL) - [Brief description] [Access date]
-- [Source Name](URL) - [Brief description] [Access date]
-- [Source Name](URL) - [Brief description] [Access date]
+- Source Name (URL) - [Brief description] [Access date]
+- Source Name (URL) - [Brief description] [Access date]
+- Source Name (URL) - [Brief description] [Access date]
 
 ### Medium Confidence Sources (Community)
 
-- [Source Name](URL) - [Brief description] [Access date]
-- [Source Name](URL) - [Brief description] [Access date]
+- Source Name (URL) - [Brief description] [Access date]
+- Source Name (URL) - [Brief description] [Access date]
 
 ### Supplementary References
 
-- [Source Name](URL) - [Brief description]
-- [Source Name](URL) - [Brief description]
+- Source Name (URL) - [Brief description]
+- Source Name (URL) - [Brief description]
 
 ---
 

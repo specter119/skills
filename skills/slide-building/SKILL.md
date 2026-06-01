@@ -10,53 +10,44 @@ allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch
 
 # Slide Building
 
-Responsible for **presentation structure, page planning, and visual direction** — not external research, long-form writing, or layout implementation.
+**Presentation structure, page planning, and visual direction** — not research, long-form writing, or layout implementation.
 
-## Routing Boundaries
+## USE FOR
 
-### Should Route Here
+- Creating or improving presentations, pitch decks, and talk decks
+- Designing outlines, throughlines, and page count estimates
+- Optimizing page types, information density, and visual rhythm
+- Converting materials into presentation-ready structures
 
-- Creating presentations, pitch decks, and technical talk decks
-- Designing page-by-page outlines, narrative throughlines, and page count estimates
-- Optimizing slide page types, information density, and visual rhythm
-- Converting existing materials into presentation-ready slide structures
+## DO NOT USE FOR
 
-### Should Not Route Here
-
-- Insufficient source material — research skill should run first
-- Excessive raw material — bulk-digest skill should run first
-- Primary goal is writing reports, papers, or long documents
-- Primary goal is Typst/PPTX/PDF technical implementation
+- Insufficient source material → research skill first
+- Too much raw material → bulk-digest skill first
+- Writing reports, papers, or long documents
+- Typst/PPTX/PDF layout implementation
 
 ## Execution Skeleton
 
-1. Confirm audience, medium, duration, and core objective first.
-2. Define a one-sentence throughline first, then break it into 3-5 parts with a page plan.
-3. Define page type, takeaway, evidence, and recommended layout for each page.
-4. Delegate to an audience review or visual polish agent when needed.
-5. If entering the implementation phase, hand off to a layout implementation skill or specific generator.
+1. Confirm audience, medium, duration, and objective.
+2. Define a one-sentence throughline, then break into 3–5 parts with a page plan.
+3. For each page define type, takeaway, evidence, and layout.
+4. Delegate to audience review or visual polish agents when needed.
+5. For implementation, hand off to a layout skill or generator.
 
-## Reference Map
+## References
 
-- `references/workflow.md`
-- `references/slide-types.md`
-- `references/design-system.md`
-- `references/review-and-qa.md`
-- `references/components.md`
-- `references/oracle-delegation.md`
-- `references/frontend-delegation.md`
+- [workflow](references/workflow.md)
+- [slide-types](references/slide-types.md)
+- [design-system](references/design-system.md)
+- [review-and-qa](references/review-and-qa.md)
+- [components](references/components.md)
+- [oracle-delegation](references/oracle-delegation.md)
+- [frontend-delegation](references/frontend-delegation.md)
 - `evals/trigger-cases.md`
 - `evals/execution-cases.md`
 - `reports/optimization-notes.md`
 
 ## Output Contract
 
-- Default delivery: at least 2 of — throughline, page-by-page outline, visual direction
-- If continuing, can additionally deliver an implementation handoff
-
-## Collaboration and Handoff
-
-- Hand off to research skill when source material is insufficient
-- Hand off to bulk-digest skill when raw material is excessive
-- Hand off to layout implementation skill when entering implementation phase
-- Hand off to image generation skill when illustrations are needed
+- Default: at least 2 of — throughline, page-by-page outline, visual direction
+- If continuing: additionally deliver an implementation handoff
