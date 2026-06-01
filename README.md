@@ -62,6 +62,7 @@ uv run scripts/build_history_eval_report.py --global-history
 | **genimg** | Generate images for content | "生成图片", "配图" |
 | **marimo-eda-prototype** | Write EDA-first marimo notebooks with restrained UI and clear extraction boundaries | "marimo", "EDA notebook", "prototype-first" |
 | **msgraph-explore** | Search, fetch, and sync Microsoft Graph content for SharePoint, OneDrive, and OneNote | "搜索 SharePoint", "拉 SharePoint 文件", "同步 OneDrive", "拉取 onenote" |
+| **jj** | jj (Jujutsu) version control for agent workflows, with jj-pre-push hook integration | "jj", "jujutsu", "版本控制" |
 
 ## Usage
 
@@ -77,6 +78,10 @@ Claude will automatically activate the `deep-research` skill.
 
 - Claude Code >= 1.0.33
 - For `genimg`: Requires API key configuration (see `genimg/.env.example`)
+
+## Acknowledgments
+
+The **jj** skill is based on [onevcat-jj](https://github.com/nicepkg/skills) by onevcat, with modifications to use `jj push` (jj-pre-push alias) instead of `jj git push` for pre-push hook integration.
 
 ## License
 
