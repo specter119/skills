@@ -41,11 +41,11 @@ External references primarily drew from three practices in MiniMax `pptx-generat
 
 Date: 2026-05-11
 
-## Assessment
+## Assessment (2026-05-11)
 
 The design craft guidance in `design-system.md` and `review-and-qa.md` was too basic, lacking structured rules for typography hierarchy, color discipline, and anti-AI defaults.
 
-## Optimization Actions
+## Optimization Actions (2026-05-11)
 
 1. **`references/design-system.md`**:
    - Upgraded "font hierarchy" to "typography hierarchy", added hierarchy behavior (entry point, rhythm, information flow), five-vector model, three-level working model, and typography anti-patterns
@@ -56,7 +56,7 @@ The design craft guidance in `design-system.md` and `review-and-qa.md` was too b
 
 2. **`references/review-and-qa.md`**: Added P0 delivery threshold (6 deterministic checks) to run before subjective review
 
-## References
+## References (2026-05-11)
 
 Drew from the nexu-io/open-design design craft specification, primarily referencing:
 - `craft/typography-hierarchy.md`: typography hierarchy behavior and anti-patterns
@@ -65,7 +65,7 @@ Drew from the nexu-io/open-design design craft specification, primarily referenc
 
 All content was adapted to principles — no CSS/HTML implementation details were carried over directly.
 
-## Unresolved Issues
+## Unresolved Issues (2026-05-11)
 
 1. P0 thresholds have no automated checking mechanism yet
 2. Typography hierarchy rules lack Typst code examples

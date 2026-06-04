@@ -21,11 +21,11 @@ The original `genimg` entry point piled prompt methodology, CLI reference, slide
 
 Date: 2026-05-11
 
-## Assessment
+## Assessment (2026-05-11)
 
 `prompt-enhancement.md` lacked guidance on the default aesthetic tendencies of AI image models, making it easy to produce "generic AI-style" images.
 
-## Actions Taken
+## Actions Taken (2026-05-11)
 
 1. **`references/prompt-enhancement.md`**: Added "Visual Anti-Defaults" section
    - Listed 4 common AI image default patterns (blue-purple gradients, floating geometry, fake UI, excessive glow)

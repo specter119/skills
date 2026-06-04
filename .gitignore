@@ -14,9 +14,6 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Research output (generated)
+# Research & Report outputs
 research/
-
-# dotter
-/.dotter/cache.toml
-/.dotter/local.toml
+reports/

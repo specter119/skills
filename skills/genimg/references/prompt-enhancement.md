@@ -1,9 +1,11 @@
 # Prompt Enhancement Guide
 
 ## Rationale
+
 Gemini image models are better at understanding rich, narrative descriptions; simple keywords often fall short of optimal results. Use a 50–150 word paragraph that weaves together subject, action, setting, lighting, composition, and style into a small story.
 
 ## Key Elements
+
 | Element | Description | Example |
 |------|------|------|
 | Subject | Who or what the main focus is | "A robot barista with blue optical lenses" |
@@ -14,11 +16,13 @@ Gemini image models are better at understanding rich, narrative descriptions; si
 | Style | Overall tone matching `-s` | "Modern tech aesthetic" |
 
 ## Auto-Supplement Rules
+
 - If text is not explicitly requested, append `-n "text, words, letters, labels"`.
 - Add style-matching descriptors based on the `-s` parameter.
 - Add appropriate lighting and composition suggestions based on scene type.
 
 ## Example
+
 User input:
 ```plain
 Draw a concept diagram for the A2A protocol with a tech feel
@@ -30,12 +34,14 @@ An isometric 3D illustration depicting the A2A protocol concept. Multiple AI age
 ```
 
 ## Edit Mode Prompting
+
 When modifying an existing image, expand the user's edit instruction to:
 ```plain
 Adjust the lighting to warmer tones. Add golden hour warmth with soft orange highlights. Maintain the original composition and subject placement. Keep all other elements unchanged.
 ```
 
 ## Execution Tips
+
 - Use Flash model for fast exploration first, then Pro model for refinement.
 - Use `--variants` + `--grid` to auto-generate a multi-image grid for comparison. See `references/cli-workflow.md` for detailed CLI operations.
 

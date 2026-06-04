@@ -1,11 +1,13 @@
 # Marimo EDA Prototype Boundaries & Execution Notes
 
 ## Goals and Outputs
+
 - Target job: rapidly write marimo notebooks centered on EDA / prototype-first work; analysis and validation come first, UI is added only when it clearly improves exploration efficiency.
 - Core output: a notebook with a clear analysis thread, controlled interaction, and explicit module extraction; accompanied by a helper module or brief summary cell when needed.
 - Out of scope for this skill: comprehensive marimo API instruction, bulk GitHub fixture scanning, and treating `scripts/marimo_lint.py` as a required gate.
 
 ## Key Capability Preferences
+
 1. Use static analysis first to validate the problem / output form and confirm the main thread.
 2. Introduce UI only when interaction will significantly accelerate exploration, and keep UI cells lean.
 3. Do not treat the notebook as a complex UI container for end users; keep it to wiring data, state, and display.
@@ -14,20 +16,25 @@
 ## Hard Guardrails
 
 ### 1. Do Not Let the Notebook Become Cluttered UI Development
+
 - Avoid: multiple consecutive cells all defining UI, analysis logic scattered across cells, widgets added just to "look interactive".
 - Signal: cells sinking into state wiring early on, heavy mixing of UI definitions and logic within a single cell. This indicates it is time to extract to a module.
 
 ### 2. Keep UI Close to the Analysis It Controls
+
 - Place controls, derived results, and outputs in the same cell or adjacent cells; avoid leaving readers uncertain about which downstream cells a widget affects.
 - Avoid defining UI early in the notebook while the logic that consumes it is scattered far below.
 
 ### 3. Only Export Names That Genuinely Need Cross-Cell Reuse
+
 - Only stable helpers, necessary data, or primary results belong in the dependency graph; use the `_` prefix for intermediate / temp values to avoid polluting the graph.
 
 ### 4. Extract to a Module When a Reuse Signal Appears
+
 - When interaction / logic is reused across multiple notebooks, state coordination grows increasingly complex, or maintenance cost rises, move the relevant UI / chart / helper to a module.
 
 ## Knowledge Activation Model
+
 - Prototype vs product: is this a one-off exploration or has it entered long-term maintenance?
 - Notebook vs module: is the current logic a temporary artifact of this analysis or something worth solidifying?
 - Reactive graph hygiene: which names must enter the dependency graph, and which should remain cell-local?
@@ -35,6 +42,7 @@
 - Delayed extraction: stay lightweight until a pattern solidifies, then abstract.
 
 ## Decision Reference Table
+
 | Situation | Preferred Action | Avoid |
 | --- | --- | --- |
 | One-off analysis, fixed parameters | Plain variables + direct computation | Adding sliders / dropdowns first |
@@ -44,7 +52,9 @@
 | Intermediate value serves only the current cell | `_tmp`, `_filtered`, `_chart` | Exposing as a global name |
 
 ## Good / Bad Examples
+
 ### Good: UI Tightly Coupled to Exploration
+
 ```python
 threshold = mo.ui.slider(0, 100, value=50, label="Threshold")
 _filtered = df[df["score"] >= threshold.value]
@@ -56,6 +66,7 @@ mo.vstack([
 ```
 
 ### Bad: UI State Scattered
+
 ```python
 # Cell 1
 threshold = mo.ui.slider(0, 100, value=50)
@@ -69,6 +80,7 @@ chart = draw_chart(_filtered)
 ```
 
 ### Good: Extract Helper for Stable Pattern
+
 ```python
 # charts.py
 def build_sales_chart(df: pd.DataFrame, metric: str) -> alt.Chart:
@@ -81,6 +93,7 @@ mo.vstack([metric, chart])
 ```
 
 ### Bad: Pseudo-Component Keeps Growing in the Notebook
+
 ```python
 metric = mo.ui.dropdown(["revenue", "margin"], value="revenue")
 theme = mo.ui.dropdown(["light", "dark"], value="light")
@@ -92,6 +105,7 @@ _final
 ```
 
 ## Writing Rhythm
+
 1. Imports / simple configuration
 2. Data loading
 3. Cleaning / transformation
@@ -102,6 +116,7 @@ _final
 This is not a rigid template; the key is keeping the analysis thread clear and ensuring interaction serves exploration only.
 
 ## Final Self-Check Checklist
+
 - Is the notebook's primary task still analysis?
 - Does the UI genuinely improve exploration efficiency?
 - Is the code for a single exploration action sufficiently concentrated?
@@ -110,6 +125,7 @@ This is not a rigid template; the key is keeping the analysis thread clear and e
 - Would removing half the UI make things clearer?
 
 ## Optional Checkers
+
 - `uvx marimo check notebook.py`
 - `python scripts/marimo_lint.py notebook.py --json`
 
