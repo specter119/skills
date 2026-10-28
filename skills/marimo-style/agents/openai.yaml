@@ -1,0 +1,4 @@
+interface:
+  display_name: "Marimo Notebook Style"
+  short_description: "EDA and report notebook styles for marimo"
+  default_prompt: "Use $marimo-style to choose and apply an EDA (discovery-first, evidence before decisions) or report (conclusion-first, narrative-led) style to a marimo notebook. Delegate live-kernel mechanics to marimo-pair."

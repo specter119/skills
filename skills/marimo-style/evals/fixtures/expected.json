@@ -1,0 +1,68 @@
+{
+  "app_function_edges.py": {
+    "_note": "@app.function helper + with app.setup: the control-upstream-impact hit proves dependency edges flow through the helper cell (summary above the control reads kept_orders, which the helper derives from cutoff.value).",
+    "shared": ["control-upstream-impact"],
+    "eda": ["control-upstream-impact"],
+    "report": ["control-upstream-impact"]
+  },
+  "eda_dependent_chain.py": {
+    "_note": "Dependent control chain (city options derive from country.value) is exempt from ui-split-cells.",
+    "shared": [],
+    "eda": [],
+    "report": []
+  },
+  "eda_far_consumer.py": {
+    "_note": "Slider defined 3 visible cells before first use; in-between cells are narrative-only so control-zone-gap stays quiet in report mode.",
+    "shared": [],
+    "eda": ["ui-far-consumer"],
+    "report": []
+  },
+  "eda_split_ui.py": {
+    "_note": "Three consecutive independent control cells.",
+    "shared": ["ui-split-cells"],
+    "eda": ["ui-split-cells"],
+    "report": ["ui-split-cells"]
+  },
+  "generic_exports.py": {
+    "_note": "Cell exports generic names result/chart; message must not mention underscore prefixing.",
+    "shared": ["export-surface"],
+    "eda": ["export-surface"],
+    "report": ["export-surface"]
+  },
+  "report_gap.py": {
+    "_note": "Unrelated visible cell between the control and its dependent cell breaks the zone.",
+    "shared": [],
+    "eda": [],
+    "report": ["control-zone-gap"]
+  },
+  "report_global_filter.py": {
+    "_note": "Document-wide filter: every later visible cell is affected or narrative, so no zone gap.",
+    "shared": [],
+    "eda": [],
+    "report": []
+  },
+  "report_good_zone.py": {
+    "_note": "Summary does not depend on the control; control is followed directly by its dependent cell; narrative and new section come after the zone.",
+    "shared": [],
+    "eda": [],
+    "report": []
+  },
+  "report_hstack_display.py": {
+    "_note": "Control displayed in the same mo.hstack as its chart; no ui-far-consumer in eda, no gap in report.",
+    "shared": [],
+    "eda": [],
+    "report": []
+  },
+  "report_summary_depends_on_control.py": {
+    "_note": "Visible summary above the control reads a value derived from control.value.",
+    "shared": ["control-upstream-impact"],
+    "eda": ["control-upstream-impact"],
+    "report": ["control-upstream-impact"]
+  },
+  "report_tabs_and_crossfilter.py": {
+    "_note": "mo.ui.tabs is layout (not a control); the altair_chart selection feeds the immediately following cell.",
+    "shared": [],
+    "eda": [],
+    "report": []
+  }
+}

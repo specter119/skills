@@ -1,4 +1,0 @@
-interface:
-  display_name: "Marimo EDA Prototype"
-  short_description: "EDA notebooks with evidence before decisions"
-  default_prompt: "Use $marimo-eda-prototype to build or refactor an exploratory marimo notebook so evidence is shown before decisions, UI stays restrained, and basic marimo graph hygiene is preserved."

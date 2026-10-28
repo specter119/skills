@@ -40,7 +40,8 @@ SKILL_PATTERNS = {
         r"illustration",
         r"image generation",
     ],
-    "marimo-eda-prototype": [
+    "marimo-style": [
+        r"\bmarimo-style\b",
         r"\bmarimo-eda-prototype\b",
         r"\bmarimo\b",
         r"\beda\b",

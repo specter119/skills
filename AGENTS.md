@@ -26,4 +26,5 @@ This uses `xurl` to retrieve session history and generates `reports/history-deri
 - All user-facing text and documentation must be in English.
 - Skills follow the [waza](https://github.com/microsoft/waza/tree/main/skills) spec structure.
 - Skill manifests are registered in `.claude-plugin/marketplace.json`.
+- Only `jj` and `marimo-style` are actively maintained. Everything else lives in `.archived/` at the repo root, deliberately **outside** `skills/`. [skm](https://github.com/specter119/skm) scans only `skills/` when it exists, but it recurses into dot-directories there (it skips only `.git`), so `skills/.archived/` would still be installed. Keep archived skills out of `skills/`. To revive one, move it into `skills/` and add it to the marketplace.
 - Run `./scripts/validate-skills.sh` and `./scripts/check-skill-consistency.sh` before pushing.

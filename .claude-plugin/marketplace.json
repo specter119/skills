@@ -1,7 +1,7 @@
 {
   "name": "specter119-skills",
   "metadata": {
-    "description": "Marketplace-managed skills for research, writing, presentations, notebook prototyping, and related content workflows",
+    "description": "Actively maintained skills for jj version control and marimo notebook style (EDA and report)",
     "version": "0.1.0"
   },
   "owner": {
@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "skills",
-      "description": "Collection of marketplace-managed skills for research, authoring, presentation, and notebook workflows",
+      "description": "Actively maintained skills for jj version control and marimo notebook style (EDA and report)",
       "version": "0.1.0",
       "author": {
         "name": "specter119",
@@ -20,16 +20,8 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/deep-research",
-        "./skills/genimg",
         "./skills/jj",
-        "./skills/marimo-eda-prototype",
-        "./skills/skill-craft",
-        "./skills/msgraph-explore",
-        "./skills/report-building",
-        "./skills/slide-building",
-        "./skills/thorough-digest",
-        "./skills/typst-authoring"
+        "./skills/marimo-style"
       ]
     }
   ]
