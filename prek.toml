@@ -83,22 +83,8 @@ hooks = [
 repo = "local"
 hooks = [
   {
-    id = "check-skill-consistency",
-    name = "Check skill and marketplace consistency",
-    entry = "./scripts/check-skill-consistency.sh",
-    language = "script",
-    pass_filenames = false,
-  },
-  {
-    id = "validate-marketplace",
-    name = "Validate Claude Code marketplace",
-    entry = "claude plugins validate .",
-    language = "system",
-    pass_filenames = false,
-  },
-  {
     id = "validate-skills",
-    name = "Validate Claude Code Skills",
+    name = "Validate skills",
     entry = "./scripts/validate-skills.sh",
     language = "script",
     files = '^skills/.*SKILL\.md$',

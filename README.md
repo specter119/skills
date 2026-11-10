@@ -2,18 +2,6 @@
 
 A small collection of AI agent skills. Skills follow the [agentskills.io](https://agentskills.io) specification and can be used with any compatible agent host.
 
-## Installation
-
-### Claude Code (via Marketplace)
-
-```bash
-# Add marketplace
-/plugin marketplace add specter119/skills
-
-# Install plugin
-/plugin install skills@specter119-skills
-```
-
 ## Active Skills
 
 | Skill            | Description                                                                                           |
@@ -30,7 +18,7 @@ npx skills add marimo-team/marimo-pair
 
 ## Archived Skills
 
-Low-frequency skills live in [`.archived/`](.archived), outside `skills/`, so they are not listed in the marketplace, not picked up by [skm](https://github.com/specter119/skm), not validated by the repo scripts, and not actively maintained. To revive one, move it into `skills/` and register it in `.claude-plugin/marketplace.json`.
+Low-frequency skills live in [`.archived/`](.archived), outside `skills/`, so they are not picked up by [skm](https://github.com/specter119/skm), not validated by the repo scripts, and not actively maintained. To revive one, move it into `skills/`.
 
 | Skill               | Description                                                                     |
 | ------------------- | ------------------------------------------------------------------------------- |
