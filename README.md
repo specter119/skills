@@ -16,10 +16,10 @@ A small collection of AI agent skills. Skills follow the [agentskills.io](https:
 
 ## Active Skills
 
-| Skill            | Description                                                                                         |
-| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Skill            | Description                                                                                           |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
 | **marimo-style** | Notebook style for marimo: discovery-first EDA and conclusion-first report with its own control rules |
-| **jj**           | jj (Jujutsu) version control with pre-push hook integration                                         |
+| **jj**           | jj (Jujutsu) version control with pre-push hook integration                                           |
 
 `marimo-style` covers the purpose-driven shape of a notebook only. It is meant to sit beside two official skills: [marimo-pair](https://github.com/marimo-team/marimo-pair) for driving a live kernel (running code, editing cells, setting widgets, packages) and [marimo-notebook](https://github.com/marimo-team/skills/tree/main/skills/marimo-notebook) for the file format and API. Install them alongside:
 

@@ -27,14 +27,14 @@ allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch
 ## Execution Skeleton
 
 1. Decide: should this become a skill? If no, answer directly. See [method](references/method.md).
-2. Capture intent: job, outputs, refusals, constraints. See [dialogue](references/dialogue.md).
-3. Scan 2-3 external references. See [dialogue](references/dialogue.md).
-4. Write `description` frontmatter first; test route quality.
-5. Choose lightest archetype (Scaffold → Production → Library → Governed). See [method](references/method.md).
-6. Build: SKILL.md + references/ + agents/interface.yaml + optional scripts/, evals/.
-7. Validate: `waza check <skill>` and iterate.
-8. Generate evals: `waza suggest <skill> --apply`.
-9. Surface top three next iterations.
+1. Capture intent: job, outputs, refusals, constraints. See [dialogue](references/dialogue.md).
+1. Scan 2-3 external references. See [dialogue](references/dialogue.md).
+1. Write `description` frontmatter first; test route quality.
+1. Choose lightest archetype (Scaffold → Production → Library → Governed). See [method](references/method.md).
+1. Build: SKILL.md + references/ + agents/interface.yaml + optional scripts/, evals/.
+1. Validate: `waza check <skill>` and iterate.
+1. Generate evals: `waza suggest <skill> --apply`.
+1. Surface top three next iterations.
 
 ## Waza CLI
 

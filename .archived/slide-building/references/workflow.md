@@ -67,9 +67,9 @@ Applicable for: 10–30 minute presentations.
 Do not copy the source material outline directly into slides. Perform 4 actions:
 
 1. Extract key numbers, forming comparisons where possible
-2. Identify pain points — don't just list "features"
-3. Select 1–2 strongest cases; others serve as context only
-4. Reorganize as Hook → Pain → Solution → Evidence → Takeaway
+1. Identify pain points — don't just list "features"
+1. Select 1–2 strongest cases; others serve as context only
+1. Reorganize as Hook → Pain → Solution → Evidence → Takeaway
 
 ## 5. Information Density
 
@@ -90,12 +90,12 @@ Prioritize removing:
 
 ### Quantification Techniques
 
-| Vague Phrasing | Better Alternative |
-| --- | --- |
-| Easy to duplicate | `3× duplicate logic` |
-| Limited context | `~8K tokens / context` |
+| Vague Phrasing     | Better Alternative       |
+| ------------------ | ------------------------ |
+| Easy to duplicate  | `3× duplicate logic`     |
+| Limited context    | `~8K tokens / context`   |
 | Problems long-term | `6 months until rewrite` |
-| Many choices | `75+ providers` |
+| Many choices       | `75+ providers`          |
 
 Precise numbers must be traceable; estimated numbers should be marked `~` or `approx.`.
 
@@ -119,9 +119,9 @@ Handling principles:
 Experience sharing is not concept transfer — it must answer:
 
 1. What problem did I encounter
-2. How did I solve it
-3. What were the results
-4. How can the audience reuse this
+1. How did I solve it
+1. What were the results
+1. How can the audience reuse this
 
 If a slide can only answer "this tool has this feature", it usually isn't strong enough.
 

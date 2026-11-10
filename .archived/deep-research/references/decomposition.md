@@ -2,15 +2,15 @@
 
 ## Quick Reference
 
-| Research Type | Trigger Keywords | Template | Typical Dimensions |
-|---------------|------------------|----------|-------------------|
-| Technology | research, learn, explore [X] | [Technology](#technology) | 7 |
-| Comparison | X vs Y, difference, compare | [Comparison](#comparison) | 7 |
-| Concept | what is, how it works, understand | [Concept](#concept) | 7 |
-| Problem | how to solve, solution, issue | [Problem](#problem) | 7 |
-| Trend | current state, trends, development | [Trend](#trend) | 7 |
+| Research Type | Trigger Keywords                   | Template                  | Typical Dimensions |
+| ------------- | ---------------------------------- | ------------------------- | ------------------ |
+| Technology    | research, learn, explore [X]       | [Technology](#technology) | 7                  |
+| Comparison    | X vs Y, difference, compare        | [Comparison](#comparison) | 7                  |
+| Concept       | what is, how it works, understand  | [Concept](#concept)       | 7                  |
+| Problem       | how to solve, solution, issue      | [Problem](#problem)       | 7                  |
+| Trend         | current state, trends, development | [Trend](#trend)           | 7                  |
 
----
+______________________________________________________________________
 
 ## Dynamic Adjustment Principles
 
@@ -34,7 +34,7 @@ Priority 2 (Important): D3-D4 Practical Application
 Priority 3 (Supplemental): D5-D7 Advanced/Future
 ```
 
----
+______________________________________________________________________
 
 ## Technology
 
@@ -125,7 +125,7 @@ Priority 3 (Supplemental): D5-D7 Advanced/Future
 "[Tech] community discussion RFC proposal"
 ```
 
----
+______________________________________________________________________
 
 ## Comparison
 
@@ -196,7 +196,7 @@ Priority 3 (Supplemental): D5-D7 Advanced/Future
 | Best Fit Scenarios | | | |
 ```
 
----
+______________________________________________________________________
 
 ## Concept
 
@@ -247,7 +247,7 @@ Priority 3 (Supplemental): D5-D7 Advanced/Future
     └── In-depth learning resources
 ```
 
----
+______________________________________________________________________
 
 ## Problem
 
@@ -311,7 +311,7 @@ Priority 3 (Supplemental): D5-D7 Advanced/Future
 | C    | High   | High | High | ⭐⭐ |
 ```
 
----
+______________________________________________________________________
 
 ## Trend
 
@@ -362,22 +362,22 @@ Priority 3 (Supplemental): D5-D7 Advanced/Future
     └── Regulatory/compliance risks
 ```
 
----
+______________________________________________________________________
 
 ## How to Use
 
 ### Step-by-Step Process
 
 1. **Identify type**: Choose the appropriate template based on the user question
-2. **Customize dimensions**: Adjust D1-D7 for the specific topic
+1. **Customize dimensions**: Adjust D1-D7 for the specific topic
    - Add topic-specific sub-dimensions
    - Remove irrelevant sub-dimensions
    - Adjust priorities
-3. **Generate plan**: Define specific questions and sources for each dimension
-4. **Execute research**: Collect information per dimension (sequentially or in parallel)
-5. **Assess completeness**: Check coverage for each dimension
-6. **Iterate deeper**: Add research for under-covered dimensions
-7. **Synthesize report**: Consolidate findings across all dimensions
+1. **Generate plan**: Define specific questions and sources for each dimension
+1. **Execute research**: Collect information per dimension (sequentially or in parallel)
+1. **Assess completeness**: Check coverage for each dimension
+1. **Iterate deeper**: Add research for under-covered dimensions
+1. **Synthesize report**: Consolidate findings across all dimensions
 
 ### Dimension Quality Checklist
 
@@ -402,7 +402,7 @@ Each dimension should satisfy:
 Overall: 73% → Target 80%
 ```
 
----
+______________________________________________________________________
 
 ## Parallel Research Assignment
 
@@ -428,29 +428,29 @@ Task 3: D3-D4
 Task 4: D5-D7
 ```
 
----
+______________________________________________________________________
 
 ## Source Quality Reference
 
 ### Source Credibility Rating
 
-| Level | Source Type | Examples |
-|------|----------|------|
-| **High** | Official Docs | docs.*, github.com/[org] |
-| **High** | Authoritative Orgs | IETF, W3C, CNCF |
-| **High** | Core Maintainers | Project author blog/talks |
-| **Medium** | Well-known Tech Blogs | engineering.*, InfoQ |
-| **Medium** | Stack Overflow | High-vote answers, verified responses |
-| **Low** | Personal Blogs | Cross-reference required |
-| **Low** | Forum Discussions | Reddit, HN comments |
-| **Verify** | AI-Generated Content | Must cross-verify with other sources |
+| Level      | Source Type           | Examples                              |
+| ---------- | --------------------- | ------------------------------------- |
+| **High**   | Official Docs         | docs.\*, github.com/[org]             |
+| **High**   | Authoritative Orgs    | IETF, W3C, CNCF                       |
+| **High**   | Core Maintainers      | Project author blog/talks             |
+| **Medium** | Well-known Tech Blogs | engineering.\*, InfoQ                 |
+| **Medium** | Stack Overflow        | High-vote answers, verified responses |
+| **Low**    | Personal Blogs        | Cross-reference required              |
+| **Low**    | Forum Discussions     | Reddit, HN comments                   |
+| **Verify** | AI-Generated Content  | Must cross-verify with other sources  |
 
 ### Timeliness Requirements
 
-| Topic Type | Max Information Age |
-|----------|--------------|
-| Security Vulnerabilities | 1 month |
-| Library Versions | 3 months |
-| Best Practices | 1 year |
-| Architecture Patterns | 2-3 years |
-| Fundamental Concepts | 5+ years OK |
+| Topic Type               | Max Information Age |
+| ------------------------ | ------------------- |
+| Security Vulnerabilities | 1 month             |
+| Library Versions         | 3 months            |
+| Best Practices           | 1 year              |
+| Architecture Patterns    | 2-3 years           |
+| Fundamental Concepts     | 5+ years OK         |

@@ -1,6 +1,6 @@
 ---
 name: genimg
-description: >
+description: >-
   Generate or edit illustrative images with Gemini image models. Use when asked to
   "generate image", "create illustration", or "draw a picture". Excludes diagrams, charts, precise
   architecture visuals, and other code-first graphics.
@@ -25,9 +25,9 @@ Handles **illustrative image generation and editing**; does not handle precise s
 ## Execution Skeleton
 
 1. First determine whether the image is best solved with a generative model; if code-based drawing is more appropriate, switch tools instead of forcing generation.
-2. Expand the user's short prompt into a 50–150 word narrative prompt following the rules in [prompt-enhancement](references/prompt-enhancement.md).
-3. Decide whether to generate once, edit an existing image, or first run the `variants + grid` exploration workflow.
-4. Execute via `scripts/generate.py`; see [cli-workflow](references/cli-workflow.md) for model and parameter selection.
+1. Expand the user's short prompt into a 50–150 word narrative prompt following the rules in [prompt-enhancement](references/prompt-enhancement.md).
+1. Decide whether to generate once, edit an existing image, or first run the `variants + grid` exploration workflow.
+1. Execute via `scripts/generate.py`; see [cli-workflow](references/cli-workflow.md) for model and parameter selection.
 
 ## References
 

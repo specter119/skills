@@ -18,11 +18,11 @@ This skill decides **what a notebook should look like for its purpose**. It does
 
 ## Division of Labor
 
-| Skill | Owns |
-| --- | --- |
-| [marimo-pair](https://github.com/marimo-team/marimo-pair) | A live kernel: running code, editing cells through `cm`, setting widget values, packages, cell boundaries by rerun cost |
-| [marimo-notebook](https://github.com/marimo-team/skills/tree/main/skills/marimo-notebook) | The `.py` format, `@app.cell`, API usage, script mode, exports, tests, `marimo check` |
-| **marimo-style** (this) | Story order, control placement, layout, code visibility, EDA vs report guardrails |
+| Skill                                                                                     | Owns                                                                                                                    |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| [marimo-pair](https://github.com/marimo-team/marimo-pair)                                 | A live kernel: running code, editing cells through `cm`, setting widget values, packages, cell boundaries by rerun cost |
+| [marimo-notebook](https://github.com/marimo-team/skills/tree/main/skills/marimo-notebook) | The `.py` format, `@app.cell`, API usage, script mode, exports, tests, `marimo check`                                   |
+| **marimo-style** (this)                                                                   | Story order, control placement, layout, code visibility, EDA vs report guardrails                                       |
 
 Do not repeat or contradict the other two. Where this skill and an official skill touch the same rule, the split is:
 
@@ -35,17 +35,17 @@ If the other skills are not installed, this skill still works on its own: write 
 
 Decide before writing any cell. If the request is ambiguous, ask which one is wanted.
 
-| Question | EDA notebook | Report notebook |
-| --- | --- | --- |
-| Reader | The analyst, and future analysts auditing the path | A stakeholder who did not do the analysis |
-| Job | Find out what the data says | Communicate what is already known |
-| Story order | Evidence, pattern, hypothesis, validation, decision, result | Conclusion, supporting evidence, caveats, appendix |
-| Conclusion | Last, recorded as an explicit decision | First, and stable (does not change when a control moves) |
-| Interaction | Low state: reversible local lenses, plain code and charts first | Coupled controls allowed, but each control's effect is a contiguous zone right after it |
-| Layout | Adjacent cells, little composition | Composition allowed: callouts, tabs, accordions, side by side |
-| Code | Visible; it is part of the record | Hidden; narrative leads |
-| Delivery | `marimo edit` | Dynamic HTML: `marimo run`, `marimo export html-wasm --mode run`, or molab |
-| Failure mode | Presentation drift: charts picked to fit a conclusion | Exploration drift, or a control that changes something far away |
+| Question     | EDA notebook                                                    | Report notebook                                                                         |
+| ------------ | --------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Reader       | The analyst, and future analysts auditing the path              | A stakeholder who did not do the analysis                                               |
+| Job          | Find out what the data says                                     | Communicate what is already known                                                       |
+| Story order  | Evidence, pattern, hypothesis, validation, decision, result     | Conclusion, supporting evidence, caveats, appendix                                      |
+| Conclusion   | Last, recorded as an explicit decision                          | First, and stable (does not change when a control moves)                                |
+| Interaction  | Low state: reversible local lenses, plain code and charts first | Coupled controls allowed, but each control's effect is a contiguous zone right after it |
+| Layout       | Adjacent cells, little composition                              | Composition allowed: callouts, tabs, accordions, side by side                           |
+| Code         | Visible; it is part of the record                               | Hidden; narrative leads                                                                 |
+| Delivery     | `marimo edit`                                                   | Dynamic HTML: `marimo run`, `marimo export html-wasm --mode run`, or molab              |
+| Failure mode | Presentation drift: charts picked to fit a conclusion           | Exploration drift, or a control that changes something far away                         |
 
 Defaults when unstated: exploring data means EDA; "share", "present", "stakeholder", "summary for others" means report.
 

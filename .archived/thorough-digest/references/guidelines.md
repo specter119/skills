@@ -5,6 +5,7 @@
 **Core insight**: LLM context window limitations cause "lazy" behavior on long tasks (skipping items, premature completion). Apply agentic decomposition patterns by dividing work into isolated sub-tasks with small output scope.
 
 **Key principles**:
+
 - **Context isolation**: Prevent cross-contamination between sub-tasks.
 - **Parallel execution**: Use a fan-out pattern for independent batches.
 - **Narrative synthesis**: Map-reduce pattern for the final report.
@@ -28,8 +29,8 @@
 ### Phase 1 – Analyze
 
 1. Inventory every material to process (see `references/templates.md` for inventory logging).
-2. Classify inputs by topic, file, section, or batch.
-3. Plan the parallelization strategy (choose by file, topic, section, or uniform batch). Document the grouping decision.
+1. Classify inputs by topic, file, section, or batch.
+1. Plan the parallelization strategy (choose by file, topic, section, or uniform batch). Document the grouping decision.
 
 ### Phase 2 – Parallel Process
 
@@ -41,19 +42,19 @@
 ### Phase 3 – Synthesize
 
 1. Collect all `findings.md` files created by sub-agents.
-2. Run a gap check: compare processed items against the original inventory.
-3. If gaps appear or context requires external validation, trigger an external research capability before finalizing.
-4. Produce the final synthesis or report using the format in `references/templates.md`.
+1. Run a gap check: compare processed items against the original inventory.
+1. If gaps appear or context requires external validation, trigger an external research capability before finalizing.
+1. Produce the final synthesis or report using the format in `references/templates.md`.
 
 ## Parallelization Guidelines
 
 | Total Items | Suggested Groups | Items per Group |
-|-------------|------------------|-----------------|
-| 1–10 | 1–2 | 5–10 |
-| 11–30 | 3–5 | 6–10 |
-| 31–50 | 5–8 | 6–10 |
-| 51–100 | 8–15 | 5–10 |
-| 100+ | 15–20 | 5–10 |
+| ----------- | ---------------- | --------------- |
+| 1–10        | 1–2              | 5–10            |
+| 11–30       | 3–5              | 6–10            |
+| 31–50       | 5–8              | 6–10            |
+| 51–100      | 8–15             | 5–10            |
+| 100+        | 15–20            | 5–10            |
 
 ## Integration with Deep Research
 
@@ -71,17 +72,17 @@ Thorough Digest → re-synthesize with new external evidence
 
 ## Error Handling
 
-| Error | Action |
-|-------|--------|
-| Sub-agent skips items | Re-run with smaller groups and stricter instructions |
-| File read fails | Note the failure in a gap log and proceed with remaining inputs |
-| Sub-agent timeout | Accept partial results but flag missing items for reprocessing |
-| Output format wrong | Re-prompt the sub-agent with explicit formatting requirements |
+| Error                 | Action                                                          |
+| --------------------- | --------------------------------------------------------------- |
+| Sub-agent skips items | Re-run with smaller groups and stricter instructions            |
+| File read fails       | Note the failure in a gap log and proceed with remaining inputs |
+| Sub-agent timeout     | Accept partial results but flag missing items for reprocessing  |
+| Output format wrong   | Re-prompt the sub-agent with explicit formatting requirements   |
 
 ## Best Practices
 
 1. Keep groups small (5–10 items) to reduce context fatigue.
-2. Provide exact file paths rather than glob patterns for sub-agents.
-3. Verify the processed count matches the input count before synthesis.
-4. Maintain strict isolation between sub-agents; no sharing of intermediate findings.
-5. Use file-based communication (structured `findings.md`) so the synthesis step can read predictable inputs.
+1. Provide exact file paths rather than glob patterns for sub-agents.
+1. Verify the processed count matches the input count before synthesis.
+1. Maintain strict isolation between sub-agents; no sharing of intermediate findings.
+1. Use file-based communication (structured `findings.md`) so the synthesis step can read predictable inputs.

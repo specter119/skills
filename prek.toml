@@ -1,0 +1,107 @@
+# Configuration file for `prek`, a git hook framework written in Rust.
+# See https://prek.j178.dev for more information.
+#:schema https://www.schemastore.org/prek.json
+
+# Markdown formatting. `mdformat-gfm` covers tables and other GFM syntax;
+# `mdformat-front-matters` keeps SKILL.md metadata parseable while formatting the body.
+[[repos]]
+repo = "https://github.com/hukkin/mdformat"
+rev = "1.0.0"
+hooks = [
+  {
+    id = "mdformat",
+    args = ["--wrap", "keep"],
+    additional_dependencies = [
+      "mdformat-gfm==1.0.0",
+      "mdformat-front-matters==2.0.0",
+    ],
+    priority = 1,
+  },
+]
+
+# Standard hooks, run by prek's Rust-native built-in implementations.
+[[repos]]
+repo = "builtin"
+hooks = [
+  { id = "detect-private-key" },
+  { id = "check-case-conflict" },
+  # Whitespace fixers run after the formatters so their output is final.
+  { id = "end-of-file-fixer", priority = 2 },
+  { id = "trailing-whitespace", args = ["--markdown-linebreak-ext=md"], priority = 2 },
+  # `--disallow-unknown-tags` keeps parity with pre-commit-hooks' check-yaml.
+  { id = "check-yaml", args = ["--disallow-unknown-tags"] },
+  { id = "check-json" },
+  { id = "check-added-large-files", args = ["--maxkb=500"] },
+]
+
+# `detect-aws-credentials` has no built-in implementation, so it still comes from
+# the upstream pre-commit-hooks repository.
+[[repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+rev = "v6.0.0"
+hooks = [
+  { id = "detect-aws-credentials", args = ["--allow-missing-credentials"] },
+]
+
+# Markdown linting, after formatting so it only reports what mdformat leaves alone.
+[[repos]]
+repo = "https://github.com/DavidAnson/markdownlint-cli2"
+rev = "v0.24.0"
+hooks = [
+  { id = "markdownlint-cli2", args = ["--fix"], priority = 2 },
+]
+
+# Detect secrets and credentials
+[[repos]]
+repo = "https://github.com/Yelp/detect-secrets"
+rev = "v1.5.0"
+hooks = [
+  {
+    id = "detect-secrets",
+    args = ["--baseline", ".secrets.baseline"],
+    exclude = "package.lock.json",
+  },
+]
+
+# Skill quality checks
+[[repos]]
+repo = "local"
+hooks = [
+  {
+    id = "waza-check",
+    name = "Skill readiness check (waza)",
+    entry = "waza check",
+    language = "system",
+    pass_filenames = false,
+    always_run = true,
+    verbose = true,
+  },
+]
+
+# Repository-specific validation
+[[repos]]
+repo = "local"
+hooks = [
+  {
+    id = "check-skill-consistency",
+    name = "Check skill and marketplace consistency",
+    entry = "./scripts/check-skill-consistency.sh",
+    language = "script",
+    pass_filenames = false,
+  },
+  {
+    id = "validate-marketplace",
+    name = "Validate Claude Code marketplace",
+    entry = "claude plugins validate .",
+    language = "system",
+    pass_filenames = false,
+  },
+  {
+    id = "validate-skills",
+    name = "Validate Claude Code Skills",
+    entry = "./scripts/validate-skills.sh",
+    language = "script",
+    files = '^skills/.*SKILL\.md$',
+    pass_filenames = false,
+  },
+]

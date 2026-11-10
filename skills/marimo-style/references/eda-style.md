@@ -72,18 +72,18 @@ Mark logic as an extraction candidate when the same filter, aggregation, or char
 
 ## Decision Table
 
-| Situation | Prefer | Avoid |
-| --- | --- | --- |
-| EDA story flow | Evidence, pattern, hypothesis, validation, decision, result | Conclusion, cherry-picked chart, justification |
-| First-pass data understanding | Raw rows, histogram, scatter, box plot | Jumping to a selected feature set |
-| Feature or outlier review | Plot all eligible candidates, then record exclusions | Plotting only the already-kept result |
-| Reversible subgroup inspection | Small local control, often chart-native | `mo.ui.dropdown(...).value` feeding distant cells |
-| One-off analysis, fixed parameters | Plain variables and direct computation | Sliders and dropdowns first |
-| Long-running step | Batch computation with visible progress | Cross-cell UI orchestration around the run |
-| Trying several parameters | Minimal control next to the analysis cell | Controls defined far from their consumer |
-| Related diagnostics | Adjacent cells | App-like panels |
-| Filter or plot logic repeats | Extract a helper | Copying similar cells |
-| Cell exports `chart` / `result` | Semantic name | An underscore prefix to hide it |
+| Situation                          | Prefer                                                      | Avoid                                             |
+| ---------------------------------- | ----------------------------------------------------------- | ------------------------------------------------- |
+| EDA story flow                     | Evidence, pattern, hypothesis, validation, decision, result | Conclusion, cherry-picked chart, justification    |
+| First-pass data understanding      | Raw rows, histogram, scatter, box plot                      | Jumping to a selected feature set                 |
+| Feature or outlier review          | Plot all eligible candidates, then record exclusions        | Plotting only the already-kept result             |
+| Reversible subgroup inspection     | Small local control, often chart-native                     | `mo.ui.dropdown(...).value` feeding distant cells |
+| One-off analysis, fixed parameters | Plain variables and direct computation                      | Sliders and dropdowns first                       |
+| Long-running step                  | Batch computation with visible progress                     | Cross-cell UI orchestration around the run        |
+| Trying several parameters          | Minimal control next to the analysis cell                   | Controls defined far from their consumer          |
+| Related diagnostics                | Adjacent cells                                              | App-like panels                                   |
+| Filter or plot logic repeats       | Extract a helper                                            | Copying similar cells                             |
+| Cell exports `chart` / `result`    | Semantic name                                               | An underscore prefix to hide it                   |
 
 ## Good and Bad Examples
 

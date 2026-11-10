@@ -33,8 +33,8 @@ If the user only needs a direct answer, explanation, or one-off artifact, do not
 Three layers, scan at most 3-5 objects from ≤3 categories:
 
 1. **External Benchmark Scan** (primary): authoritative references — specifications, style guides, canonical examples
-2. **User Reference Intake** (secondary): the user's own templates, past outputs, or style preferences
-3. **Local Fit Check** (calibration): existing skills in the workspace that might conflict or overlap
+1. **User Reference Intake** (secondary): the user's own templates, past outputs, or style preferences
+1. **Local Fit Check** (calibration): existing skills in the workspace that might conflict or overlap
 
 Reference categories: method, structure, execution, portability, domain.
 
@@ -46,14 +46,14 @@ Mandatory for Production tier and above. Optional for Scaffold.
 
 Do not build a skill when the user really wants:
 
-| User intent | Correct response |
-|-------------|-----------------|
-| Explain or summarize | Direct answer |
-| Translate content | Direct translation |
-| Brainstorm ideas | Direct brainstorm |
-| One-off artifact | Produce it, don't package it |
-| Wiki page / policy memo | Write the document |
-| Deterministic repeatable task | Write a script, not a skill |
+| User intent                   | Correct response             |
+| ----------------------------- | ---------------------------- |
+| Explain or summarize          | Direct answer                |
+| Translate content             | Direct translation           |
+| Brainstorm ideas              | Direct brainstorm            |
+| One-off artifact              | Produce it, don't package it |
+| Wiki page / policy memo       | Write the document           |
+| Deterministic repeatable task | Write a script, not a skill  |
 
 **Promote to skill only when**: the job is recurring, discoverability matters, boundary precision helps, or reusable instructions add value over a script.
 

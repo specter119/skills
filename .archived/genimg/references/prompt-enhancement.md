@@ -6,14 +6,14 @@ Gemini image models are better at understanding rich, narrative descriptions; si
 
 ## Key Elements
 
-| Element | Description | Example |
-|------|------|------|
-| Subject | Who or what the main focus is | "A robot barista with blue optical lenses" |
-| Action | What the subject is doing | "Brewing coffee in a futuristic café" |
-| Setting | The surrounding environment | "A futuristic café" |
-| Lighting | Nature and direction of light | "Soft ambient light cast from overhead neon tubes" |
-| Technical | Lens / quality / depth of field, etc. | "Shallow depth of field, 4K quality" |
-| Style | Overall tone matching `-s` | "Modern tech aesthetic" |
+| Element   | Description                           | Example                                            |
+| --------- | ------------------------------------- | -------------------------------------------------- |
+| Subject   | Who or what the main focus is         | "A robot barista with blue optical lenses"         |
+| Action    | What the subject is doing             | "Brewing coffee in a futuristic café"              |
+| Setting   | The surrounding environment           | "A futuristic café"                                |
+| Lighting  | Nature and direction of light         | "Soft ambient light cast from overhead neon tubes" |
+| Technical | Lens / quality / depth of field, etc. | "Shallow depth of field, 4K quality"               |
+| Style     | Overall tone matching `-s`            | "Modern tech aesthetic"                            |
 
 ## Auto-Supplement Rules
 
@@ -24,11 +24,13 @@ Gemini image models are better at understanding rich, narrative descriptions; si
 ## Example
 
 User input:
+
 ```plain
 Draw a concept diagram for the A2A protocol with a tech feel
 ```
 
 Enhanced:
+
 ```plain
 An isometric 3D illustration depicting the A2A protocol concept. Multiple AI agents represented as glowing geometric nodes connected by flowing data streams. Clean, modern tech aesthetic with blue accent lighting. Soft diffused top-down lighting creates depth. Professional, corporate style suitable for technical presentation. Sharp focus, high quality rendering.
 ```
@@ -36,6 +38,7 @@ An isometric 3D illustration depicting the A2A protocol concept. Multiple AI age
 ## Edit Mode Prompting
 
 When modifying an existing image, expand the user's edit instruction to:
+
 ```plain
 Adjust the lighting to warmer tones. Add golden hour warmth with soft orange highlights. Maintain the original composition and subject placement. Keep all other elements unchanged.
 ```

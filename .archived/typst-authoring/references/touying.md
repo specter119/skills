@@ -12,13 +12,13 @@ Need animations (#pause, #only)?
          └─ No → Native Typst `#page[]` is sufficient
 ```
 
-| Scenario | Recommendation | Reason |
-|----------|----------------|--------|
-| One-off internal presentation | Native Typst | Less overhead, full control |
-| Team template for reuse | Touying | Theme system, consistency |
-| Progressive reveal needed | Touying | `#pause`, `#only` built-in |
-| Video conference, simple | Native Typst | No framework learning curve |
-| Conference talk | Touying | Professional themes, speaker notes |
+| Scenario                      | Recommendation | Reason                             |
+| ----------------------------- | -------------- | ---------------------------------- |
+| One-off internal presentation | Native Typst   | Less overhead, full control        |
+| Team template for reuse       | Touying        | Theme system, consistency          |
+| Progressive reveal needed     | Touying        | `#pause`, `#only` built-in         |
+| Video conference, simple      | Native Typst   | No framework learning curve        |
+| Conference talk               | Touying        | Professional themes, speaker notes |
 
 ### Native Typst Alternative
 
@@ -38,7 +38,7 @@ When Touying is overkill:
 ]
 ```
 
----
+______________________________________________________________________
 
 ## Quick Start
 
@@ -91,7 +91,7 @@ typst watch slides.typ slides.pdf
 ]
 ```
 
----
+______________________________________________________________________
 
 ## Animations
 
@@ -130,7 +130,7 @@ typst watch slides.typ slides.pdf
 ]
 ```
 
----
+______________________________________________________________________
 
 ## Layout
 
@@ -165,17 +165,17 @@ typst watch slides.typ slides.pdf
 ]
 ```
 
----
+______________________________________________________________________
 
 ## Theme Selection
 
-| Theme | Style | Best For |
-|-------|-------|----------|
-| `simple` | Minimal, clean | Internal meetings, tech talks |
-| `university` | Academic, formal | Conference, thesis defense |
-| `metropolis` | Modern, bold headers | Tech conferences |
-| `aqua` | Fresh, light colors | Marketing, product demos |
-| `dewdrop` | Elegant, subtle | Executive presentations |
+| Theme        | Style                | Best For                      |
+| ------------ | -------------------- | ----------------------------- |
+| `simple`     | Minimal, clean       | Internal meetings, tech talks |
+| `university` | Academic, formal     | Conference, thesis defense    |
+| `metropolis` | Modern, bold headers | Tech conferences              |
+| `aqua`       | Fresh, light colors  | Marketing, product demos      |
+| `dewdrop`    | Elegant, subtle      | Executive presentations       |
 
 ```typst
 // Simple - minimal and modern
@@ -205,7 +205,7 @@ typst watch slides.typ slides.pdf
 )
 ```
 
----
+______________________________________________________________________
 
 ## Diagrams in Touying
 
@@ -223,7 +223,7 @@ See `references/diagraph.md` for detailed best practices.
 ]
 ```
 
----
+______________________________________________________________________
 
 ## Compilation
 
@@ -238,7 +238,7 @@ typst compile --format png slides.typ slide-{0p}.png
 typst compile --pdf-standard a-2b slides.typ slides.pdf
 ```
 
----
+______________________________________________________________________
 
 ## Complete Example: Business Proposal
 
@@ -303,7 +303,7 @@ typst compile --pdf-standard a-2b slides.typ slides.pdf
 ]
 ```
 
----
+______________________________________________________________________
 
 ## Page Validation (Required After Generation)
 
@@ -354,13 +354,13 @@ Grep pattern="#page\\[" file.typ output_mode="count"
 
 ### Common Overflow Causes
 
-| Cause | Symptom |
-|-------|---------|
+| Cause                                                   | Symptom                                |
+| ------------------------------------------------------- | -------------------------------------- |
 | Extra content between heading and block (e.g., `#grid`) | Heading and content split to two pages |
-| diagraph with `rankdir=TB` (vertical layout) | Diagram too tall, causes overflow |
-| Image/diagram width set too large | Content exceeds page height |
-| Too much content in single grid cell | Single page can't fit |
-| Font size or line spacing too large | Text takes more space than expected |
+| diagraph with `rankdir=TB` (vertical layout)            | Diagram too tall, causes overflow      |
+| Image/diagram width set too large                       | Content exceeds page height            |
+| Too much content in single grid cell                    | Single page can't fit                  |
+| Font size or line spacing too large                     | Text takes more space than expected    |
 
 ### Bad Examples and Fixes
 

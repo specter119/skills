@@ -15,7 +15,7 @@ typst watch report.typ report.pdf
 typst init @preview/basic-report:0.2.0 my-report
 ```
 
----
+______________________________________________________________________
 
 ## Basic Report Template
 
@@ -42,7 +42,7 @@ typst init @preview/basic-report:0.2.0 my-report
 // Supporting data
 ```
 
----
+______________________________________________________________________
 
 ## Academic Paper Template (IMRaD)
 
@@ -85,7 +85,7 @@ typst init @preview/basic-report:0.2.0 my-report
 // References
 ```
 
----
+______________________________________________________________________
 
 ## Factory Function Template
 
@@ -181,7 +181,7 @@ typst init @preview/basic-report:0.2.0 my-report
 )
 ```
 
----
+______________________________________________________________________
 
 ## Chart and Figure Integration
 
@@ -207,7 +207,7 @@ typst init @preview/basic-report:0.2.0 my-report
 
 ### Code Highlighting
 
-```typst
+````typst
 #import "@preview/zebraw:0.6.1": *
 
 #zebraw(
@@ -217,24 +217,24 @@ typst init @preview/basic-report:0.2.0 my-report
   ```,
   highlight-lines: (2,),
 )
-```
+````
 
 ### Flowcharts
 
 Refer to the diagram generation section of this skill. Recommended order: diagraph > D2 > oxdraw
 
----
+______________________________________________________________________
 
 ## Common Template Packages
 
-| Package | Purpose |
-|------|------|
-| basic-report | General-purpose report |
-| academic-alt | Academic assignments |
-| thesist | Master's thesis |
-| modern-technique-report | Technical report |
+| Package                 | Purpose                |
+| ----------------------- | ---------------------- |
+| basic-report            | General-purpose report |
+| academic-alt            | Academic assignments   |
+| thesist                 | Master's thesis        |
+| modern-technique-report | Technical report       |
 
----
+______________________________________________________________________
 
 ## Compilation Verification
 

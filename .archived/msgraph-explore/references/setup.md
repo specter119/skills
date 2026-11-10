@@ -10,10 +10,10 @@ cp skills/msgraph-explore/.env.example /path/to/project/.env
 
 Required variables:
 
-| Variable | Description |
-| --- | --- |
-| `MICROSOFT_CLIENT_ID` | Azure AD app registration client ID |
-| `MICROSOFT_AUTHORITY` | `https://login.microsoftonline.com/<tenant-id>` |
+| Variable                  | Description                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------ |
+| `MICROSOFT_CLIENT_ID`     | Azure AD app registration client ID                                            |
+| `MICROSOFT_AUTHORITY`     | `https://login.microsoftonline.com/<tenant-id>`                                |
 | `MICROSOFT_REFRESH_TOKEN` | Can be left empty on first run; will be written back automatically after login |
 
 ## Permissions

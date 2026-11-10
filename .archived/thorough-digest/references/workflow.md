@@ -3,8 +3,8 @@
 ## Phase 1: Analyze
 
 1. Inventory: enumerate all materials
-2. Classify: group by file / topic / section / batch
-3. Plan: determine parallelization and output structure
+1. Classify: group by file / topic / section / batch
+1. Plan: determine parallelization and output structure
 
 Suggested output structure:
 
@@ -33,15 +33,15 @@ Key constraints:
 ## Phase 3: Synthesize
 
 1. Collect all findings
-2. Check for missing items or gaps
-3. Trigger an external research skill when needed
-4. Output the synthesis report
+1. Check for missing items or gaps
+1. Trigger an external research skill when needed
+1. Output the synthesis report
 
 ## Grouping Strategy
 
-| Strategy | When to Use |
-| --- | --- |
-| By file | Each file is independent |
-| By topic | Materials cluster naturally by topic |
-| By section | A single large file can be split by section |
-| By batch | Large volumes of uniform materials divided evenly |
+| Strategy   | When to Use                                       |
+| ---------- | ------------------------------------------------- |
+| By file    | Each file is independent                          |
+| By topic   | Materials cluster naturally by topic              |
+| By section | A single large file can be split by section       |
+| By batch   | Large volumes of uniform materials divided evenly |

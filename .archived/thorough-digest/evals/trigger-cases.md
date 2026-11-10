@@ -3,14 +3,14 @@
 ## Should Trigger
 
 1. Batch analyze 40 Markdown documents in this directory.
-2. Organize all these meeting minutes into a unified narrative.
-3. Process each of these materials one by one without missing any.
+1. Organize all these meeting minutes into a unified narrative.
+1. Process each of these materials one by one without missing any.
 
 ## Should Not Trigger
 
 1. First research this topic on the internet.
-2. Just summarize this one article.
-3. Help me create a slides outline.
+1. Just summarize this one article.
+1. Help me create a slides outline.
 
 ## Near Neighbors
 

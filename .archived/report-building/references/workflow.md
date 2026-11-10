@@ -30,7 +30,7 @@ Then break it into sections.
 
 ## 5. Output Choice
 
-| Scenario | Recommendation |
-| --- | --- |
-| Quick collaboration, internal documentation | Markdown |
-| Formal report, paper, PDF | Typst |
+| Scenario                                    | Recommendation |
+| ------------------------------------------- | -------------- |
+| Quick collaboration, internal documentation | Markdown       |
+| Formal report, paper, PDF                   | Typst          |

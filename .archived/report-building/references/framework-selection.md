@@ -2,13 +2,13 @@
 
 ## Goals and Frameworks
 
-| Goal | Framework | Reference |
-| --- | --- | --- |
-| Persuade management | SCQA / Pyramid Principle | Barbara Minto, McKinsey |
-| Academic paper | IMRaD | General academic writing conventions |
-| Technical documentation | Inverted pyramid | Journalism / Divio |
-| Business proposal | Problem-Solution-Impact | Consulting and business writing |
-| Case study | STAR | Behavioral case expression |
+| Goal                    | Framework                | Reference                            |
+| ----------------------- | ------------------------ | ------------------------------------ |
+| Persuade management     | SCQA / Pyramid Principle | Barbara Minto, McKinsey              |
+| Academic paper          | IMRaD                    | General academic writing conventions |
+| Technical documentation | Inverted pyramid         | Journalism / Divio                   |
+| Business proposal       | Problem-Solution-Impact  | Consulting and business writing      |
+| Case study              | STAR                     | Behavioral case expression           |
 
 ## Writing Quality Guardrails
 

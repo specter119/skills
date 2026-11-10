@@ -2,7 +2,7 @@
 
 Format specifications for research artifacts. For full report templates, see [report-en](report-en.md) and [report-zh](report-zh.md).
 
----
+______________________________________________________________________
 
 ## Source Archival Format
 
@@ -38,7 +38,7 @@ tags: [topic, subtopic]
 [2-3 sentence summary of key points relevant to research]
 ```
 
----
+______________________________________________________________________
 
 ## Findings Template
 
@@ -64,7 +64,7 @@ Each subtopic produces a `findings.md`:
 - [_sources/yyy.md]: [brief description]
 ```
 
----
+______________________________________________________________________
 
 ## Sub-agent Prompt Template
 
@@ -107,7 +107,7 @@ Write to: `{subtopic}/findings.md`
 Use: Findings Template above
 ```
 
----
+______________________________________________________________________
 
 ## Research Brief Template
 

@@ -29,10 +29,10 @@ allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch
 ## Execution Skeleton
 
 1. Confirm audience, medium, duration, and objective.
-2. Define a one-sentence throughline, then break into 3–5 parts with a page plan.
-3. For each page define type, takeaway, evidence, and layout.
-4. Delegate to audience review or visual polish agents when needed.
-5. For implementation, hand off to a layout skill or generator.
+1. Define a one-sentence throughline, then break into 3–5 parts with a page plan.
+1. For each page define type, takeaway, evidence, and layout.
+1. Delegate to audience review or visual polish agents when needed.
+1. For implementation, hand off to a layout skill or generator.
 
 ## References
 

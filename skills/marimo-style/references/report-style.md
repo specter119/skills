@@ -46,11 +46,11 @@ Lint: `control-zone-gap` flags a visible cell inside a zone that the control doe
 
 A report is delivered as dynamic HTML, so it is interactive when it has controls.
 
-| Situation | Deliver with |
-| --- | --- |
+| Situation                       | Deliver with                                                                                                                 |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | Controls, read-only for readers | `marimo run notebook.py` (code hidden by default), or `marimo export html-wasm notebook.py -o out --mode run --no-show-code` |
-| No controls at all | Static `marimo export html` is lighter and avoids the WASM cold start |
-| Sharing with minimal setup | [molab](https://docs.marimo.io/guides/molab/) |
+| No controls at all              | Static `marimo export html` is lighter and avoids the WASM cold start                                                        |
+| Sharing with minimal setup      | [molab](https://docs.marimo.io/guides/molab/)                                                                                |
 
 WASM exports run Python in the reader's browser, so:
 

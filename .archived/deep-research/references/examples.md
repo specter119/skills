@@ -70,7 +70,7 @@ Supplemental Task: D6-D7 deep research
 
 **Expected Output**: Comprehensive 15-page report with architecture diagrams, code examples, and actionable recommendations.
 
----
+______________________________________________________________________
 
 ## Example 2: Comparison Research
 
@@ -119,7 +119,7 @@ Task 3: Ecosystem and Use Cases (D5-D7)
 | Best Fit | High-performance services | Simple apps | Embedded/small | - |
 ```
 
----
+______________________________________________________________________
 
 ## Example 3: Problem-Solving Research
 
@@ -151,7 +151,7 @@ Rust Async Ecosystem Fragmentation Solution Research
 | Wait for standardization | N/A | N/A | Time | ⭐⭐⭐ |
 ```
 
----
+______________________________________________________________________
 
 ## Example 4: Trend Research
 
@@ -186,7 +186,7 @@ Task 3: Evaluation and Recommendations (D5-D7)
 - WebSearch: "AI agent framework risks"
 ```
 
----
+______________________________________________________________________
 
 ## Search Query Patterns
 
@@ -238,20 +238,20 @@ Task 3: Evaluation and Recommendations (D5-D7)
 "[topic] adoption statistics"
 ```
 
----
+______________________________________________________________________
 
 ## Tool Selection Guide
 
-| Scenario | Recommended Tool | Reason |
-|------|----------|------|
-| Broad discovery | WebSearch, Exa Search | Wide coverage |
-| Official docs | Context7, WebFetch | Precise content |
-| Code examples | Exa Code Context | Code-specific |
-| Latest updates | Exa Search (livecrawl) | Real-time crawling |
-| Deep content | WebFetch, Exa Crawl | Full page retrieval |
-| Parallel speed-up | Task Agents | Save time |
+| Scenario          | Recommended Tool       | Reason              |
+| ----------------- | ---------------------- | ------------------- |
+| Broad discovery   | WebSearch, Exa Search  | Wide coverage       |
+| Official docs     | Context7, WebFetch     | Precise content     |
+| Code examples     | Exa Code Context       | Code-specific       |
+| Latest updates    | Exa Search (livecrawl) | Real-time crawling  |
+| Deep content      | WebFetch, Exa Crawl    | Full page retrieval |
+| Parallel speed-up | Task Agents            | Save time           |
 
----
+______________________________________________________________________
 
 ## Quality Assurance Checklist
 
@@ -265,7 +265,7 @@ Check before completing each research:
 - [ ] Report structure complete
 - [ ] Recommendations are specific and actionable
 
----
+______________________________________________________________________
 
 ## Quick Start: Full Workflow Demo
 

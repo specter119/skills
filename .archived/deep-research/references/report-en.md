@@ -1,23 +1,14 @@
 # [Topic] Research Report
 
----
+______________________________________________________________________
 
-Topic: [Topic]
-Research Type: Technology / Comparison / Concept / Problem / Trend
-Date: [YYYY-MM-DD]
-Iterations: [N] rounds
-Completeness: [X]%
-Quality Grade: A/B/C/D
-Sources: [N]
-Information Gaps: [N]
-Confidence: High/Medium/Low
----
+## Topic: [Topic] Research Type: Technology / Comparison / Concept / Problem / Trend Date: [YYYY-MM-DD] Iterations: [N] rounds Completeness: [X]% Quality Grade: A/B/C/D Sources: [N] Information Gaps: [N] Confidence: High/Medium/Low
 
 ## Executive Summary
 
 [3-5 sentences capturing key findings, conclusions, and recommendations]
 
----
+______________________________________________________________________
 
 ## Research Plan Review
 
@@ -36,17 +27,17 @@ Confidence: High/Medium/Low
 
 ### Completeness Assessment
 
-| Dimension | Coverage | Confidence | Status |
-|-----------|----------|------------|--------|
-| D1 | [X]% | High/Medium/Low | ✅/⚠️/❌ |
-| D2 | [X]% | High/Medium/Low | ✅/⚠️/❌ |
-| D3 | [X]% | High/Medium/Low | ✅/⚠️/❌ |
-| D4 | [X]% | High/Medium/Low | ✅/⚠️/❌ |
-| D5 | [X]% | High/Medium/Low | ✅/⚠️/❌ |
-| D6 | [X]% | High/Medium/Low | ✅/⚠️/❌ |
-| D7 | [X]% | High/Medium/Low | ✅/⚠️/❌ |
+| Dimension | Coverage | Confidence      | Status   |
+| --------- | -------- | --------------- | -------- |
+| D1        | [X]%     | High/Medium/Low | ✅/⚠️/❌ |
+| D2        | [X]%     | High/Medium/Low | ✅/⚠️/❌ |
+| D3        | [X]%     | High/Medium/Low | ✅/⚠️/❌ |
+| D4        | [X]%     | High/Medium/Low | ✅/⚠️/❌ |
+| D5        | [X]%     | High/Medium/Low | ✅/⚠️/❌ |
+| D6        | [X]%     | High/Medium/Low | ✅/⚠️/❌ |
+| D7        | [X]%     | High/Medium/Low | ✅/⚠️/❌ |
 
----
+______________________________________________________________________
 
 ## Dimension Details
 
@@ -57,23 +48,26 @@ Confidence: High/Medium/Low
 **Key Findings**:
 
 1. **[Finding Title]**
+
    - [Detailed description]
    - Source: [URL/Document]
    - Confidence: High/Medium/Low
 
-2. **[Finding Title]**
+1. **[Finding Title]**
+
    - [Detailed description]
    - Source: [URL/Document]
    - Confidence: High/Medium/Low
 
 **Key Quote**:
+
 > "[Important original quote]" — [Source]
 
 **Information Gaps**:
 
 - [Information not found / needs verification]
 
----
+______________________________________________________________________
 
 ### D2. [Dimension Name]
 
@@ -82,82 +76,84 @@ Confidence: High/Medium/Low
 **Key Findings**:
 
 1. [Finding 1]
-2. [Finding 2]
+1. [Finding 2]
 
 **Confidence**: High/Medium/Low
 **Source**: [Primary reference]
 
----
+______________________________________________________________________
 
 ### D3. [Dimension Name]
 
 [...detailed analysis for each dimension...]
 
----
+______________________________________________________________________
 
 ### D4. [Dimension Name]
 
 [...]
 
----
+______________________________________________________________________
 
 ### D5. [Dimension Name]
 
 [...]
 
----
+______________________________________________________________________
 
 ### D6. [Dimension Name]
 
 [...]
 
----
+______________________________________________________________________
 
 ### D7. [Dimension Name]
 
 [...]
 
----
+______________________________________________________________________
 
 ## Key Findings Summary
 
-| Dimension | Core Conclusion | Confidence | Business Impact |
-|-----------|-----------------|------------|-----------------|
-| D1 | [One-line summary] | High | High/Medium/Low |
-| D2 | [One-line summary] | Medium | High/Medium/Low |
-| D3 | [One-line summary] | High | High/Medium/Low |
-| D4 | [One-line summary] | Medium | High/Medium/Low |
-| D5 | [One-line summary] | Low | High/Medium/Low |
-| D6 | [One-line summary] | Medium | High/Medium/Low |
-| D7 | [One-line summary] | Low | High/Medium/Low |
+| Dimension | Core Conclusion    | Confidence | Business Impact |
+| --------- | ------------------ | ---------- | --------------- |
+| D1        | [One-line summary] | High       | High/Medium/Low |
+| D2        | [One-line summary] | Medium     | High/Medium/Low |
+| D3        | [One-line summary] | High       | High/Medium/Low |
+| D4        | [One-line summary] | Medium     | High/Medium/Low |
+| D5        | [One-line summary] | Low        | High/Medium/Low |
+| D6        | [One-line summary] | Medium     | High/Medium/Low |
+| D7        | [One-line summary] | Low        | High/Medium/Low |
 
----
+______________________________________________________________________
 
 ## Comparison Matrix
 
 > If applicable for comparison research
 
-| Feature | [Option A] | [Option B] | [Option C] | Verdict |
-|---------|------------|------------|------------|---------|
-| Performance | | | | |
-| Ease of Use | | | | |
-| Ecosystem | | | | |
-| Learning Curve | | | | |
-| Community | | | | |
-| Enterprise Adoption | | | | |
-| Cost | | | | |
+| Feature             | [Option A] | [Option B] | [Option C] | Verdict |
+| ------------------- | ---------- | ---------- | ---------- | ------- |
+| Performance         |            |            |            |         |
+| Ease of Use         |            |            |            |         |
+| Ecosystem           |            |            |            |         |
+| Learning Curve      |            |            |            |         |
+| Community           |            |            |            |         |
+| Enterprise Adoption |            |            |            |         |
+| Cost                |            |            |            |         |
 
----
+______________________________________________________________________
 
 ## Information Gaps & Uncertainties
 
 ### Unresolved Questions
 
 1. **[Question 1]**
+
    - Reason: [Why unanswered]
    - Suggestion: [Follow-up direction]
 
-2. **[Question 2]**
+1. **[Question 2]**
+
    - Reason: [Why unanswered]
    - Suggestion: [Follow-up direction]
 
@@ -165,8 +161,8 @@ Confidence: High/Medium/Low
 
 **Controversy: [Topic]**
 
-| Position | Source | Argument |
-|----------|--------|----------|
+| Position   | Source   | Argument      |
+| ---------- | -------- | ------------- |
 | Position A | [Source] | [Description] |
 | Position B | [Source] | [Description] |
 
@@ -178,33 +174,36 @@ Confidence: High/Medium/Low
 - [ ] [Claim 1] - Verification source: [Suggestion]
 - [ ] [Claim 2] - Verification source: [Suggestion]
 
----
+______________________________________________________________________
 
 ## Best Practices / Recommendations
 
 ### Core Recommendations
 
 1. **[Recommendation 1 Title]**
+
    - Details: [Specific approach]
    - Applicable When: [Use cases]
    - Caveats: [Risks/Limitations]
 
-2. **[Recommendation 2 Title]**
+1. **[Recommendation 2 Title]**
+
    - Details: [Specific approach]
    - Applicable When: [Use cases]
    - Caveats: [Risks/Limitations]
 
-3. **[Recommendation 3 Title]**
+1. **[Recommendation 3 Title]**
+
    - Details: [Specific approach]
    - Applicable When: [Use cases]
    - Caveats: [Risks/Limitations]
 
 ### Anti-patterns
 
-- ❌ [Anti-pattern 1]: [Why not recommended]
-- ❌ [Anti-pattern 2]: [Why not recommended]
+- ❌ \[Anti-pattern 1\]: [Why not recommended]
+- ❌ \[Anti-pattern 2\]: [Why not recommended]
 
----
+______________________________________________________________________
 
 ## References
 
@@ -224,7 +223,7 @@ Confidence: High/Medium/Low
 - Source Name (URL) - [Brief description]
 - Source Name (URL) - [Brief description]
 
----
+______________________________________________________________________
 
 ## Conclusions & Action Items
 
@@ -260,22 +259,22 @@ Based on this research:
 
 - [ ] [Topics requiring further investigation]
 
----
+______________________________________________________________________
 
 ## Research Metadata
 
-| Item | Value |
-|------|-------|
-| Start Time | [Time] |
-| End Time | [Time] |
-| Iterations | [N] rounds |
-| Task Agents Used | [N] |
-| Search Queries | [N] |
-| Pages Fetched | [N] |
-| Completeness | [X]% |
-| Quality Grade | A/B/C/D |
+| Item             | Value      |
+| ---------------- | ---------- |
+| Start Time       | [Time]     |
+| End Time         | [Time]     |
+| Iterations       | [N] rounds |
+| Task Agents Used | [N]        |
+| Search Queries   | [N]        |
+| Pages Fetched    | [N]        |
+| Completeness     | [X]%       |
+| Quality Grade    | A/B/C/D    |
 
----
+______________________________________________________________________
 
 *Generated by: Claude Code Deep Research Skill v2.0*
 *Timestamp: [Timestamp]*

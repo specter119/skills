@@ -5,6 +5,7 @@
 - Clarify only when multiple critical readings exist; keep the user interaction light and fact-based.
 - Decompose the topic internally using the templates in `references/decomposition.md` (technology/comparison/concept/problem/trend).
 - Brief: generate a short, focused plan listing the topic slug, subtopics, expected report location, and estimated duration.
+
 ```text
 Starting research on {topic}
 Output directory: {output path}
@@ -27,19 +28,22 @@ Estimated [N] minutes, starting now...
 
 - Supervisor picks the parallelization strategy:
 
-  | Topic type | Strategy |
-  |------------|----------|
-  | Single focus | sequential search with iteration |
-  | Multiple comparisons | one sub-agent per item |
-  | Multi-faceted topic | parallel per dimension/subtopic |
-  | Deep single topic | sequential with follow-up loops |
+  | Topic type           | Strategy                         |
+  | -------------------- | -------------------------------- |
+  | Single focus         | sequential search with iteration |
+  | Multiple comparisons | one sub-agent per item           |
+  | Multi-faceted topic  | parallel per dimension/subtopic  |
+  | Deep single topic    | sequential with follow-up loops  |
 
 - Sub-agent pipeline:
+
   1. WebSearch / WebFetch to gather 2-4 queries.
-  2. Fetch URLs, archive full text under `_sources/` (or `sources/` for slide/report projects).
-  3. Attach metadata (URL, timestamp, source type) to each archive file.
-  4. Write `findings.md` for each subtopic with bullet summaries and citations.
+  1. Fetch URLs, archive full text under `_sources/` (or `sources/` for slide/report projects).
+  1. Attach metadata (URL, timestamp, source type) to each archive file.
+  1. Write `findings.md` for each subtopic with bullet summaries and citations.
+
 - Supervisor reviews coverage, spots gaps, and spawns follow-up tasks when a dimension lacks sources.
+
 - All agents clean their findings (no raw scraped fragments) before returning, to keep the write pass focused on synthesis.
 
 ## Phase 3 · Write
@@ -50,12 +54,12 @@ Estimated [N] minutes, starting now...
 
 ## Error handling
 
-| Error | Action |
-|-------|--------|
-| Sub-agent timeout | document partial results, highlight gaps in the brief/report, continue with fastest remaining sources |
-| Search failure | attempt alternative queries or switch between WebSearch/WebFetch; note failed queries in `findings.md` |
-| Fetch failure | fall back to Exa crawl when possible; log the failure and reason in the report |
-| No sources | escalate to supervisor for clarification before proceeding |
+| Error             | Action                                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------------------------ |
+| Sub-agent timeout | document partial results, highlight gaps in the brief/report, continue with fastest remaining sources  |
+| Search failure    | attempt alternative queries or switch between WebSearch/WebFetch; note failed queries in `findings.md` |
+| Fetch failure     | fall back to Exa crawl when possible; log the failure and reason in the report                         |
+| No sources        | escalate to supervisor for clarification before proceeding                                             |
 
 ## Best practices
 

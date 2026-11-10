@@ -17,42 +17,42 @@ Recommended priority:
 
 ### Recommended Type Sizes
 
-| Level | Use | Recommended Size |
-| --- | --- | --- |
-| Display | Cover / Transition | 32-48pt |
-| H1 | Page title | 20-24pt |
-| H2 | Section title | 16-18pt |
-| Body | Body text | 14-16pt |
-| Caption | Notes / Source | 10-12pt |
-| Code | Code block | 9-11pt |
+| Level   | Use                | Recommended Size |
+| ------- | ------------------ | ---------------- |
+| Display | Cover / Transition | 32-48pt          |
+| H1      | Page title         | 20-24pt          |
+| H2      | Section title      | 16-18pt          |
+| Body    | Body text          | 14-16pt          |
+| Caption | Notes / Source     | 10-12pt          |
+| Code    | Code block         | 9-11pt           |
 
 ### Hierarchy Behavior
 
 Type size is just one dimension of hierarchy. Typography hierarchy on each slide must satisfy three conditions:
 
 1. **One dominant entry point.** Only one element is seen first visually — not two, not three.
-2. **Intentional rhythm between levels.** Adjacent levels must have sufficient contrast — a 2pt difference is not enough.
-3. **Recoverable information flow.** Even if hierarchy is inverted (e.g., body text larger than a heading), readers can still understand structure through reading order.
+1. **Intentional rhythm between levels.** Adjacent levels must have sufficient contrast — a 2pt difference is not enough.
+1. **Recoverable information flow.** Even if hierarchy is inverted (e.g., body text larger than a heading), readers can still understand structure through reading order.
 
 Five vectors for establishing hierarchy — at least two should act in the same direction on the dominant element:
 
-| Vector | Controls | Direction |
-| --- | --- | --- |
-| Type size | Size contrast | Large → Small = Primary → Secondary |
-| Weight | Mass contrast | Heavy → Light = Primary → Secondary |
-| Spacing | Breathing room | More space = more important |
-| Letter-spacing | Tight vs. loose | Tight = fast; Wide = ceremonial |
-| Alignment | Relationship to grid | Breaking alignment = signals importance |
+| Vector         | Controls             | Direction                               |
+| -------------- | -------------------- | --------------------------------------- |
+| Type size      | Size contrast        | Large → Small = Primary → Secondary     |
+| Weight         | Mass contrast        | Heavy → Light = Primary → Secondary     |
+| Spacing        | Breathing room       | More space = more important             |
+| Letter-spacing | Tight vs. loose      | Tight = fast; Wide = ceremonial         |
+| Alignment      | Relationship to grid | Breaking alignment = signals importance |
 
 ### Three-Level Working Model
 
 Most slide pages can be mapped to three functional levels:
 
-| Level | Role | Typical Implementation |
-| --- | --- | --- |
-| Primary | Entry point — one per slide | Type size + spacing, or alignment break |
-| Secondary | Structural support | Weight change or type size step |
-| Tertiary | Ancillary information (labels, notes) | Smaller size, lower weight |
+| Level     | Role                                  | Typical Implementation                  |
+| --------- | ------------------------------------- | --------------------------------------- |
+| Primary   | Entry point — one per slide           | Type size + spacing, or alignment break |
+| Secondary | Structural support                    | Weight change or type size step         |
+| Tertiary  | Ancillary information (labels, notes) | Smaller size, lower weight              |
 
 More than three visual levels above the fold is usually a layout problem, not a hierarchy opportunity.
 
@@ -75,12 +75,12 @@ More than three visual levels above the fold is usually a layout problem, not a 
 
 A controllable palette has four tiers — plan before writing styles:
 
-| Tier | Pixel Share | Role |
-| --- | --- | --- |
-| Neutrals | 70-90% | Backgrounds, surfaces, text, borders |
-| Accent (one only) | 5-10% | Accent only — do not invent a second accent |
-| Semantic colors | 0-5% | success / warn / error |
-| Effects | <1% | Gradients, glows — use sparingly |
+| Tier              | Pixel Share | Role                                        |
+| ----------------- | ----------- | ------------------------------------------- |
+| Neutrals          | 70-90%      | Backgrounds, surfaces, text, borders        |
+| Accent (one only) | 5-10%       | Accent only — do not invent a second accent |
+| Semantic colors   | 0-5%        | success / warn / error                      |
+| Effects           | \<1%        | Gradients, glows — use sparingly            |
 
 ### Semantic Naming
 
@@ -102,11 +102,11 @@ The most common readability issue in AI-generated interfaces is overuse of accen
 
 Use as pass/fail threshold checks:
 
-| Combination | Minimum Contrast |
-| --- | --- |
-| Body text (≤16pt) on background | 4.5:1 |
-| Large text (>18pt or 14pt bold) on background | 3:1 |
-| UI elements on adjacent surfaces | 3:1 |
+| Combination                                   | Minimum Contrast |
+| --------------------------------------------- | ---------------- |
+| Body text (≤16pt) on background               | 4.5:1            |
+| Large text (>18pt or 14pt bold) on background | 3:1              |
+| UI elements on adjacent surfaces              | 3:1              |
 
 In practice, `#757575` on white is generally safer than `#999999`.
 
@@ -114,8 +114,8 @@ In practice, `#757575` on white is generally safer than `#999999`.
 
 Avoid pure black and pure white — both cause visual vibration and fatigue:
 
-| Role | Dark Theme | Light Theme |
-| --- | --- | --- |
+| Role       | Dark Theme             | Light Theme            |
+| ---------- | ---------------------- | ---------------------- |
 | Background | `#0f0f0f` (not `#000`) | `#FAFAFA` (not `#FFF`) |
 | Foreground | `#f0f0f0` (not `#FFF`) | `#212121` (not `#000`) |
 
@@ -130,11 +130,11 @@ On dark surfaces, prefer **semi-transparent white borders** over solid dark bord
 
 Choose density based on deck type:
 
-| Type | Characteristics | Recommendation |
-| --- | --- | --- |
-| Talk | One point per slide, relies on speaker narration | Large whitespace, light information density |
-| Business | Needs to be self-readable | Clear structure, denser information |
-| Technical | Heavy on code, architecture, process | Mixed density, emphasize diagrams and evidence |
+| Type      | Characteristics                                  | Recommendation                                 |
+| --------- | ------------------------------------------------ | ---------------------------------------------- |
+| Talk      | One point per slide, relies on speaker narration | Large whitespace, light information density    |
+| Business  | Needs to be self-readable                        | Clear structure, denser information            |
+| Technical | Heavy on code, architecture, process             | Mixed density, emphasize diagrams and evidence |
 
 ### Style Selection
 
@@ -159,21 +159,21 @@ Patterns that AI commonly falls into when generating slides — actively correct
 ### P0 (Must Fix)
 
 1. **Fabricated metrics** — "10× faster", "99.9% uptime", "users save 4 hours/week". Do not invent numbers without a source; use `—` or mark `[data needed]`.
-2. **Filler text** — lorem ipsum, "Feature One / Two / Three", "seamless innovation", "streamline your workflow". Missing content is a layout design problem to solve — not a gap to fill with invented words.
-3. **Emoji used as icons** — `✨ 🚀 🎯 ⚡ 🔥 💡` appearing in headings or list items. Use typographic hierarchy or simple shapes instead.
-4. **Contrast unreadable on projection** — does not meet the §2 contrast thresholds.
+1. **Filler text** — lorem ipsum, "Feature One / Two / Three", "seamless innovation", "streamline your workflow". Missing content is a layout design problem to solve — not a gap to fill with invented words.
+1. **Emoji used as icons** — `✨ 🚀 🎯 ⚡ 🔥 💡` appearing in headings or list items. Use typographic hierarchy or simple shapes instead.
+1. **Contrast unreadable on projection** — does not meet the §2 contrast thresholds.
 
 ### P1 (Should Fix)
 
 5. Standardized flow "Cover → Agenda → Features → Summary" with zero variation. Introduce at least one unconventional section (full-bleed quote, embedded mini-demo, status comparison timeline).
-6. Default palette — unmodified Tailwind/Material color palette used directly.
-7. More than 2 accent uses per screen.
-8. Decorative gradients or blob/wave backgrounds — geometric decoration with no functional purpose.
+1. Default palette — unmodified Tailwind/Material color palette used directly.
+1. More than 2 accent uses per screen.
+1. Decorative gradients or blob/wave backgrounds — geometric decoration with no functional purpose.
 
 ### P2 (Can Improve)
 
 9. Perfectly symmetric layouts with no visual tension.
-10. All card components with identical shape (rounded corners + left-border accent).
+1. All card components with identical shape (rounded corners + left-border accent).
 
 ## 5. Reusable Components
 

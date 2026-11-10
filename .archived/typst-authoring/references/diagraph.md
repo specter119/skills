@@ -16,15 +16,15 @@
 
 ## When to Use Diagraph
 
-| Scenario | Recommended | Reason |
-|----------|-------------|--------|
-| Simple flowchart | **diagraph** | Native Typst integration |
-| Chinese labels | **diagraph** | `labels` parameter uses Typst rendering |
-| Math in labels | **diagraph** | Only option supporting `$formula$` |
-| Nested containers | D2 | Better subgraph layout control |
-| Sequence/State diagrams | oxdraw | Mermaid syntax simpler |
+| Scenario                | Recommended  | Reason                                  |
+| ----------------------- | ------------ | --------------------------------------- |
+| Simple flowchart        | **diagraph** | Native Typst integration                |
+| Chinese labels          | **diagraph** | `labels` parameter uses Typst rendering |
+| Math in labels          | **diagraph** | Only option supporting `$formula$`      |
+| Nested containers       | D2           | Better subgraph layout control          |
+| Sequence/State diagrams | oxdraw       | Mermaid syntax simpler                  |
 
----
+______________________________________________________________________
 
 ## Slides Best Practices
 
@@ -65,10 +65,10 @@ Graphviz renders to "infinite canvas" then scales to fit. In slides with limited
 
 **When to use which dimension:**
 
-| Layout | Set | Auto |
-|--------|-----|------|
-| `rankdir=TB` (vertical) | `height` | width |
-| `rankdir=LR` (horizontal) | `width` | height |
+| Layout                    | Set      | Auto   |
+| ------------------------- | -------- | ------ |
+| `rankdir=TB` (vertical)   | `height` | width  |
+| `rankdir=LR` (horizontal) | `width`  | height |
 
 **2. Alternative: `stretch: false` with both dimensions**
 
@@ -142,11 +142,11 @@ Note: `stretch: false` requires **absolute lengths** (cm, pt), not ratios (%).
 - Available content: ~12cm
 - **Safe diagram height: ≤ 8-10cm**
 
-| Slide Layout | Diagram Position | Recommended Size |
-|--------------|------------------|------------------|
-| Full width | Center | width: 70-80%, height: ≤ 10cm |
-| Two column | Half page | height: ≤ 8cm (TB) or width: 90% (LR) |
-| With table | Side | height: ≤ 8cm |
+| Slide Layout | Diagram Position | Recommended Size                      |
+| ------------ | ---------------- | ------------------------------------- |
+| Full width   | Center           | width: 70-80%, height: ≤ 10cm         |
+| Two column   | Half page        | height: ≤ 8cm (TB) or width: 90% (LR) |
+| With table   | Side             | height: ≤ 8cm                         |
 
 > ⚠️ **Always verify**: If grid cell has other content (text, tables), reduce diagram height accordingly.
 
@@ -178,7 +178,7 @@ Note: `stretch: false` requires **absolute lengths** (cm, pt), not ratios (%).
 )
 ```
 
----
+______________________________________________________________________
 
 ## Reports Best Practices
 
@@ -233,18 +233,18 @@ d2 --layout dagre architecture.d2 architecture.svg
 )
 ```
 
----
+______________________________________________________________________
 
 ## Graphviz Quick Reference
 
 ### Layout Directions
 
-| Value | Direction |
-|-------|-----------|
+| Value        | Direction               |
+| ------------ | ----------------------- |
 | `rankdir=TB` | Top to bottom (default) |
-| `rankdir=BT` | Bottom to top |
-| `rankdir=LR` | Left to right |
-| `rankdir=RL` | Right to left |
+| `rankdir=BT` | Bottom to top           |
+| `rankdir=LR` | Left to right           |
+| `rankdir=RL` | Right to left           |
 
 ### Node Shapes
 
@@ -274,17 +274,17 @@ subgraph cluster_name {
 }
 ```
 
----
+______________________________________________________________________
 
 ## Troubleshooting
 
-| Problem | Cause | Solution |
-|---------|-------|----------|
-| **Distorted aspect ratio** | Both `width` + `height` set | Set only ONE dimension |
-| Nodes stretched vertically | `height` set on TB diagram | Use `height` only (correct) or switch to `width` only |
-| Diagram cut off/truncated | Wrong dimension constrained | LR → use `width`; TB → use `height` |
-| Text too small | Graphviz fontsize scaled down | Use `labels` parameter |
-| Uneven margins | Subgraph auto-layout | Simplify or use D2 |
-| Diagram too tall | `rankdir=TB` with many nodes | Switch to `rankdir=LR` |
-| Page overflow | No height constraint | Wrap in `#box(height: Xcm)` |
-| Chinese garbled | Graphviz font issue | Use `labels` with Typst text |
+| Problem                    | Cause                         | Solution                                              |
+| -------------------------- | ----------------------------- | ----------------------------------------------------- |
+| **Distorted aspect ratio** | Both `width` + `height` set   | Set only ONE dimension                                |
+| Nodes stretched vertically | `height` set on TB diagram    | Use `height` only (correct) or switch to `width` only |
+| Diagram cut off/truncated  | Wrong dimension constrained   | LR → use `width`; TB → use `height`                   |
+| Text too small             | Graphviz fontsize scaled down | Use `labels` parameter                                |
+| Uneven margins             | Subgraph auto-layout          | Simplify or use D2                                    |
+| Diagram too tall           | `rankdir=TB` with many nodes  | Switch to `rankdir=LR`                                |
+| Page overflow              | No height constraint          | Wrap in `#box(height: Xcm)`                           |
+| Chinese garbled            | Graphviz font issue           | Use `labels` with Typst text                          |

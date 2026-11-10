@@ -5,8 +5,8 @@
 Output quality is part of skill quality. Before designing output:
 
 1. Route by artifact type: high-trust report, tutorial, dashboard, review viewer, slide deck
-2. Extract facts/claims/numbers before formatting
-3. Pick a design system that matches the work
+1. Extract facts/claims/numbers before formatting
+1. Pick a design system that matches the work
 
 Non-negotiables for generated artifacts:
 
@@ -38,11 +38,11 @@ Prompt quality is a skill-design input, not a long prompt to paste into SKILL.md
 
 Map need → prompt:
 
-| Need Type | Task Family | RTF→Skill Mapping |
-|-----------|-------------|-------------------|
-| Explicit need | Execution | Role→operating stance, Task→workflow, Format→output contract |
-| Implicit need | Creative | Discover through dialogue, then map |
-| Scenario-based | Teaching | Structure as examples + rules |
+| Need Type      | Task Family | RTF→Skill Mapping                                            |
+| -------------- | ----------- | ------------------------------------------------------------ |
+| Explicit need  | Execution   | Role→operating stance, Task→workflow, Format→output contract |
+| Implicit need  | Creative    | Discover through dialogue, then map                          |
+| Scenario-based | Teaching    | Structure as examples + rules                                |
 
 Quality dimensions: completeness, clarity, consistency, practicality, specificity.
 
@@ -53,9 +53,9 @@ Quality dimensions: completeness, clarity, consistency, practicality, specificit
 Borrow durable patterns, not surface style. A pattern passes the four-gate test:
 
 1. **Recurrence** — appears in >1 source
-2. **Generativity** — guides new cases
-3. **Distinctiveness** — more specific than generic advice
-4. **Boundary** — known limit
+1. **Generativity** — guides new cases
+1. **Distinctiveness** — more specific than generic advice
+1. **Boundary** — known limit
 
 Borrow: workflow loops, quality gates, review checkpoints, crisp output shapes, boundary language.
 
@@ -66,8 +66,8 @@ Do not borrow: branding, long prose, roleplay style, platform-specific assumptio
 Four questions for any skill:
 
 1. What does this skill own?
-2. What feedback tells us it's improving or drifting?
-3. Which failure appears after repeated use?
-4. Where is the smallest change with the largest quality gain?
+1. What feedback tells us it's improving or drifting?
+1. Which failure appears after repeated use?
+1. Where is the smallest change with the largest quality gain?
 
 Leverage points (in order): clarify boundary → tune description → add self-repair check → borrow external pattern → close feedback loop.

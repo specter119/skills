@@ -26,9 +26,9 @@ Responsible for **external information research, source archiving, and synthesis
 ## Execution Skeleton
 
 1. Decompose the research question into dimensions; define the research directory and subtopics.
-2. Multi-round search, fetch, and archive raw sources; then write subtopic findings.
-3. Synthesize into a final `report.md`, marking sources and gaps.
-4. Directory logic, error handling, and supervisor heuristics are in [execution](references/execution.md).
+1. Multi-round search, fetch, and archive raw sources; then write subtopic findings.
+1. Synthesize into a final `report.md`, marking sources and gaps.
+1. Directory logic, error handling, and supervisor heuristics are in [execution](references/execution.md).
 
 ## Reference Map
 

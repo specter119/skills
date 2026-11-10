@@ -15,12 +15,12 @@ Promote to skill only when at least one is true:
 
 Choose the lightest archetype that fits:
 
-| Archetype | When | Package |
-|-----------|------|---------|
-| Scaffold | Exploratory or personal use | SKILL.md + agents/interface.yaml only |
-| Production | Team reuse | Add references/, scripts/, evals/, manifest |
-| Library | Shared org capability | Full suite with governance metadata |
-| Governed | High-trust, regulated | Full suite + review cadence + lifecycle |
+| Archetype  | When                        | Package                                     |
+| ---------- | --------------------------- | ------------------------------------------- |
+| Scaffold   | Exploratory or personal use | SKILL.md + agents/interface.yaml only       |
+| Production | Team reuse                  | Add references/, scripts/, evals/, manifest |
+| Library    | Shared org capability       | Full suite with governance metadata         |
+| Governed   | High-trust, regulated       | Full suite + review cadence + lifecycle     |
 
 Stay Scaffold unless reuse is clearly real.
 
@@ -29,9 +29,9 @@ Stay Scaffold unless reuse is clearly real.
 Define four things before expanding:
 
 1. **Owned job**: one clear capability
-2. **Output**: what the skill produces
-3. **Near-neighbor refusals**: what looks similar but belongs elsewhere
-4. **Detail placement**: SKILL.md for triggers and skeleton; references/ for depth
+1. **Output**: what the skill produces
+1. **Near-neighbor refusals**: what looks similar but belongs elsewhere
+1. **Detail placement**: SKILL.md for triggers and skeleton; references/ for depth
 
 ## Authoring Discipline
 
@@ -64,9 +64,9 @@ Always surface the top three next iteration directions.
 
 ## Context Budget Tiers
 
-| Tier | SKILL.md tokens | References |
-|------|----------------|------------|
-| Scaffold | ≤700 | Optional |
-| Production | ≤1000 | 2-3 modules |
-| Library | ≤1300 | 3-5 modules |
-| Governed | ≤1300 | 3-5 + governance |
+| Tier       | SKILL.md tokens | References       |
+| ---------- | --------------- | ---------------- |
+| Scaffold   | ≤700            | Optional         |
+| Production | ≤1000           | 2-3 modules      |
+| Library    | ≤1300           | 3-5 modules      |
+| Governed   | ≤1300           | 3-5 + governance |

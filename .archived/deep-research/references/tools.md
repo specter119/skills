@@ -4,17 +4,17 @@
 
 ### Credibility Assessment Matrix
 
-| Source Type | Base Score | Verification Needed |
-|-------------|------------|---------------------|
-| Official Docs | 90/100 | Check version/date |
-| GitHub (>1k stars) | 80/100 | Check last commit |
-| Academic Paper | 85/100 | Check citations |
-| Tech Company Blog | 75/100 | Check author credentials |
-| Stack Overflow | 70/100 | Check votes, verify answer |
-| Tutorial Site | 60/100 | Cross-reference |
-| Personal Blog | 50/100 | Must cross-reference |
-| Forum/Reddit | 40/100 | Multiple sources required |
-| AI-Generated | 30/100 | Always verify externally |
+| Source Type        | Base Score | Verification Needed        |
+| ------------------ | ---------- | -------------------------- |
+| Official Docs      | 90/100     | Check version/date         |
+| GitHub (>1k stars) | 80/100     | Check last commit          |
+| Academic Paper     | 85/100     | Check citations            |
+| Tech Company Blog  | 75/100     | Check author credentials   |
+| Stack Overflow     | 70/100     | Check votes, verify answer |
+| Tutorial Site      | 60/100     | Cross-reference            |
+| Personal Blog      | 50/100     | Must cross-reference       |
+| Forum/Reddit       | 40/100     | Multiple sources required  |
+| AI-Generated       | 30/100     | Always verify externally   |
 
 ### Verification Checklist
 
@@ -26,7 +26,7 @@ For each key finding:
 - [ ] Cross-referenced with 2nd source
 - [ ] Flagged any contradictions
 
----
+______________________________________________________________________
 
 ## Completeness Assessment Framework
 
@@ -43,13 +43,13 @@ Coverage Level:
 
 ### Quality Indicators
 
-| Indicator | High Quality | Medium Quality | Low Quality |
-|-----------|--------------|----------------|-------------|
-| Sources | 3+ independent | 2 sources | 1 source |
-| Recency | < 6 months | 6-12 months | > 1 year |
-| Depth | Detailed analysis | Overview level | Surface only |
-| Validation | Cross-verified | Partially verified | Not verified |
-| Confidence | Can recommend | With caveats | Need more info |
+| Indicator  | High Quality      | Medium Quality     | Low Quality    |
+| ---------- | ----------------- | ------------------ | -------------- |
+| Sources    | 3+ independent    | 2 sources          | 1 source       |
+| Recency    | < 6 months        | 6-12 months        | > 1 year       |
+| Depth      | Detailed analysis | Overview level     | Surface only   |
+| Validation | Cross-verified    | Partially verified | Not verified   |
+| Confidence | Can recommend     | With caveats       | Need more info |
 
 ### Overall Research Quality Score
 
@@ -72,38 +72,41 @@ Quality Grade:
 - D (<55): Unreliable, research needs to be redone
 ```
 
----
+______________________________________________________________________
 
 ## Information Gap Analysis
 
 ### Gap Categories
 
 1. **Critical Gaps** (Must address)
+
    - Core concepts unclear
    - No authoritative source found
    - Conflicting information unresolved
 
-2. **Important Gaps** (Should address)
+1. **Important Gaps** (Should address)
+
    - Missing recent data
    - Single source only
    - Expert opinion not verified
 
-3. **Minor Gaps** (Nice to have)
+1. **Minor Gaps** (Nice to have)
+
    - Edge case coverage
    - Historical context
    - Future predictions
 
 ### Gap Resolution Strategies
 
-| Gap Type | Strategy | Tool |
-|----------|----------|------|
-| No info found | Broaden search terms | WebSearch |
-| Outdated info | Search with year filter | "topic 2025" |
-| Conflicting info | Find authoritative source | Official docs |
-| Single source | Search alternative terms | Different query |
-| Technical depth | Check library docs | Context7 |
+| Gap Type         | Strategy                  | Tool            |
+| ---------------- | ------------------------- | --------------- |
+| No info found    | Broaden search terms      | WebSearch       |
+| Outdated info    | Search with year filter   | "topic 2025"    |
+| Conflicting info | Find authoritative source | Official docs   |
+| Single source    | Search alternative terms  | Different query |
+| Technical depth  | Check library docs        | Context7        |
 
----
+______________________________________________________________________
 
 ## Search Query Templates
 
@@ -171,26 +174,29 @@ site:github.com/[org] [topic]
 [topic] engineering blog
 ```
 
----
+______________________________________________________________________
 
 ## Conflict Resolution
 
 ### When Sources Disagree
 
 1. **Identify the conflict clearly**
+
    - What exactly do they disagree on?
    - Are they talking about the same version/context?
 
-2. **Check source authority**
+1. **Check source authority**
+
    - Official docs > Community > Individual
    - Recent > Old (for technical facts)
 
-3. **Look for context differences**
+1. **Look for context differences**
+
    - Different versions?
    - Different use cases?
    - Different assumptions?
 
-4. **Report both perspectives**
+1. **Report both perspectives**
 
    ```markdown
    ### Conflict: [Topic]
@@ -202,7 +208,7 @@ site:github.com/[org] [topic]
    **Recommendation**: [What to trust and why]
    ```
 
----
+______________________________________________________________________
 
 ## Report Quality Checklist
 
@@ -233,7 +239,7 @@ Confidence: High/Medium/Low
 ---
 ```
 
----
+______________________________________________________________________
 
 ## Tool-Specific Tips
 
@@ -272,18 +278,18 @@ Confidence: High/Medium/Low
 - Set file output location
 - Don't overlap dimensions
 
----
+______________________________________________________________________
 
 ## Time Management
 
 ### Research Time Estimates
 
 | Research Depth | Dimensions | Est. Time | Iterations |
-|----------------|------------|-----------|------------|
-| Quick Overview | 3-4 | 5-10 min | 0-1 |
-| Standard | 5-6 | 10-20 min | 1 |
-| Comprehensive | 7 | 20-40 min | 1-2 |
-| Deep Dive | 7+ | 40-60 min | 2-3 |
+| -------------- | ---------- | --------- | ---------- |
+| Quick Overview | 3-4        | 5-10 min  | 0-1        |
+| Standard       | 5-6        | 10-20 min | 1          |
+| Comprehensive  | 7          | 20-40 min | 1-2        |
+| Deep Dive      | 7+         | 40-60 min | 2-3        |
 
 ### When to Stop Iterating
 
@@ -293,17 +299,17 @@ Confidence: High/Medium/Low
 - User indicates time constraint
 - Diminishing returns (same results)
 
----
+______________________________________________________________________
 
 ## Common Pitfalls
 
 ### Avoid These Mistakes
 
 1. **Skipping decomposition** → Unfocused research
-2. **Single source reliance** → Unreliable findings
-3. **Ignoring dates** → Outdated information
-4. **Over-iterating** → Diminishing returns
-5. **Missing conflicts** → False confidence
-6. **No gap documentation** → Hidden limitations
-7. **Vague queries** → Poor search results
-8. **Parallel without coordination** → Duplicate work
+1. **Single source reliance** → Unreliable findings
+1. **Ignoring dates** → Outdated information
+1. **Over-iterating** → Diminishing returns
+1. **Missing conflicts** → False confidence
+1. **No gap documentation** → Hidden limitations
+1. **Vague queries** → Poor search results
+1. **Parallel without coordination** → Duplicate work

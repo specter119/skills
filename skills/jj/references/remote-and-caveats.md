@@ -25,8 +25,8 @@ jj bookmark set my-feature -r <change>   # Move existing bookmark to different c
 ### Push Workflow
 
 1. Finish your work (`jj describe` the change)
-2. `jj bookmark create <name> -r <change>` — give it a Git branch name
-3. `jj push` — push to remote (or `--bookmark <name>` for just one)
+1. `jj bookmark create <name> -r <change>` — give it a Git branch name
+1. `jj push` — push to remote (or `--bookmark <name>` for just one)
 
 ```bash
 jj push                                  # Push all changed bookmarks (uses jj-pre-push alias)

@@ -64,13 +64,13 @@ After reading this slide, does the audience know how to interpret it or what act
 
 Each dimension scored 1–10:
 
-| Dimension | Question |
-| --- | --- |
-| Narrative Structure | Is the throughline clear? Do parts have causal relationships? |
-| Information Density | Are there numbers, comparisons, and scenarios — not just vague descriptions? |
-| Visual Rhythm | Do consecutive slides have variation? |
-| So What | Does each slide have a clear takeaway? |
-| Domain-Specific Value | Does the content genuinely serve the topic's judgment or decision-making? |
+| Dimension             | Question                                                                     |
+| --------------------- | ---------------------------------------------------------------------------- |
+| Narrative Structure   | Is the throughline clear? Do parts have causal relationships?                |
+| Information Density   | Are there numbers, comparisons, and scenarios — not just vague descriptions? |
+| Visual Rhythm         | Do consecutive slides have variation?                                        |
+| So What               | Does each slide have a clear takeaway?                                       |
+| Domain-Specific Value | Does the content genuinely serve the topic's judgment or decision-making?    |
 
 Suggested targets:
 
@@ -82,9 +82,9 @@ Suggested targets:
 Must answer:
 
 1. What problem was encountered
-2. How it was solved
-3. What the results were
-4. How the audience can reuse it
+1. How it was solved
+1. What the results were
+1. How the audience can reuse it
 
 If the entire deck is only "feature introduction", it usually reads more like documentation than a talk.
 

@@ -26,9 +26,9 @@ Responsible for **exhaustive processing and parallel synthesis of local material
 ## Execution Skeleton
 
 1. First inventory all input items to ensure the scope is clear.
-2. Follow [workflow](references/workflow.md) to determine grouping and parallelization strategy.
-3. Give each sub-agent an explicit item list, output path, and the constraint that no items may be skipped.
-4. Aggregate findings from each group; if needed, chain an external research skill to fill gaps.
+1. Follow [workflow](references/workflow.md) to determine grouping and parallelization strategy.
+1. Give each sub-agent an explicit item list, output path, and the constraint that no items may be skipped.
+1. Aggregate findings from each group; if needed, chain an external research skill to fill gaps.
 
 ## Reference Map
 

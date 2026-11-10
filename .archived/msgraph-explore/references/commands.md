@@ -18,13 +18,13 @@ uv run skills/msgraph-explore/scripts/msgraph_search.py "Fin skill design" \
   --json
 ```
 
-| Parameter | Description |
-| --- | --- |
-| `query` | Search keyword, supports KQL syntax |
+| Parameter        | Description                                                                  |
+| ---------------- | ---------------------------------------------------------------------------- |
+| `query`          | Search keyword, supports KQL syntax                                          |
 | `--entity-types` | Entity types to search (default `driveItem,listItem`; `site` also available) |
-| `--site-path` | KQL path scope (e.g., `"sites/IACB"`) |
-| `--max-results` | Maximum results (default 25) |
-| `--json` | Output JSON with raw identifiers for chaining |
+| `--site-path`    | KQL path scope (e.g., `"sites/IACB"`)                                        |
+| `--max-results`  | Maximum results (default 25)                                                 |
+| `--json`         | Output JSON with raw identifiers for chaining                                |
 
 > **Note:** OneNote page search coverage depends on the Graph Search index state and is best-effort / discovery-only. For full OneNote content search, first run `fetch-onenote` to sync locally, then use grep.
 

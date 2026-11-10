@@ -26,10 +26,10 @@ Handles **long-form structured writing**; does not handle presentation structure
 ## Execution Skeleton
 
 1. Clarify the writing goal, audience, and purpose; select a matching framework from [framework-selection](references/framework-selection.md).
-2. Design the outline per [workflow](references/workflow.md); mark core arguments, key evidence, and action items.
-3. Write content section by section, continuously self-checking with MECE, So What, and data-backed principles.
-4. When needed, delegate via [oracle-delegation](references/oracle-delegation.md) to review the outline and draft from a reader's perspective.
-5. Hand off to the Typst implementation skill for formal typesetting or export.
+1. Design the outline per [workflow](references/workflow.md); mark core arguments, key evidence, and action items.
+1. Write content section by section, continuously self-checking with MECE, So What, and data-backed principles.
+1. When needed, delegate via [oracle-delegation](references/oracle-delegation.md) to review the outline and draft from a reader's perspective.
+1. Hand off to the Typst implementation skill for formal typesetting or export.
 
 ## Reference Map
 

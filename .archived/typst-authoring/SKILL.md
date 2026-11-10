@@ -28,8 +28,8 @@ Responsible for **Typst's technical implementation layer**; does not handle cont
 ## Execution Skeleton
 
 1. Follow [workflow](references/workflow.md) through the diagnostics → compile → output check loop.
-2. Then branch by document type: slides → [touying](references/touying.md), reports → [report](references/report.md), diagrams → [diagraph](references/diagraph.md).
-3. When package versions are uncertain, consult the latest documentation; do not rely on hard-coded old version numbers.
+1. Then branch by document type: slides → [touying](references/touying.md), reports → [report](references/report.md), diagrams → [diagraph](references/diagraph.md).
+1. When package versions are uncertain, consult the latest documentation; do not rely on hard-coded old version numbers.
 
 ## Reference Map
 

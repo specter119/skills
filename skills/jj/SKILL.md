@@ -22,8 +22,8 @@ description: "Use jj (Jujutsu) for local version control instead of git. Activat
 ## Execution Skeleton
 
 1. Detect: `test -d .jj`. If absent, do not activate.
-2. Use jj commands for all local VCS operations.
-3. For workflows and remote interaction, see reference modules.
+1. Use jj commands for all local VCS operations.
+1. For workflows and remote interaction, see reference modules.
 
 ## Reference Map
 
@@ -33,17 +33,17 @@ description: "Use jj (Jujutsu) for local version control instead of git. Activat
 
 ## Quick Reference
 
-| Task | Command |
-|------|---------|
-| Init in git repo | `jj git init --colocate` |
-| See status | `jj log` |
-| Describe change | `jj describe -m "..."` |
-| Start next task | `jj new` |
-| Edit older change | `jj edit <change>` |
-| Discard change | `jj abandon` |
-| Split change | `jj split` |
-| Undo anything | `jj undo` |
-| Fetch remote | `jj git fetch` |
-| Rebase onto master | `jj rebase -d master` |
-| Create bookmark | `jj bookmark create <name> -r @` |
-| Push | `jj push` / `jj push --bookmark <name>` |
+| Task               | Command                                 |
+| ------------------ | --------------------------------------- |
+| Init in git repo   | `jj git init --colocate`                |
+| See status         | `jj log`                                |
+| Describe change    | `jj describe -m "..."`                  |
+| Start next task    | `jj new`                                |
+| Edit older change  | `jj edit <change>`                      |
+| Discard change     | `jj abandon`                            |
+| Split change       | `jj split`                              |
+| Undo anything      | `jj undo`                               |
+| Fetch remote       | `jj git fetch`                          |
+| Rebase onto master | `jj rebase -d master`                   |
+| Create bookmark    | `jj bookmark create <name> -r @`        |
+| Push               | `jj push` / `jj push --bookmark <name>` |

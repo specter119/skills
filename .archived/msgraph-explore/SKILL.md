@@ -1,6 +1,6 @@
 ---
 name: msgraph-explore
-description: >
+description: >-
   Unified Microsoft Graph skill for SharePoint, OneDrive, and OneNote.
   USE FOR: search SharePoint or OneDrive content, fetch SharePoint files, sync drive folders,
   discover sites/notebooks/sections, sync OneNote pages to Markdown.
@@ -30,8 +30,8 @@ description: >
 ## Execution Skeleton
 
 1. Ensure prerequisites are configured (see [setup](references/setup.md)).
-2. Choose the right command by task type (see [commands](references/commands.md)).
-3. Retrieve data; results are cached locally (see [architecture](references/architecture.md)).
+1. Choose the right command by task type (see [commands](references/commands.md)).
+1. Retrieve data; results are cached locally (see [architecture](references/architecture.md)).
 
 ## Reference Map
 

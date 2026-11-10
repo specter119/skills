@@ -43,9 +43,9 @@ uv run $SCRIPT --list-styles
 
 ## Model Selection
 
-| Model | Best For |
-| --- | --- |
-| `gemini-2.5-flash-image` | Fast exploration, batch variants |
+| Model                        | Best For                                      |
+| ---------------------------- | --------------------------------------------- |
+| `gemini-2.5-flash-image`     | Fast exploration, batch variants              |
 | `gemini-3-pro-image-preview` | Refinement, editing, text-sensitive scenarios |
 
 Rule of thumb:
@@ -65,12 +65,12 @@ uv run $SCRIPT "enhance lighting, add more details" \
 
 ## Slides Integration
 
-| Use Case | Style | Ratio |
-| --- | --- | --- |
-| Cover | `tech` / `corporate` | `16:9` |
-| Section divider | `minimalist` | `16:9` |
-| Concept | `isometric` / `illustration` | `4:3` |
-| Icon | `icon` / `flat` | `1:1` |
+| Use Case        | Style                        | Ratio  |
+| --------------- | ---------------------------- | ------ |
+| Cover           | `tech` / `corporate`         | `16:9` |
+| Section divider | `minimalist`                 | `16:9` |
+| Concept         | `isometric` / `illustration` | `4:3`  |
+| Icon            | `icon` / `flat`              | `1:1`  |
 
 Tips:
 
