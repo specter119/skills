@@ -1,6 +1,6 @@
 ---
 name: jj
-description: "Use jj (Jujutsu) for local version control instead of git. Activate when: the repo has a .jj/ directory, the user or project config mentions jj, the user says 'use jj', or any version control operation is needed in a jj-managed repo."
+description: "Use jj (Jujutsu) for local version control instead of git. Activate when: the repo has a .jj/ directory, the user or project config mentions jj, the user says 'use jj', or any version control operation is needed in a jj-managed repo. Also use when asked to commit, branch, stash, rebase, or perform any git-like operation in a repo that uses jj; if unsure whether a repo uses jj, check for a .jj/ directory."
 ---
 
 # jj (Jujutsu) — Version Control for Agent Workflows
@@ -30,20 +30,25 @@ description: "Use jj (Jujutsu) for local version control instead of git. Activat
 - [essentials](references/essentials.md): Mental model, detection, setup, inspect/work/reorganize commands, parallel workspaces
 - [workflow-patterns](references/workflow-patterns.md): Five agent workflow patterns (start task, interrupt/resume, split, skeleton planning, undo)
 - [remote-and-caveats](references/remote-and-caveats.md): Git bridge, bookmarks, push, cleanup, common mistakes, advanced help
+- [local-push-alias](references/local-push-alias.md): Appendix — how the `jj push` alias (jj-pre-push) is configured. Read only if `jj push` turns out to be undefined
 
 ## Quick Reference
 
-| Task               | Command                                 |
-| ------------------ | --------------------------------------- |
-| Init in git repo   | `jj git init --colocate`                |
-| See status         | `jj log`                                |
-| Describe change    | `jj describe -m "..."`                  |
-| Start next task    | `jj new`                                |
-| Edit older change  | `jj edit <change>`                      |
-| Discard change     | `jj abandon`                            |
-| Split change       | `jj split`                              |
-| Undo anything      | `jj undo`                               |
-| Fetch remote       | `jj git fetch`                          |
-| Rebase onto master | `jj rebase -d master`                   |
-| Create bookmark    | `jj bookmark create <name> -r @`        |
-| Push               | `jj push` / `jj push --bookmark <name>` |
+| Task                | Command                              |
+| ------------------- | ------------------------------------ |
+| Init in git repo    | `jj git init --colocate`             |
+| See status          | `jj log`                             |
+| Describe change     | `jj describe -m "..."`               |
+| Start next task     | `jj new`                             |
+| Edit older change   | `jj edit <change>`                   |
+| Discard change      | `jj abandon`                         |
+| Split change        | `jj split`                           |
+| Undo anything       | `jj undo`                            |
+| Fetch remote        | `jj git fetch`                       |
+| Rebase onto master  | `jj rebase -d master`                |
+| Create bookmark     | `jj bookmark create <name> -r @`     |
+| Move bookmark       | `jj bookmark set <name> -r <change>` |
+| Track remote branch | `jj bookmark track <name>@<remote>`  |
+| Merge changes       | `jj new <chg1> <chg2> ...`           |
+| Parallel workspace  | `jj workspace add <path>`            |
+| Push                | `jj push` (`--bookmark`/`--deleted`) |

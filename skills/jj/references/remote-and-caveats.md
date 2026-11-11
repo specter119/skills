@@ -34,7 +34,7 @@ jj push --bookmark my-feature            # Push only a specific bookmark
 jj push --deleted                         # Push bookmark deletions after jj abandon
 ```
 
-> **Note:** `jj push` is a custom alias running `jj-pre-push push`, which checks pre-commit hooks. Use `jj git push` directly to bypass checks.
+> **Note:** `jj push` is a local alias (`jj-pre-push --checker prek push`) that runs pre-push hooks before delegating to `jj git push`. Use it directly — do not probe for the alias first. Only if `jj push` fails as an unknown command, fall back to `jj git push` with the same flags; setup and hook-stage details are in [local-push-alias](local-push-alias.md).
 
 ### Cleanup After Abandoning a Pushed Change
 
@@ -49,7 +49,7 @@ When you `jj abandon` a change whose bookmark was pushed to remote, the bookmark
 
 ## Beyond This Skill
 
-jf has rich functionality (revsets, templates, custom aliases, conflict resolution, etc.) not covered here:
+jj has rich functionality (revsets, templates, custom aliases, conflict resolution, etc.) not covered here:
 
 ```bash
 jj help                  # List all commands

@@ -41,7 +41,7 @@ Turn this analysis into a marimo report notebook for stakeholders.
 
 ## Acknowledgments
 
-- **jj** is based on [onevcat-jj](https://github.com/nicepkg/skills/tree/main/skills/onevcat-jj) by onevcat, modified to use `jj push` (jj-pre-push alias) instead of `jj git push`.
+- **jj** is based on [onevcat-jj](https://github.com/onevcat/skills/blob/master/skills/onevcat-jj/SKILL.md) by onevcat, restructured into a skeleton plus reference modules and extended with `jj push` (the author's `jj-pre-push` alias) as the preferred push command.
 - **marimo-style** builds on [marimo-pair](https://github.com/marimo-team/marimo-pair) by the marimo team for live-kernel interaction.
 - Archived **skill-craft** is based on [yao-meta-skill](https://github.com/nicepkg/skills/tree/main/skills/yao-meta-skill) by Yao Team, adapted for waza spec compliance. Structure influenced by [microsoft/waza](https://github.com/microsoft/waza/tree/main/skills).
 
